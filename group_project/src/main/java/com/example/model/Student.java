@@ -1,7 +1,9 @@
+//生徒一覧を表示するためにDAOから生徒情報を取得したレコードを格納するBeanです。
 package com.example.model;
 
 import java.io.Serializable;
 
+//Serializableを実装することでログイン認証がログアウトで解除されるまでBeanをセッションに保持できるようにしています。
 public class Student implements Serializable {
     private String schoolCd;
     private String no;

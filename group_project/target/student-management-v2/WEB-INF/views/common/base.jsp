@@ -11,6 +11,7 @@
     <div class="sidebar">
         <h2>メニュー</h2>
         <ul>
+            <li><a href="${pageContext.request.contextPath}/menu.action">メニュー</a></li>
             <li><a href="${pageContext.request.contextPath}/student.action">学生管理</a></li>
             <li><a href="${pageContext.request.contextPath}/testRegist.action">成績登録</a></li>
             <li><a href="${pageContext.request.contextPath}/testList.action">成績参照</a></li>

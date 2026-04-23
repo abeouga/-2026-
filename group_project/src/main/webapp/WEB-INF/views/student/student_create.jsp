@@ -12,7 +12,7 @@
 
 <section class="me-4">
 
-    <!-- ① -->
+    <!-- タイトル -->
     <h2 class="mb-4 fw-normal
         bg-secondary bg-opacity-10
         py-2 px-4">
@@ -21,29 +21,22 @@
 
     <form action="StudentCreateExecute.action" method="post">
 
-        <!-- ②③ 入学年度 -->
+        <!-- 入学年度 -->
         <div class="mb-3">
             <label class="form-label">入学年度</label>
 
-            <select name="entYear"
-                class="form-select">
+            <select name="entYear" class="form-select">
+                <option value="">------</option>
 
-                <option value="">
-                    ------
-                </option>
-
-                <c:forEach var="year"
-                    items="${ent_year_set}">
-
+                <c:forEach var="year" items="${ent_year_set}">
                     <option value="${year}">
                         ${year}
                     </option>
-
                 </c:forEach>
             </select>
         </div>
 
-        <!-- ④⑤ 学生番号 -->
+        <!-- 学生番号 -->
         <div class="mb-3">
             <label class="form-label">学生番号</label>
 
@@ -53,7 +46,7 @@
                 placeholder="学生番号を入力してください">
         </div>
 
-        <!-- ⑥⑦ 氏名 -->
+        <!-- 氏名 -->
         <div class="mb-3">
             <label class="form-label">氏名</label>
 
@@ -63,32 +56,38 @@
                 placeholder="氏名を入力してください">
         </div>
 
-        <!-- ⑧⑨ クラス -->
+        <!-- クラス -->
         <div class="mb-3">
             <label class="form-label">クラス</label>
 
-            <select name="classNum"
-                class="form-select">
-
-                <c:forEach var="num"
-                    items="${class_num_set}">
-
+            <select name="classNum" class="form-select">
+                <c:forEach var="num" items="${class_num_set}">
                     <option value="${num}">
                         ${num}
                     </option>
-
                 </c:forEach>
             </select>
         </div>
 
-        <!-- ⑩ -->
+        <!-- ★ 在学（追加部分） -->
+        <div class="mb-3">
+            <label class="form-label">在学</label><br>
+
+            <input type="checkbox"
+                name="isAttend"
+                value="true">
+
+            在学中
+        </div>
+
+        <!-- ボタン -->
         <button class="btn btn-secondary">
             登録して終了
         </button>
 
     </form>
 
-    <!-- ⑪ -->
+    <!-- 戻る -->
     <div class="mt-3">
         <a href="StudentList.action">戻る</a>
     </div>

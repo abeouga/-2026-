@@ -13,6 +13,6 @@
                     <li><a href="subjectList.action">科目管理</a></li>
                 </ul>
 
-                <p><a href="logout.action">ログアウト</a></p>
+                <p><a href="logout.action" onclick="return confirm('ログアウトしますか？');">ログアウト</a></p>
             </c:param>
         </c:import>

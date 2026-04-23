@@ -50,11 +50,11 @@ body{
 </style>
 
 </head>
+
 <body>
 
 <div class="container mt-3">
 
-    <!-- ヘッダー -->
     <div class="header d-flex justify-content-between align-items-center">
         <h2 class="mb-0 fw-bold">得点管理システム</h2>
 
@@ -68,7 +68,6 @@ body{
 
     <div class="row">
 
-        <!-- 左メニュー -->
         <c:if test="${not empty user}">
             <div class="col-2 sidebar">
 
@@ -92,13 +91,11 @@ body{
 
             </div>
 
-            <!-- 右コンテンツ -->
             <div class="col-10">
                 <c:out value="${param.content}" escapeXml="false"/>
             </div>
         </c:if>
 
-        <!-- ログイン画面など -->
         <c:if test="${empty user}">
             <div class="col-12">
                 <c:out value="${param.content}" escapeXml="false"/>
@@ -107,7 +104,6 @@ body{
 
     </div>
 
-    <!-- フッター -->
     <div class="footer">
         © 2023 TIC<br>
         大原学園

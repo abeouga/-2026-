@@ -1,18 +1,75 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <%@ taglib prefix="c" uri="jakarta.tags.core" %>
-        <c:import url="/WEB-INF/views/common/base.jsp">
-            <c:param name="title">メインメニュー</c:param>
-            <c:param name="content">
-                <h1>メインメニュー</h1>
-                <p>ようこそ、${sessionScope.user.name} 先生</p>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>メニュー</title>
 
-                <ul>
-                    <li><a href="student.action">学生管理</a></li>
-                    <li><a href="testRegist.action">成績登録</a></li>
-                    <li><a href="testList.action">成績参照</a></li>
-                    <li><a href="subjectList.action">科目管理</a></li>
-                </ul>
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-                <p><a href="logout.action" onclick="return confirm('ログアウトしますか？');">ログアウト</a></p>
-            </c:param>
-        </c:import>
+<style>
+    body {
+        background-color: #f8f9fa;
+        padding: 30px;
+    }
+
+    h2 {
+        background-color: #dee2e6;
+        padding: 20px;
+        border-radius: 12px;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
+
+    p {
+        margin-bottom: 20px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        transition: 0.3s;
+    }
+
+    p:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+    }
+
+    p a {
+        display: block;
+        padding: 20px;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    /* 色分け（HTMLそのまま） */
+    p:nth-of-type(1) {
+        background-color: #f8d7da;
+    }
+
+    p:nth-of-type(2),
+    p:nth-of-type(3) {
+        background-color: #d1e7dd;
+    }
+
+    p:nth-of-type(4) {
+        background-color: #d6d8f5;
+    }
+</style>
+
+</head>
+<body>
+
+<h2>メニュー画面</h2>
+<div class="mt-auto">
+<hr class="text-white">
+<a class="nav-link text-warning" href="Logout.action" onclick="return confirm('ログアウトしますか？');">ログアウト</a>
+</div>
+<p><a href="Student.action">学生管理</a></p>
+<p><a href="testList.action">成績参照</a></p>
+<p><a href="testCreate.action">成績登録</a></p>
+<p><a href="SubjectList.action">科目管理</a></p>
+
+</body>
+</html>

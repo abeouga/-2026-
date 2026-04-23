@@ -139,3 +139,14 @@
 0:0:0:0:0:0:0:1 - - [23/Apr/2026:14:27:39 +0900] "GET /student-management-v2/menu.action HTTP/1.1" 200 1670
 0:0:0:0:0:0:0:1 - - [23/Apr/2026:14:27:43 +0900] "GET /student-management-v2/student.action HTTP/1.1" 200 5103
 0:0:0:0:0:0:0:1 - - [23/Apr/2026:14:27:44 +0900] "GET /student-management-v2/studentCreate.action HTTP/1.1" 200 2324
+0:0:0:0:0:0:0:1 - - [23/Apr/2026:14:30:18 +0900] "GET /student-management-v2/studentCreate.action HTTP/1.1" 200 2936
+0:0:0:0:0:0:0:1 - - [23/Apr/2026:14:31:01 +0900] "GET /student-management-v2/studentCreate.action HTTP/1.1" 200 2936
+0:0:0:0:0:0:0:1 - - [23/Apr/2026:14:31:03 +0900] "GET /student-management-v2/StudentList.action HTTP/1.1" 200 1372
+0:0:0:0:0:0:0:1 - - [23/Apr/2026:14:31:04 +0900] "GET /student-management-v2/menu.action HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [23/Apr/2026:14:31:05 +0900] "GET /student-management-v2/login.action HTTP/1.1" 200 1970
+0:0:0:0:0:0:0:1 - - [23/Apr/2026:14:34:00 +0900] "POST /student-management-v2/LoginExecute.action HTTP/1.1" 404 802
+0:0:0:0:0:0:0:1 - - [23/Apr/2026:14:34:42 +0900] "GET /student-management-v2/login.action HTTP/1.1" 200 1970
+0:0:0:0:0:0:0:1 - - [23/Apr/2026:14:34:47 +0900] "POST /student-management-v2/LoginExecute.action HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [23/Apr/2026:14:34:47 +0900] "GET /student-management-v2/menu.action HTTP/1.1" 200 1670
+0:0:0:0:0:0:0:1 - - [23/Apr/2026:14:34:49 +0900] "GET /student-management-v2/student.action HTTP/1.1" 200 5103
+0:0:0:0:0:0:0:1 - - [23/Apr/2026:14:34:51 +0900] "GET /student-management-v2/studentCreate.action HTTP/1.1" 200 4335

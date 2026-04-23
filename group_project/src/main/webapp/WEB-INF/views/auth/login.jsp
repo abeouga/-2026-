@@ -8,7 +8,7 @@
                 <c:if test="${not empty errorMessage}">
                     <p style="color:red;">${errorMessage}</p>
                 </c:if>
-                <form action="loginExecute.action" method="post">
+                <form action="LoginExecute.action" method="post">
                     <div>
                         <label>ID:</label>
                         <input type="text" name="id" required>

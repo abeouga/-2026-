@@ -12,10 +12,12 @@ import com.example.bean.Student;
 import com.example.bean.Subject;
 import com.example.bean.Teacher;
 import com.example.bean.TestListStudent;
+import com.example.bean.TestListSubject;
 import com.example.dao.ClassNumDao;
 import com.example.dao.StudentDao;
 import com.example.dao.SubjectDao;
 import com.example.dao.TestListStudentDao;
+import com.example.dao.TestListSubjectDao;
 
 public class TestListSubjectExecuteAction extends Action{
     public String execute(HttpServletRequest request,HttpServletResponse responce)throws Exception{
@@ -24,19 +26,22 @@ public class TestListSubjectExecuteAction extends Action{
         School school = teacher.getSchool();
         SubjectDao sdao = new SubjectDao();
         ClassNumDao cdao = new ClassNumDao();
-        StudentDao stdao = new StudentDao();
         Subject subject = null;
+        int entYear = 0;
         
         List<Subject> list = sdao.filter(school);
         request.setAttribute("subjectList",list);
         List<String> list2 = cdao.filter(school);
         request.setAttribute("classList",list2);
         
-        String entYear = request.getParameter("entYear");
+        String entYearStr = request.getParameter("entYear");
         String subjectCd = request.getParameter("subjectCd");
         String classNum = request.getParameter("classNum");
+        if(entYearStr != null && !entYearStr.isEmpty()){
+            entYear = Integer.parseInt(entYearStr);
+        }
 
-        List<TestListStudent> testList = null;
+        List<TestListSubject> testList = null;
 
         // ▼ 検索処理
         if (subjectCd != null && !subjectCd.isEmpty()
@@ -45,12 +50,10 @@ public class TestListSubjectExecuteAction extends Action{
             subject = sdao.get(subjectCd, school);
 
             if (subject != null) {
-                TestListStudentDao dao = new TestListStudentDao();
-                testList = dao.filter(classNum, subject, school);
+                TestListSubjectDao dao = new TestListSubjectDao();
+                testList = dao.filter(entYear,classNum, subject, school);
             }
         }
-        System.out.println("subjectCd=" + subjectCd);
-        System.out.println("classNum=" + classNum);
         request.setAttribute("testList",testList);
         //request.getRequestDispatcher("test_list.jsp").forward(request, response);
         return "test_list_subject.jsp";

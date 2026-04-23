@@ -10,7 +10,7 @@ import java.sql.Statement;
 @WebListener
 public class AppInitListener implements ServletContextListener {
 
-    private static final String URL = "jdbc:h2:file:~/kozin2;AUTO_SERVER=TRUE";
+    private static final String URL = "jdbc:h2:file:~/groupes;AUTO_SERVER=TRUE";
     private static final String USER = "sa";
     private static final String PASSWORD = "";
 

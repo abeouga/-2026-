@@ -1,83 +1,114 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java"
+    contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" %>
+
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>${param.title}</title>
+<meta charset="UTF-8">
+<title>${param.title}</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-        .sidebar {
-            width: 250px;
-            min-height: 100vh;
-        }
-    </style>
+<style>
+body{
+    background:#f8f9fa;
+}
+
+.header{
+    background:#dfeaf6;
+    padding:15px 25px;
+    margin-bottom:15px;
+}
+
+.sidebar{
+    min-height:600px;
+    border-right:1px solid #ddd;
+}
+
+.sidebar a{
+    display:block;
+    padding:4px 0;
+    text-decoration:none;
+}
+
+.sidebar a:hover{
+    color:#0d6efd;
+    padding-left:5px;
+}
+
+.footer{
+    background:#e9ecef;
+    text-align:center;
+    font-size:12px;
+    color:#666;
+    padding:10px;
+    margin-top:30px;
+}
+</style>
+
 </head>
 
 <body>
 
-<div class="d-flex">
+<div class="container mt-3">
 
-    <!-- サイドバー -->
-    <div class="sidebar bg-dark text-white p-3 d-flex flex-column">
-        <h4 class="mb-4">メニュー</h4>
+    <div class="header d-flex justify-content-between align-items-center">
+        <h2 class="mb-0 fw-bold">得点管理システム</h2>
 
-        <ul class="nav flex-column">
-            <li class="nav-item">
-                <a class="nav-link text-white" href="${pageContext.request.contextPath}/menu.action">メニュー</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="${pageContext.request.contextPath}/student.action">学生管理</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="${pageContext.request.contextPath}/testRegist.action">成績登録</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="${pageContext.request.contextPath}/testList.action">成績参照</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="${pageContext.request.contextPath}/subjectList.action">科目管理</a>
-            </li>
-        </ul>
-
-        <div class="mt-auto">
-            <hr class="text-white">
-            <a class="nav-link text-warning"
-               href="logout.action"
-               onclick="return confirm('ログアウトしますか？');">
-                ログアウト
-            </a>
-        </div>
-    </div>
-
-    <!-- メイン -->
-    <div class="flex-grow-1">
-
-        <!-- ヘッダー -->
-        <div class="d-flex justify-content-between align-items-center bg-light border-bottom p-3">
-            <h5 class="mb-0">${param.title}</h5>
-
+        <c:if test="${not empty user}">
             <div>
-                <c:choose>
-                    <c:when test="${not empty sessionScope.user}">
-                        ようこそ、${sessionScope.user.name} 先生
-                    </c:when>
-                    <c:otherwise>
-                        ゲスト
-                    </c:otherwise>
-                </c:choose>
+                ${user.name} 様　
+                <a href="Logout.action">ログアウト</a>
             </div>
-        </div>
+        </c:if>
+    </div>
 
-        <!-- コンテンツ -->
-        <div class="p-4">
-            ${param.content}
-        </div>
+    <div class="row">
+
+        <c:if test="${not empty user}">
+            <div class="col-2 sidebar">
+
+                <a href="Menu.action">メニュー</a>
+
+                <div class="mt-3 fw-bold">
+                    学生管理
+                </div>
+                <a href="StudentList.action">学生一覧</a>
+
+                <div class="mt-3 fw-bold">
+                    成績管理
+                </div>
+                <a href="TestCreate.action">成績登録</a>
+                <a href="TestList.action">成績参照</a>
+
+                <div class="mt-3 fw-bold">
+                    科目管理
+                </div>
+                <a href="SubjectList.action">科目一覧</a>
+
+            </div>
+
+            <div class="col-10">
+                <c:out value="${param.content}" escapeXml="false"/>
+            </div>
+        </c:if>
+
+        <c:if test="${empty user}">
+            <div class="col-12">
+                <c:out value="${param.content}" escapeXml="false"/>
+            </div>
+        </c:if>
 
     </div>
+
+    <div class="footer">
+        © 2023 TIC<br>
+        大原学園
+    </div>
+
 </div>
 
 </body>

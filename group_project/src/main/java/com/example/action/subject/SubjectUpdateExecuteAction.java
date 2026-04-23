@@ -13,7 +13,7 @@ public class SubjectUpdateExecuteAction implements Action {
 
         Teacher user = (Teacher)session.getAttribute("user");
         
-        String code = req.getParameter("code");
+        String code = req.getParameter("cd");
         String name = req.getParameter("name");
 
         SubjectDao dao = new SubjectDao();

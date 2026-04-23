@@ -13,7 +13,7 @@ public class SubjectDeleteExecuteAction implements Action {
 
         Teacher user = (Teacher)session.getAttribute("user");
         
-        String code = req.getParameter("code");
+        String code = req.getParameter("cd");
 
         SubjectDao dao = new SubjectDao();
         Subject subject = dao.get(user.getSchoolCd(), code);

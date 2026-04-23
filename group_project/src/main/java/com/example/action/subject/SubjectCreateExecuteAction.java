@@ -13,25 +13,31 @@ public class SubjectCreateExecuteAction implements Action {
 
         Teacher user = (Teacher)session.getAttribute("user");
         
-        String code = req.getParameter("code");
+        String code = req.getParameter("cd");
         String name = req.getParameter("name");
 
-        if (code == null) {
-            req.setAttribute("code", code);
+        if (code == null || name == null) {
+            req.setAttribute("cd", code);
             req.setAttribute("name", name);
             req.setAttribute("error", "科目コード、科目名をセットし、科目コードは３文字で入力してください");
-            req.getRequestDispatcher("/student-management-v2/subject_list.jsp").forward(req, res);
+            req.getRequestDispatcher("/WEB-INF/views/subject/subject_create.jsp").forward(req, res);
+            return;
         }
 
         SubjectDao dao = new SubjectDao();
         Subject subject = dao.get(user.getSchoolCd(), code);
-        if (subject == null) {
-            req.setAttribute("code", code);
+        if (subject != null) {
+            req.setAttribute("cd", code);
             req.setAttribute("name", name);
             req.setAttribute("error", "科目コードが重複しています");
-            req.getRequestDispatcher("/subject_list.jsp").forward(req, res);
+            req.getRequestDispatcher("/WEB-INF/views/subject/subject_create.jsp").forward(req, res);
+            return;
         }
-        boolean line = dao.save(subject);
+        Subject newSubject = new Subject();
+        newSubject.setCd(code);
+        newSubject.setName(name);
+        newSubject.setSchoolCd(user.getSchoolCd());
+        boolean line = dao.save(newSubject);
 
         session.setAttribute("line", line);
 

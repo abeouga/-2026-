@@ -62,7 +62,10 @@
 <body>
 
 <h2>メニュー画面</h2>
-
+<div class="mt-auto">
+<hr class="text-white">
+<a class="nav-link text-warning" href="logout.action" onclick="return confirm('ログアウトしますか？');">ログアウト</a>
+</div>
 <p><a href="StudentList.action">学生管理</a></p>
 <p><a href="TestList.action">成績参照</a></p>
 <p><a href="TestCreate.action">成績登録</a></p>

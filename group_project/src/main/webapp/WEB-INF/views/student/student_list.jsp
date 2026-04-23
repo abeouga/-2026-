@@ -21,7 +21,7 @@
                     </h2>
 
                     <div class="my-2 text-end px-4">
-                        <a href="StudentCreate.action">
+                        <a href="studentCreate.action">
                             新規登録
                         </a>
                     </div>
@@ -149,7 +149,7 @@
                                         </td>
 
                                         <td>
-                                            <a href="StudentUpdate.action?no=${student.no}">
+                                            <a href="studentUpdate.action?no=${student.no}">
                                                 変更
                                             </a>
                                         </td>

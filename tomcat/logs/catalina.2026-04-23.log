@@ -219,3 +219,35 @@
 23-Apr-2026 10:14:00.686 情報 [main] org.apache.coyote.AbstractProtocol.stop ProtocolHandler ["http-nio-8080"]の停止中
 23-Apr-2026 10:14:00.687 情報 [main] org.apache.coyote.AbstractProtocol.destroy ProtocolHandler ["http-nio-8080"] を破棄します。
 >>>>>>> 7190d05ceaf29c05f20876aa46c38a53278e513f
+23-Apr-2026 10:36:19.978 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log Serverのバージョン名:     Apache Tomcat/10.1.9
+23-Apr-2026 10:36:19.983 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log Server ビルド:            May 9 2023 14:30:05 UTC
+23-Apr-2026 10:36:19.983 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log サーバーのバージョン番号: 10.1.9.0
+23-Apr-2026 10:36:19.984 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log OS 名:                    Windows 11
+23-Apr-2026 10:36:19.984 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log OS バージョン:            10.0
+23-Apr-2026 10:36:19.984 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log アーキテクチャ:           amd64
+23-Apr-2026 10:36:19.985 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                C:\Program Files\Java\jdk-25
+23-Apr-2026 10:36:19.985 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM バージョン:           25+37-LTS-3491
+23-Apr-2026 10:36:19.985 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM ベンダ:               Oracle Corporation
+23-Apr-2026 10:36:19.986 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:            C:\Users\i_kudou\Desktop\共有\-2026-\tomcat
+23-Apr-2026 10:36:19.986 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:            C:\Users\i_kudou\Desktop\共有\-2026-\tomcat
+23-Apr-2026 10:36:20.010 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djava.util.logging.config.file=C:\Users\i_kudou\Desktop\共有\-2026-\tomcat\conf\logging.properties
+23-Apr-2026 10:36:20.011 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+23-Apr-2026 10:36:20.011 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djdk.tls.ephemeralDHKeySize=2048
+23-Apr-2026 10:36:20.012 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+23-Apr-2026 10:36:20.012 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.base/java.lang=ALL-UNNAMED
+23-Apr-2026 10:36:20.012 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.base/java.io=ALL-UNNAMED
+23-Apr-2026 10:36:20.012 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.base/java.util=ALL-UNNAMED
+23-Apr-2026 10:36:20.013 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+23-Apr-2026 10:36:20.013 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+23-Apr-2026 10:36:20.014 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Dcatalina.base=C:\Users\i_kudou\Desktop\共有\-2026-\tomcat
+23-Apr-2026 10:36:20.014 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Dcatalina.home=C:\Users\i_kudou\Desktop\共有\-2026-\tomcat
+23-Apr-2026 10:36:20.014 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djava.io.tmpdir=C:\Users\i_kudou\Desktop\共有\-2026-\tomcat\temp
+23-Apr-2026 10:36:20.033 情報 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent 商用環境に最適な性能を発揮する APR ベースの Tomcat ネイティブライブラリが java.library.path [C:\Program Files\Java\jdk-25\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Go\bin;C:\Users\i_kudou\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\i_kudou\AppData\Local\Programs\Python\Python313\;C:\Users\i_kudou\AppData\Local\Programs\Python\Launcher\;C:\Users\i_kudou\AppData\Local\Microsoft\WindowsApps;C:\Users\i_kudou\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\i_kudou\go\bin;.] に存在しません。
+23-Apr-2026 10:36:20.518 情報 [main] org.apache.coyote.AbstractProtocol.init プロトコルハンドラ ["http-nio-8080"] を初期化します。
+23-Apr-2026 10:36:20.559 情報 [main] org.apache.catalina.startup.Catalina.load サーバーの初期化 [913] ミリ秒
+23-Apr-2026 10:36:20.631 情報 [main] org.apache.catalina.core.StandardService.startInternal サービス [Catalina] を起動します
+23-Apr-2026 10:36:20.631 情報 [main] org.apache.catalina.core.StandardEngine.startInternal サーブレットエンジンの起動：[Apache Tomcat/10.1.9]
+23-Apr-2026 10:36:20.676 情報 [main] org.apache.catalina.startup.HostConfig.deployWAR Webアプリケーションアーカイブ [C:\Users\i_kudou\Desktop\共有\-2026-\tomcat\webapps\student-management-v2.war] を配備します
+23-Apr-2026 10:36:21.244 情報 [main] org.apache.catalina.startup.HostConfig.deployWAR Web アプリケーションアーカイブ [C:\Users\i_kudou\Desktop\共有\-2026-\tomcat\webapps\student-management-v2.war] の配備は [558] ミリ秒で完了しました
+23-Apr-2026 10:36:21.250 情報 [main] org.apache.coyote.AbstractProtocol.start プロトコルハンドラー ["http-nio-8080"] を開始しました。
+23-Apr-2026 10:36:21.315 情報 [main] org.apache.catalina.startup.Catalina.start サーバーの起動 [753] ミリ秒

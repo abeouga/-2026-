@@ -43,3 +43,12 @@
 0:0:0:0:0:0:0:1 - - [23/Apr/2026:09:40:42 +0900] "POST /student-management-v2/loginExecute.action HTTP/1.1" 200 1508
 0:0:0:0:0:0:0:1 - - [23/Apr/2026:09:40:42 +0900] "GET /student-management-v2/css/style.css HTTP/1.1" 404 938
 >>>>>>> 7190d05ceaf29c05f20876aa46c38a53278e513f
+0:0:0:0:0:0:0:1 - - [23/Apr/2026:10:36:23 +0900] "GET /student-management-v2/login.action HTTP/1.1" 404 933
+0:0:0:0:0:0:0:1 - - [23/Apr/2026:10:36:25 +0900] "GET /student-management-v2/login.action HTTP/1.1" 404 933
+0:0:0:0:0:0:0:1 - - [23/Apr/2026:10:36:26 +0900] "GET /student-management-v2/login.action HTTP/1.1" 404 933
+0:0:0:0:0:0:0:1 - - [23/Apr/2026:10:36:27 +0900] "GET /student-management-v2/login.action HTTP/1.1" 404 933
+0:0:0:0:0:0:0:1 - - [23/Apr/2026:10:36:27 +0900] "GET /student-management-v2/login.action HTTP/1.1" 404 933
+0:0:0:0:0:0:0:1 - - [23/Apr/2026:10:36:27 +0900] "GET /student-management-v2/login.action HTTP/1.1" 404 933
+0:0:0:0:0:0:0:1 - - [23/Apr/2026:10:36:27 +0900] "GET /student-management-v2/login.action HTTP/1.1" 404 933
+0:0:0:0:0:0:0:1 - - [23/Apr/2026:10:37:11 +0900] "GET /student-management-v2/ HTTP/1.1" 404 921
+0:0:0:0:0:0:0:1 - - [23/Apr/2026:10:37:22 +0900] "GET /student-management-v2/login.action HTTP/1.1" 404 933

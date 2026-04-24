@@ -4,7 +4,10 @@
 <head>
 <meta charset="UTF-8">
 <title>メニュー</title>
-
+<div class="mt-auto">
+<hr class="text-white">
+<a class="nav-link text-warning" href="Logout.action" onclick="return confirm('ログアウトしますか？');">ログアウト</a>
+</div>
 <!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -62,10 +65,6 @@
 <body>
 
 <h2>メニュー画面</h2>
-<div class="mt-auto">
-<hr class="text-white">
-<a class="nav-link text-warning" href="Logout.action" onclick="return confirm('ログアウトしますか？');">ログアウト</a>
-</div>
 <p><a href="student.action">学生管理</a></p>
 <p><a href="testList.action">成績参照</a></p>
 <p><a href="testCreate.action">成績登録</a></p>

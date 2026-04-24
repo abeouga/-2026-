@@ -1,0 +1,10 @@
+0:0:0:0:0:0:0:1 - - [24/Apr/2026:10:30:04 +0900] "GET /student-management/students HTTP/1.1" 404 802
+0:0:0:0:0:0:0:1 - - [24/Apr/2026:10:30:08 +0900] "GET /student-management-v2/student.action HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [24/Apr/2026:10:30:09 +0900] "GET /student-management-v2/login.action HTTP/1.1" 200 1970
+0:0:0:0:0:0:0:1 - - [24/Apr/2026:10:30:09 +0900] "GET /favicon.ico HTTP/1.1" 404 802
+0:0:0:0:0:0:0:1 - - [24/Apr/2026:10:30:17 +0900] "POST /student-management-v2/LoginExecute.action HTTP/1.1" 200 1970
+0:0:0:0:0:0:0:1 - - [24/Apr/2026:10:30:23 +0900] "POST /student-management-v2/LoginExecute.action HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [24/Apr/2026:10:30:23 +0900] "GET /student-management-v2/menu.action HTTP/1.1" 200 1670
+0:0:0:0:0:0:0:1 - - [24/Apr/2026:10:30:26 +0900] "GET /student-management-v2/student.action HTTP/1.1" 200 8220
+0:0:0:0:0:0:0:1 - - [24/Apr/2026:10:30:28 +0900] "GET /student-management-v2/studentCreate.action HTTP/1.1" 200 6022
+0:0:0:0:0:0:0:1 - - [24/Apr/2026:10:30:43 +0900] "POST /student-management-v2/StudentCreateExecute.action HTTP/1.1" 200 2204

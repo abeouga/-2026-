@@ -30,7 +30,7 @@
                             </div>
 
                             <div class="mt-4">
-                                <button type="submit" class="btn btn-secondary px-5">登録</button>
+                                <button type="submit" class="btn btn-secondary px-5">更新</button>
                             </div>
                         </form>
 

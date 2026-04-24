@@ -66,13 +66,12 @@ public class TestListSubjectDao extends DAO{
             statement = connection.prepareStatement(baseSql + condition + order);
             //プリペアードステートメントに学校コードをバインド
             //プリペアードステートメントにクラス番号をバインド
-            statement.setString(1, subject.getCd());
+            statement.setString(1, subject.getCd().trim());
             statement.setString(2, classNum);
             statement.setInt(3, entYear);
             //プリペアードステートメントを実行
             rSet = statement.executeQuery();
-            PreparedStatement statement2 = connection.prepareStatement("select name from subject where cd = ?");
-            statement2.setString(1, subject.getCd());
+            
 
             //リストへの格納処理を実行
             list = postFilter(rSet);

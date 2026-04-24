@@ -11,19 +11,21 @@ import bean.School;
 import bean.Subject;
 
 public class SubjectDao extends DAO{
-    private String baseSql = "select * from subject where school_cd=? ";
+    private String baseSql = "select * from subject where school_cd=?";
     public Subject get(String cd,School school)throws Exception{
+        String exsql = " and cd = ?";
         Subject subject = new Subject();
         Connection connection = getConnection();
         PreparedStatement statement = null;
         try{
-            statement = connection.prepareStatement(baseSql);
+            statement = connection.prepareStatement(baseSql+exsql);
             statement.setString(1, school.getCd());
+            statement.setString(2, cd);
             ResultSet rSet = statement.executeQuery();
             if(rSet.next()){
                 //リザルトセットが存在する場合
                 //学校インスタンスに学校コードと学校名をセット
-                subject.setCd(rSet.getString("cd"));
+                subject.setCd(rSet.getString("cd").trim());
                 subject.setName(rSet.getString("NAME"));
             }else{
                 //リザルトセットが存在しない場合
@@ -52,7 +54,7 @@ public class SubjectDao extends DAO{
         return subject;
     }
     public List<Subject> filter(School school)throws Exception{
-        
+         
         //リストを初期化
         List<Subject> list = new ArrayList<>();
         //データベースへのコネクションを確立
@@ -61,7 +63,7 @@ public class SubjectDao extends DAO{
         PreparedStatement statement = null;
         try{
             //プリペアードステートメントにSQL文をセット
-            statement = connection.prepareStatement("select * from subject where school_cd=?");
+            statement = connection.prepareStatement(baseSql);
             //プリペアードステートメントに学校コードをバインド
             statement.setString(1, school.getCd());
             //プリペアードステートメントを実行

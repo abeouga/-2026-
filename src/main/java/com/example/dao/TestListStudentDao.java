@@ -12,10 +12,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import bean.Subject;
-
 public class TestListStudentDao extends DAO{
-    private String baseSql = "select * from test where school_cd=? ";
+    private String baseSql = "SELECT\n" + //
+                "    st.no AS student_no,\n" + //
+                "    st.name AS student_name,\n" + //
+                "    sub.name AS subject_name,\n" + //
+                "    t.point\n" + //
+                "FROM test t\n" + //
+                "JOIN student st ON t.student_no = st.no\n" + //
+                "JOIN subject sub ON t.subject_cd = sub.cd ";
     private List<TestListStudent> postFilter(ResultSet rSet)throws Exception{
         //リストを初期化
         List<TestListStudent> list = new ArrayList<>();
@@ -25,9 +30,9 @@ public class TestListStudentDao extends DAO{
                 //学生インスタンスを初期化
                 TestListStudent student = new TestListStudent();
                 //学生インスタンスに検索結果をセット
-                //student.setSubjectName(rSet.getString("name"));
-                student.setSubjectCd(rSet.getString("subject_cd"));
-                student.setNum(rSet.getInt("class_num"));
+                student.setStudentName(rSet.getString("name"));
+                student.setStudentNo(rSet.getString("student_No"));
+                student.setClassNum("class_num");
                 student.setPoint(rSet.getInt("point"));
                 //リストに追加
                 list.add(student);
@@ -37,50 +42,32 @@ public class TestListStudentDao extends DAO{
         }
         return list;
     }
-    public List<TestListStudent> filter(String classNum,Subject subject,School school)throws Exception{
-        //リストを初期化
-        List<TestListStudent> list = new ArrayList<>();
-        //コネクションを確立
-        Connection connection = getConnection();
-        //プリペアードステートメント
-        PreparedStatement statement = null;
-        //リザルトセット
-        ResultSet rSet = null;
-        //SQL文の条件
-        String condition = "and subject_cd = ? and class_num = ?";
-        //SQL文のソート
-        String order = "order by no asc ";
-        
-        try{
-            //プリペアードステートメントにSQL文をセット
-            statement = connection.prepareStatement(baseSql + condition + order);
-            //プリペアードステートメントに学校コードをバインド
-            statement.setString(1, school.getCd());
-            //プリペアードステートメントにクラス番号をバインド
-            statement.setString(2, subject.getCd());
-            statement.setString(3, classNum);
-            //プリペアードステートメントを実行
-            rSet = statement.executeQuery();
+    
+    public List<TestListStudent> filter(String studentNo, School school) throws Exception {
 
-            //リストへの格納処理を実行
-            list = postFilter(rSet);
-        }catch(Exception e){
-            throw e;
-        }finally{
-            //プリペアードステートメントを閉じる
-            if(statement != null){
-                try{
-                    statement.close();
-                }catch(SQLException sqle){
-                    throw sqle;
-                }
-            }
-            //コネクションを閉じる
-            if(connection != null){
-                try{
-                    connection.close();
-                }catch(SQLException sqle){
-                    throw sqle;
+        List<TestListStudent> list = new ArrayList<>();
+
+        String sql =
+            baseSql +
+            "WHERE st.no = ? AND st.school_cd = ? " +
+            "ORDER BY sub.cd";
+
+        try (
+            Connection connection = getConnection();
+            PreparedStatement statement = connection.prepareStatement(sql);
+        ) {
+            statement.setString(1, studentNo);
+            statement.setString(2, school.getCd());
+
+            try (ResultSet rSet = statement.executeQuery()) {
+                while (rSet.next()) {
+                    TestListStudent student = new TestListStudent();
+                    
+                    student.setStudentNo(rSet.getString("student_no"));
+                    student.setStudentName(rSet.getString("student_name"));
+                    student.setSubjectCd(rSet.getString("subject_name"));
+                    student.setPoint(rSet.getInt("point"));
+                    list.add(student);
                 }
             }
         }

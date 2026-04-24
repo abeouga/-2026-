@@ -13,13 +13,12 @@ public class SubjectUpdateAction implements Action {
 
         Teacher user = (Teacher)session.getAttribute("user");
         
-        String code = req.getParameter("code");
+        String code = req.getParameter("cd");
 
         SubjectDao dao = new SubjectDao();
         Subject subject = dao.get(user.getSchoolCd(), code);
-        boolean line = dao.save(subject);
 
-        session.setAttribute("line", line);
+        session.setAttribute("subject", subject);
 
         req.getRequestDispatcher("/WEB-INF/views/subject/subject_update.jsp").forward(req, res);
     }

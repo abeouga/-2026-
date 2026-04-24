@@ -76,18 +76,18 @@ body{
                 <div class="mt-3 fw-bold">
                     学生管理
                 </div>
-                <a href="StudentList.action">学生一覧</a>
+                <a href="student.action">学生一覧</a>
 
                 <div class="mt-3 fw-bold">
                     成績管理
                 </div>
-                <a href="TestCreate.action">成績登録</a>
-                <a href="TestList.action">成績参照</a>
+                <a href="testCreate.action">成績登録</a>
+                <a href="testList.action">成績参照</a>
 
                 <div class="mt-3 fw-bold">
                     科目管理
                 </div>
-                <a href="SubjectList.action">科目一覧</a>
+                <a href="subjectList.action">科目一覧</a>
 
             </div>
 

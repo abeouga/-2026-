@@ -66,10 +66,10 @@
 <hr class="text-white">
 <a class="nav-link text-warning" href="Logout.action" onclick="return confirm('ログアウトしますか？');">ログアウト</a>
 </div>
-<p><a href="StudentList.action">学生管理</a></p>
-<p><a href="TestList.action">成績参照</a></p>
-<p><a href="TestCreate.action">成績登録</a></p>
-<p><a href="SubjectList.action">科目管理</a></p>
+<p><a href="student.action">学生管理</a></p>
+<p><a href="testList.action">成績参照</a></p>
+<p><a href="testCreate.action">成績登録</a></p>
+<p><a href="subjectList.action">科目管理</a></p>
 
 </body>
 </html>

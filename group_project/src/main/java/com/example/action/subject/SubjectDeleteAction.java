@@ -18,7 +18,7 @@ public class SubjectDeleteAction implements Action {
         SubjectDao dao = new SubjectDao();
         Subject subject = dao.get(user.getSchoolCd(), code);
 
-        session.setAttribute("subject", subject);
+        req.setAttribute("subject", subject);
 
         req.getRequestDispatcher("/WEB-INF/views/subject/subject_delete.jsp").forward(req, res);
     }

@@ -24,6 +24,19 @@ public class StudentCreateExecuteAction implements Action {
         String name = req.getParameter("name");
         String classNum = req.getParameter("classNum");
 
+        // 入学年度リストを生成
+        java.util.List<Integer> entYearSet = new java.util.ArrayList<>();
+        int year = java.time.LocalDate.now().getYear();
+        for (int i = year - 10; i <= year + 1; i++) {
+            entYearSet.add(i);
+        }
+        req.setAttribute("ent_year_set", entYearSet);
+
+        // クラス番号リストを取得
+        com.example.dao.ClassNumDao classNumDao = new com.example.dao.ClassNumDao();
+        java.util.List<String> classNumSet = classNumDao.filter(teacher.getSchoolCd());
+        req.setAttribute("class_num_set", classNumSet);
+
         boolean error = false;
 
         if (entYearStr == null || entYearStr.isEmpty() || entYearStr.equals("0")) {
@@ -71,7 +84,7 @@ public class StudentCreateExecuteAction implements Action {
         dao.save(student);
 
         req.setAttribute("student", student);
-        req.getRequestDispatcher("/WEB-INF/views/student/student_create_done.jsp").forward(req, res);
+        req.getRequestDispatcher("/WEB-INF/views/student/studentCreateComplete.jsp").forward(req, res);
     }
 }
 

@@ -37,8 +37,8 @@
 
                 <thead class="table-dark">
                     <tr>
-                        <th>科目</th>
-                        <th>科目コード</th>
+                        <th>学生名</th>
+                        <th>科目名</th>
                         <th>学生番号</th>
                         <th>点数</th>
                     </tr>
@@ -47,9 +47,9 @@
                 <tbody>
                     <c:forEach var="t" items="${testList}">
                         <tr>
-                            <td>${t.name}</td>
-                            <td>${t.cd}</td>
-                            <td>${t.num}</td>
+                            <td>${t.studentName}</td>
+                            <td>${t.subjectCd}</td>
+                            <td>${t.studentNo}</td>
                             <td>${t.point}</td>
                         </tr>
                     </c:forEach>

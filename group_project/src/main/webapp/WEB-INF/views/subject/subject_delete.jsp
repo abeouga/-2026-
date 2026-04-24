@@ -27,7 +27,7 @@
                         </form>
 
         
-                            <a href="menu.action" class="text-decoration-none small">戻る</a>
+                            <a href="subjectList.action" class="text-decoration-none small">戻る</a>
                         </div>
                     </section>
                 </main>

@@ -42,7 +42,7 @@
                         <option value="">選択してください</option>
                         <c:forEach var="sub" items="${subjectList}">
                             <option value="${sub.cd}"
-                            <c:if test="${param.subjectCd == sub.cd}">selected</c:if>>
+                            <c:if test="${param.subjectCd eq sub.cd}">selected</c:if>>
                             ${sub.cd} : ${sub.name}
                             </option>
                         </c:forEach>
@@ -74,7 +74,7 @@
                         <tr>
                             <td>${t.subjectName}</td>
                             <td>${t.subjectCd}</td>
-                            <td>${t.num}</td>
+                            <td>${t.classNum}</td>
                             <td>${t.point}</td>
                         </tr>
                     </c:forEach>

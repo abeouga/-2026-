@@ -13,19 +13,23 @@
                 <main class="col-md-10 p-4">
                     <section>
                         <h2 class="h4 mb-4 fw-normal py-2 px-4" style="background-color: #f0f0f0; border-bottom: 1px solid #dee2e6;">科目情報登録</h2>
-
+                        <c:if test="${not empty error}">
+                            <div class="alert alert-danger mb-3" role="alert">
+                                ${error}
+                            </div>
+                        </c:if>
                         <form action="subjectCreateExecute.action" method="post" class="mx-4">
 
                             <div class="mb-3 col-md-4">
                                 <label class="form-label" for="student-no-input">科目コード</label>
                                 <br>
-                                <input class="form-input form-control" type="text" id="student-no-input" name="cd" value="${subject.cd}" placeholder="科目コードを入力してください" required>
-                            <div class="text-danger small">${error}</div> </div>
+                                <input class="form-input form-control" type="text" id="student-no-input" name="cd" value="${cd}" placeholder="科目コードを入力してください" required>
+                            <div class="text-danger small">${errors.get("cd")}</div> </div>
 
                             <div class="mb-3 col-md-6">
                                 <label class="form-label" for="student-name-input">科目名</label>
                                 <br>
-                                <input class="form-input form-control" type="text" id="student-name-input" name="name" value="${subject.name}" placeholder="科目名を入力してください" required>
+                                <input class="form-input form-control" type="text" id="student-name-input" name="name" value="${name}" placeholder="科目名を入力してください" required>
                             </div>
 
                             <div class="mt-4">

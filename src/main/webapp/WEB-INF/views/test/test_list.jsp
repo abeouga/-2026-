@@ -16,7 +16,7 @@
                  📘 科目・クラス別で参照
             </a>
 
-            <a href="TestListStudent.action" class="btn btn-secondary">
+            <a href="TestListStudentExecute.action" class="btn btn-secondary">
                  👤 学生別で参照
             </a>
 

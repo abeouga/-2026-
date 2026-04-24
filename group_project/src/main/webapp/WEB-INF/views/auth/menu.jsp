@@ -42,6 +42,11 @@
         font-size: 18px;
         font-weight: bold;
     }
+    .logout-btn {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+    }
 
     /* 色分け（HTMLそのまま） */
     p:nth-of-type(1) {
@@ -57,19 +62,21 @@
         background-color: #d6d8f5;
     }
 </style>
-
 </head>
 <body>
 
 <h2>メニュー画面</h2>
-<div class="mt-auto">
-<hr class="text-white">
-<a class="nav-link text-warning" href="Logout.action" onclick="return confirm('ログアウトしますか？');">ログアウト</a>
+<div class="text-end mb-3">
+    <a class="btn btn-warning"
+       href="Logout.action"
+       onclick="return confirm('ログアウトしますか？');">
+       ログアウト
+    </a>
 </div>
-<p><a href="Student.action">学生管理</a></p>
-<p><a href="testList.action">成績参照</a></p>
-<p><a href="testCreate.action">成績登録</a></p>
-<p><a href="SubjectList.action">科目管理</a></p>
+<p><a href="student.action">学生管理</a></p>
+<p><a href="testRegist.action">成績参照</a></p>
+<p><a href="testList.action">成績登録</a></p>
+<p><a href="subjectList.action">科目管理</a></p>
 
 </body>
 </html>

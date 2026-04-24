@@ -4,6 +4,7 @@ com\example\model\Test.class
 com\example\action\student\StudentAction.class
 com\example\action\auth\MenuAction.class
 com\example\dao\ClassNumDao.class
+com\example\action\student\StudentDeleteExecuteAction.class
 com\example\action\student\StudentUpdateAction.class
 com\example\controller\FrontController.class
 com\example\model\Subject.class

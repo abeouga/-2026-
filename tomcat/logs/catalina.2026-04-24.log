@@ -1,0 +1,226 @@
+24-Apr-2026 09:41:30.185 情報 [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Webアプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] を配備します
+24-Apr-2026 09:41:31.204 情報 [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars 少なくとも1つのJARでTLDをスキャンしましたが、TLDが含まれていませんでした。スキャンしたもののTLDが見つからなかったJARの完全なリストについては、このロガーのデバッグログを有効にしてください。スキャン中に不要なJARをスキップすると、起動時間とJSPのコンパイル時間が短縮されます。
+24-Apr-2026 09:41:31.886 情報 [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Web アプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] の配備は [1,698] ミリ秒で完了しました
+24-Apr-2026 09:42:00.764 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log Serverのバージョン名:     Apache Tomcat/10.1.9
+24-Apr-2026 09:42:00.768 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log Server ビルド:            May 9 2023 14:30:05 UTC
+24-Apr-2026 09:42:00.769 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log サーバーのバージョン番号: 10.1.9.0
+24-Apr-2026 09:42:00.769 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log OS 名:                    Windows 11
+24-Apr-2026 09:42:00.769 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log OS バージョン:            10.0
+24-Apr-2026 09:42:00.769 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log アーキテクチャ:           amd64
+24-Apr-2026 09:42:00.769 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                C:\Program Files\Java\jdk-21
+24-Apr-2026 09:42:00.769 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM バージョン:           21.0.9+7-LTS-338
+24-Apr-2026 09:42:00.769 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM ベンダ:               Oracle Corporation
+24-Apr-2026 09:42:00.769 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:            C:\class_project\-2026-\tomcat
+24-Apr-2026 09:42:00.769 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:            C:\class_project\-2026-\tomcat
+24-Apr-2026 09:42:00.783 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djava.util.logging.config.file=C:\class_project\-2026-\tomcat\conf\logging.properties
+24-Apr-2026 09:42:00.783 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Apr-2026 09:42:00.783 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djdk.tls.ephemeralDHKeySize=2048
+24-Apr-2026 09:42:00.785 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+24-Apr-2026 09:42:00.785 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Apr-2026 09:42:00.785 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.base/java.io=ALL-UNNAMED
+24-Apr-2026 09:42:00.785 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.base/java.util=ALL-UNNAMED
+24-Apr-2026 09:42:00.785 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Apr-2026 09:42:00.785 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Apr-2026 09:42:00.785 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Dfile.encoding=UTF-8
+24-Apr-2026 09:42:00.785 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Dcatalina.base=C:\class_project\-2026-\tomcat
+24-Apr-2026 09:42:00.786 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Dcatalina.home=C:\class_project\-2026-\tomcat
+24-Apr-2026 09:42:00.786 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djava.io.tmpdir=C:\class_project\-2026-\tomcat\temp
+24-Apr-2026 09:42:00.791 情報 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent 商用環境に最適な性能を発揮する APR ベースの Tomcat ネイティブライブラリが java.library.path [C:\Program Files\Java\jdk-21\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\class_project\-2026-\jdk\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Go\bin;C:\apache-maven-3.9.15\bin;C:\Users\r_iwamoto\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\r_iwamoto\AppData\Local\Programs\Python\Python313\;C:\Users\r_iwamoto\AppData\Local\Programs\Python\Launcher\;C:\Users\r_iwamoto\AppData\Local\Microsoft\WindowsApps;C:\Users\r_iwamoto\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\r_iwamoto\go\bin;.] に存在しません。
+24-Apr-2026 09:42:01.044 情報 [main] org.apache.coyote.AbstractProtocol.init プロトコルハンドラ ["http-nio-8080"] を初期化します。
+24-Apr-2026 09:42:01.061 重大 [main] org.apache.catalina.util.LifecycleBase.handleSubClassException コンポーネント [Connector[HTTP/1.1-8080]] の初期化に失敗しました
+	org.apache.catalina.LifecycleException: プロトコルハンドラの初期化に失敗しました
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1018)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.core.StandardService.initInternal(StandardService.java:549)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:999)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:747)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:769)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:307)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:477)
+	Caused by: java.net.BindException: Address already in use: bind
+		at java.base/sun.nio.ch.Net.bind0(Native Method)
+		at java.base/sun.nio.ch.Net.bind(Net.java:573)
+		at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:344)
+		at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:301)
+		at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:247)
+		at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:202)
+		at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1256)
+		at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1269)
+		at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:622)
+		at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:77)
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1016)
+		... 11 more
+24-Apr-2026 09:42:01.062 情報 [main] org.apache.catalina.startup.Catalina.load サーバーの初期化 [474] ミリ秒
+24-Apr-2026 09:42:01.104 情報 [main] org.apache.catalina.core.StandardService.startInternal サービス [Catalina] を起動します
+24-Apr-2026 09:42:01.104 情報 [main] org.apache.catalina.core.StandardEngine.startInternal サーブレットエンジンの起動：[Apache Tomcat/10.1.9]
+24-Apr-2026 09:42:01.129 情報 [main] org.apache.catalina.startup.HostConfig.deployWAR Webアプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] を配備します
+24-Apr-2026 09:42:01.758 情報 [main] org.apache.jasper.servlet.TldScanner.scanJars 少なくとも1つのJARでTLDをスキャンしましたが、TLDが含まれていませんでした。スキャンしたもののTLDが見つからなかったJARの完全なリストについては、このロガーのデバッグログを有効にしてください。スキャン中に不要なJARをスキップすると、起動時間とJSPのコンパイル時間が短縮されます。
+24-Apr-2026 09:42:02.536 情報 [main] org.apache.catalina.startup.HostConfig.deployWAR Web アプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] の配備は [1,405] ミリ秒で完了しました
+24-Apr-2026 09:42:02.541 情報 [main] org.apache.catalina.startup.Catalina.start サーバーの起動 [1477] ミリ秒
+24-Apr-2026 09:42:02.542 重大 [main] org.apache.catalina.core.StandardServer.await アドレス [localhost] のポート番号 [8005] にサーバー停止ソケットを作成できませんでした (基本ポート番号は [8005]、オフセットは [0] です)
+	java.net.BindException: Address already in use: bind
+		at java.base/sun.nio.ch.Net.bind0(Native Method)
+		at java.base/sun.nio.ch.Net.bind(Net.java:573)
+		at java.base/sun.nio.ch.Net.bind(Net.java:562)
+		at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+		at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+		at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+		at org.apache.catalina.core.StandardServer.await(StandardServer.java:576)
+		at org.apache.catalina.startup.Catalina.await(Catalina.java:887)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:833)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:347)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:478)
+24-Apr-2026 09:42:02.542 情報 [main] org.apache.coyote.AbstractProtocol.pause ProtocolHandler ["http-nio-8080"] を一時停止します。
+24-Apr-2026 09:42:02.543 情報 [main] org.apache.catalina.core.StandardService.stopInternal サービス [Catalina] を停止します
+24-Apr-2026 09:42:02.547 警告 [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc Web アプリケーション [student-management-v2] は自身で登録した JDBC ドライバー [org.h2.Driver] を停止時に解除できませんでした。メモリーリークの発生を防ぐには JDBC ドライバーを強制的に解除してください。
+24-Apr-2026 09:42:02.555 情報 [main] org.apache.coyote.AbstractProtocol.stop ProtocolHandler ["http-nio-8080"]の停止中
+24-Apr-2026 09:42:02.555 情報 [main] org.apache.coyote.AbstractProtocol.destroy ProtocolHandler ["http-nio-8080"] を破棄します。
+24-Apr-2026 09:42:49.495 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log Serverのバージョン名:     Apache Tomcat/10.1.9
+24-Apr-2026 09:42:49.499 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log Server ビルド:            May 9 2023 14:30:05 UTC
+24-Apr-2026 09:42:49.499 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log サーバーのバージョン番号: 10.1.9.0
+24-Apr-2026 09:42:49.499 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log OS 名:                    Windows 11
+24-Apr-2026 09:42:49.499 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log OS バージョン:            10.0
+24-Apr-2026 09:42:49.499 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log アーキテクチャ:           amd64
+24-Apr-2026 09:42:49.499 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                C:\Program Files\Java\jdk-21
+24-Apr-2026 09:42:49.499 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM バージョン:           21.0.9+7-LTS-338
+24-Apr-2026 09:42:49.499 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM ベンダ:               Oracle Corporation
+24-Apr-2026 09:42:49.499 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:            C:\class_project\-2026-\tomcat
+24-Apr-2026 09:42:49.499 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:            C:\class_project\-2026-\tomcat
+24-Apr-2026 09:42:49.510 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djava.util.logging.config.file=C:\class_project\-2026-\tomcat\conf\logging.properties
+24-Apr-2026 09:42:49.510 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Apr-2026 09:42:49.510 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djdk.tls.ephemeralDHKeySize=2048
+24-Apr-2026 09:42:49.512 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+24-Apr-2026 09:42:49.512 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Apr-2026 09:42:49.512 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.base/java.io=ALL-UNNAMED
+24-Apr-2026 09:42:49.512 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.base/java.util=ALL-UNNAMED
+24-Apr-2026 09:42:49.512 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Apr-2026 09:42:49.512 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Apr-2026 09:42:49.512 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Dfile.encoding=UTF-8
+24-Apr-2026 09:42:49.512 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Dcatalina.base=C:\class_project\-2026-\tomcat
+24-Apr-2026 09:42:49.512 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Dcatalina.home=C:\class_project\-2026-\tomcat
+24-Apr-2026 09:42:49.512 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djava.io.tmpdir=C:\class_project\-2026-\tomcat\temp
+24-Apr-2026 09:42:49.518 情報 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent 商用環境に最適な性能を発揮する APR ベースの Tomcat ネイティブライブラリが java.library.path [C:\Program Files\Java\jdk-21\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\class_project\-2026-\jdk\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Go\bin;C:\apache-maven-3.9.15\bin;C:\Users\r_iwamoto\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\r_iwamoto\AppData\Local\Programs\Python\Python313\;C:\Users\r_iwamoto\AppData\Local\Programs\Python\Launcher\;C:\Users\r_iwamoto\AppData\Local\Microsoft\WindowsApps;C:\Users\r_iwamoto\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\r_iwamoto\go\bin;.] に存在しません。
+24-Apr-2026 09:42:49.744 情報 [main] org.apache.coyote.AbstractProtocol.init プロトコルハンドラ ["http-nio-8080"] を初期化します。
+24-Apr-2026 09:42:49.769 情報 [main] org.apache.catalina.startup.Catalina.load サーバーの初期化 [427] ミリ秒
+24-Apr-2026 09:42:49.807 情報 [main] org.apache.catalina.core.StandardService.startInternal サービス [Catalina] を起動します
+24-Apr-2026 09:42:49.807 情報 [main] org.apache.catalina.core.StandardEngine.startInternal サーブレットエンジンの起動：[Apache Tomcat/10.1.9]
+24-Apr-2026 09:42:49.830 情報 [main] org.apache.catalina.startup.HostConfig.deployWAR Webアプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] を配備します
+24-Apr-2026 09:42:50.456 情報 [main] org.apache.jasper.servlet.TldScanner.scanJars 少なくとも1つのJARでTLDをスキャンしましたが、TLDが含まれていませんでした。スキャンしたもののTLDが見つからなかったJARの完全なリストについては、このロガーのデバッグログを有効にしてください。スキャン中に不要なJARをスキップすると、起動時間とJSPのコンパイル時間が短縮されます。
+24-Apr-2026 09:42:51.093 情報 [main] org.apache.catalina.startup.HostConfig.deployWAR Web アプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] の配備は [1,260] ミリ秒で完了しました
+24-Apr-2026 09:42:51.097 情報 [main] org.apache.coyote.AbstractProtocol.start プロトコルハンドラー ["http-nio-8080"] を開始しました。
+24-Apr-2026 09:42:51.124 情報 [main] org.apache.catalina.startup.Catalina.start サーバーの起動 [1353] ミリ秒
+24-Apr-2026 09:45:44.486 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log Serverのバージョン名:     Apache Tomcat/10.1.9
+24-Apr-2026 09:45:44.491 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log Server ビルド:            May 9 2023 14:30:05 UTC
+24-Apr-2026 09:45:44.491 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log サーバーのバージョン番号: 10.1.9.0
+24-Apr-2026 09:45:44.491 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log OS 名:                    Windows 11
+24-Apr-2026 09:45:44.492 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log OS バージョン:            10.0
+24-Apr-2026 09:45:44.492 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log アーキテクチャ:           amd64
+24-Apr-2026 09:45:44.492 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                C:\Program Files\Java\jdk-21
+24-Apr-2026 09:45:44.492 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM バージョン:           21.0.9+7-LTS-338
+24-Apr-2026 09:45:44.492 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM ベンダ:               Oracle Corporation
+24-Apr-2026 09:45:44.492 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:            C:\class_project\-2026-\tomcat
+24-Apr-2026 09:45:44.493 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:            C:\class_project\-2026-\tomcat
+24-Apr-2026 09:45:44.502 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djava.util.logging.config.file=C:\class_project\-2026-\tomcat\conf\logging.properties
+24-Apr-2026 09:45:44.503 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Apr-2026 09:45:44.503 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djdk.tls.ephemeralDHKeySize=2048
+24-Apr-2026 09:45:44.503 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+24-Apr-2026 09:45:44.503 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Apr-2026 09:45:44.503 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.base/java.io=ALL-UNNAMED
+24-Apr-2026 09:45:44.503 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.base/java.util=ALL-UNNAMED
+24-Apr-2026 09:45:44.503 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Apr-2026 09:45:44.503 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Apr-2026 09:45:44.503 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Dfile.encoding=UTF-8
+24-Apr-2026 09:45:44.504 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Dcatalina.base=C:\class_project\-2026-\tomcat
+24-Apr-2026 09:45:44.504 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Dcatalina.home=C:\class_project\-2026-\tomcat
+24-Apr-2026 09:45:44.504 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djava.io.tmpdir=C:\class_project\-2026-\tomcat\temp
+24-Apr-2026 09:45:44.511 情報 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent 商用環境に最適な性能を発揮する APR ベースの Tomcat ネイティブライブラリが java.library.path [C:\Program Files\Java\jdk-21\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\class_project\-2026-\jdk\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Go\bin;C:\apache-maven-3.9.15\bin;C:\Users\r_iwamoto\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\r_iwamoto\AppData\Local\Programs\Python\Python313\;C:\Users\r_iwamoto\AppData\Local\Programs\Python\Launcher\;C:\Users\r_iwamoto\AppData\Local\Microsoft\WindowsApps;C:\Users\r_iwamoto\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\r_iwamoto\go\bin;.] に存在しません。
+24-Apr-2026 09:45:44.731 情報 [main] org.apache.coyote.AbstractProtocol.init プロトコルハンドラ ["http-nio-8080"] を初期化します。
+24-Apr-2026 09:45:44.752 情報 [main] org.apache.catalina.startup.Catalina.load サーバーの初期化 [425] ミリ秒
+24-Apr-2026 09:45:44.798 情報 [main] org.apache.catalina.core.StandardService.startInternal サービス [Catalina] を起動します
+24-Apr-2026 09:45:44.799 情報 [main] org.apache.catalina.core.StandardEngine.startInternal サーブレットエンジンの起動：[Apache Tomcat/10.1.9]
+24-Apr-2026 09:45:44.821 情報 [main] org.apache.catalina.startup.HostConfig.deployWAR Webアプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] を配備します
+24-Apr-2026 09:45:45.435 情報 [main] org.apache.jasper.servlet.TldScanner.scanJars 少なくとも1つのJARでTLDをスキャンしましたが、TLDが含まれていませんでした。スキャンしたもののTLDが見つからなかったJARの完全なリストについては、このロガーのデバッグログを有効にしてください。スキャン中に不要なJARをスキップすると、起動時間とJSPのコンパイル時間が短縮されます。
+24-Apr-2026 09:45:46.207 情報 [main] org.apache.catalina.startup.HostConfig.deployWAR Web アプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] の配備は [1,386] ミリ秒で完了しました
+24-Apr-2026 09:45:46.207 情報 [main] org.apache.coyote.AbstractProtocol.start プロトコルハンドラー ["http-nio-8080"] を開始しました。
+24-Apr-2026 09:45:46.234 情報 [main] org.apache.catalina.startup.Catalina.start サーバーの起動 [1480] ミリ秒
+24-Apr-2026 09:59:47.491 情報 [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy コンテキストパス [/student-management-v2] のWebアプリケーションの配備を解除します
+24-Apr-2026 09:59:47.496 警告 [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc Web アプリケーション [student-management-v2] は自身で登録した JDBC ドライバー [org.h2.Driver] を停止時に解除できませんでした。メモリーリークの発生を防ぐには JDBC ドライバーを強制的に解除してください。
+24-Apr-2026 09:59:57.528 情報 [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Webアプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] を配備します
+24-Apr-2026 09:59:57.532 情報 [Catalina-utility-2] org.apache.catalina.startup.ExpandWar.expand 関連付けられた WAR ファイルと最終更新日時の異なる展開先ディレクトリ [C:\class_project\-2026-\tomcat\webapps\student-management-v2] が見つかりました。削除します。
+24-Apr-2026 09:59:58.406 情報 [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars 少なくとも1つのJARでTLDをスキャンしましたが、TLDが含まれていませんでした。スキャンしたもののTLDが見つからなかったJARの完全なリストについては、このロガーのデバッグログを有効にしてください。スキャン中に不要なJARをスキップすると、起動時間とJSPのコンパイル時間が短縮されます。
+24-Apr-2026 09:59:59.017 情報 [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Web アプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] の配備は [1,489] ミリ秒で完了しました
+24-Apr-2026 10:03:49.238 情報 [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy コンテキストパス [/student-management-v2] のWebアプリケーションの配備を解除します
+24-Apr-2026 10:03:49.240 警告 [Catalina-utility-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc Web アプリケーション [student-management-v2] は自身で登録した JDBC ドライバー [org.h2.Driver] を停止時に解除できませんでした。メモリーリークの発生を防ぐには JDBC ドライバーを強制的に解除してください。
+24-Apr-2026 10:03:49.284 情報 [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Webアプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] を配備します
+24-Apr-2026 10:03:49.904 情報 [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars 少なくとも1つのJARでTLDをスキャンしましたが、TLDが含まれていませんでした。スキャンしたもののTLDが見つからなかったJARの完全なリストについては、このロガーのデバッグログを有効にしてください。スキャン中に不要なJARをスキップすると、起動時間とJSPのコンパイル時間が短縮されます。
+24-Apr-2026 10:03:50.420 情報 [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Web アプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] の配備は [1,136] ミリ秒で完了しました
+24-Apr-2026 10:07:30.635 情報 [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy コンテキストパス [/student-management-v2] のWebアプリケーションの配備を解除します
+24-Apr-2026 10:07:30.638 警告 [Catalina-utility-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc Web アプリケーション [student-management-v2] は自身で登録した JDBC ドライバー [org.h2.Driver] を停止時に解除できませんでした。メモリーリークの発生を防ぐには JDBC ドライバーを強制的に解除してください。
+24-Apr-2026 10:07:30.681 情報 [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Webアプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] を配備します
+24-Apr-2026 10:07:31.295 情報 [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars 少なくとも1つのJARでTLDをスキャンしましたが、TLDが含まれていませんでした。スキャンしたもののTLDが見つからなかったJARの完全なリストについては、このロガーのデバッグログを有効にしてください。スキャン中に不要なJARをスキップすると、起動時間とJSPのコンパイル時間が短縮されます。
+24-Apr-2026 10:07:31.924 情報 [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Web アプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] の配備は [1,243] ミリ秒で完了しました
+24-Apr-2026 10:09:01.993 情報 [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy コンテキストパス [/student-management-v2] のWebアプリケーションの配備を解除します
+24-Apr-2026 10:09:01.997 警告 [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc Web アプリケーション [student-management-v2] は自身で登録した JDBC ドライバー [org.h2.Driver] を停止時に解除できませんでした。メモリーリークの発生を防ぐには JDBC ドライバーを強制的に解除してください。
+24-Apr-2026 10:09:02.041 情報 [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Webアプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] を配備します
+24-Apr-2026 10:09:02.626 情報 [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars 少なくとも1つのJARでTLDをスキャンしましたが、TLDが含まれていませんでした。スキャンしたもののTLDが見つからなかったJARの完全なリストについては、このロガーのデバッグログを有効にしてください。スキャン中に不要なJARをスキップすると、起動時間とJSPのコンパイル時間が短縮されます。
+24-Apr-2026 10:09:03.130 情報 [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Web アプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] の配備は [1,089] ミリ秒で完了しました
+24-Apr-2026 10:13:33.401 情報 [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy コンテキストパス [/student-management-v2] のWebアプリケーションの配備を解除します
+24-Apr-2026 10:13:33.405 警告 [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc Web アプリケーション [student-management-v2] は自身で登録した JDBC ドライバー [org.h2.Driver] を停止時に解除できませんでした。メモリーリークの発生を防ぐには JDBC ドライバーを強制的に解除してください。
+24-Apr-2026 10:13:33.449 情報 [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Webアプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] を配備します
+24-Apr-2026 10:13:34.015 情報 [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars 少なくとも1つのJARでTLDをスキャンしましたが、TLDが含まれていませんでした。スキャンしたもののTLDが見つからなかったJARの完全なリストについては、このロガーのデバッグログを有効にしてください。スキャン中に不要なJARをスキップすると、起動時間とJSPのコンパイル時間が短縮されます。
+24-Apr-2026 10:13:34.565 情報 [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Web アプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] の配備は [1,117] ミリ秒で完了しました
+24-Apr-2026 10:17:04.755 情報 [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy コンテキストパス [/student-management-v2] のWebアプリケーションの配備を解除します
+24-Apr-2026 10:17:04.759 警告 [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc Web アプリケーション [student-management-v2] は自身で登録した JDBC ドライバー [org.h2.Driver] を停止時に解除できませんでした。メモリーリークの発生を防ぐには JDBC ドライバーを強制的に解除してください。
+24-Apr-2026 10:17:04.801 情報 [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Webアプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] を配備します
+24-Apr-2026 10:17:05.369 情報 [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars 少なくとも1つのJARでTLDをスキャンしましたが、TLDが含まれていませんでした。スキャンしたもののTLDが見つからなかったJARの完全なリストについては、このロガーのデバッグログを有効にしてください。スキャン中に不要なJARをスキップすると、起動時間とJSPのコンパイル時間が短縮されます。
+24-Apr-2026 10:17:05.963 情報 [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Web アプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] の配備は [1,162] ミリ秒で完了しました
+24-Apr-2026 10:19:33.276 情報 [Thread-3] org.apache.coyote.AbstractProtocol.pause ProtocolHandler ["http-nio-8080"] を一時停止します。
+24-Apr-2026 10:19:33.279 情報 [Thread-3] org.apache.catalina.core.StandardService.stopInternal サービス [Catalina] を停止します
+24-Apr-2026 10:19:33.283 警告 [Thread-3] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc Web アプリケーション [student-management-v2] は自身で登録した JDBC ドライバー [org.h2.Driver] を停止時に解除できませんでした。メモリーリークの発生を防ぐには JDBC ドライバーを強制的に解除してください。
+24-Apr-2026 10:19:33.284 情報 [Thread-3] org.apache.coyote.AbstractProtocol.stop ProtocolHandler ["http-nio-8080"]の停止中
+24-Apr-2026 10:19:33.287 情報 [Thread-3] org.apache.coyote.AbstractProtocol.destroy ProtocolHandler ["http-nio-8080"] を破棄します。
+24-Apr-2026 10:19:34.544 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log Serverのバージョン名:     Apache Tomcat/10.1.9
+24-Apr-2026 10:19:34.547 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log Server ビルド:            May 9 2023 14:30:05 UTC
+24-Apr-2026 10:19:34.548 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log サーバーのバージョン番号: 10.1.9.0
+24-Apr-2026 10:19:34.548 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log OS 名:                    Windows 11
+24-Apr-2026 10:19:34.548 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log OS バージョン:            10.0
+24-Apr-2026 10:19:34.548 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log アーキテクチャ:           amd64
+24-Apr-2026 10:19:34.548 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                C:\Program Files\Java\jdk-21
+24-Apr-2026 10:19:34.548 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM バージョン:           21.0.9+7-LTS-338
+24-Apr-2026 10:19:34.549 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM ベンダ:               Oracle Corporation
+24-Apr-2026 10:19:34.549 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:            C:\class_project\-2026-\tomcat
+24-Apr-2026 10:19:34.549 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:            C:\class_project\-2026-\tomcat
+24-Apr-2026 10:19:34.559 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djava.util.logging.config.file=C:\class_project\-2026-\tomcat\conf\logging.properties
+24-Apr-2026 10:19:34.559 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Apr-2026 10:19:34.560 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djdk.tls.ephemeralDHKeySize=2048
+24-Apr-2026 10:19:34.560 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+24-Apr-2026 10:19:34.560 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Apr-2026 10:19:34.560 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.base/java.io=ALL-UNNAMED
+24-Apr-2026 10:19:34.560 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.base/java.util=ALL-UNNAMED
+24-Apr-2026 10:19:34.560 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Apr-2026 10:19:34.560 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Apr-2026 10:19:34.561 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Dfile.encoding=UTF-8
+24-Apr-2026 10:19:34.561 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Dcatalina.base=C:\class_project\-2026-\tomcat
+24-Apr-2026 10:19:34.561 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Dcatalina.home=C:\class_project\-2026-\tomcat
+24-Apr-2026 10:19:34.561 情報 [main] org.apache.catalina.startup.VersionLoggerListener.log コマンドライン引数:       -Djava.io.tmpdir=C:\class_project\-2026-\tomcat\temp
+24-Apr-2026 10:19:34.567 情報 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent 商用環境に最適な性能を発揮する APR ベースの Tomcat ネイティブライブラリが java.library.path [C:\Program Files\Java\jdk-21\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\class_project\-2026-\jdk\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Go\bin;C:\apache-maven-3.9.15\bin;C:\Users\r_iwamoto\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\r_iwamoto\AppData\Local\Programs\Python\Python313\;C:\Users\r_iwamoto\AppData\Local\Programs\Python\Launcher\;C:\Users\r_iwamoto\AppData\Local\Microsoft\WindowsApps;C:\Users\r_iwamoto\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\r_iwamoto\go\bin;.] に存在しません。
+24-Apr-2026 10:19:34.798 情報 [main] org.apache.coyote.AbstractProtocol.init プロトコルハンドラ ["http-nio-8080"] を初期化します。
+24-Apr-2026 10:19:34.819 情報 [main] org.apache.catalina.startup.Catalina.load サーバーの初期化 [430] ミリ秒
+24-Apr-2026 10:19:34.863 情報 [main] org.apache.catalina.core.StandardService.startInternal サービス [Catalina] を起動します
+24-Apr-2026 10:19:34.863 情報 [main] org.apache.catalina.core.StandardEngine.startInternal サーブレットエンジンの起動：[Apache Tomcat/10.1.9]
+24-Apr-2026 10:19:34.885 情報 [main] org.apache.catalina.startup.HostConfig.deployWAR Webアプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] を配備します
+24-Apr-2026 10:19:35.506 情報 [main] org.apache.jasper.servlet.TldScanner.scanJars 少なくとも1つのJARでTLDをスキャンしましたが、TLDが含まれていませんでした。スキャンしたもののTLDが見つからなかったJARの完全なリストについては、このロガーのデバッグログを有効にしてください。スキャン中に不要なJARをスキップすると、起動時間とJSPのコンパイル時間が短縮されます。
+24-Apr-2026 10:19:36.256 情報 [main] org.apache.catalina.startup.HostConfig.deployWAR Web アプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] の配備は [1,370] ミリ秒で完了しました
+24-Apr-2026 10:19:36.260 情報 [main] org.apache.coyote.AbstractProtocol.start プロトコルハンドラー ["http-nio-8080"] を開始しました。
+24-Apr-2026 10:19:36.281 情報 [main] org.apache.catalina.startup.Catalina.start サーバーの起動 [1460] ミリ秒
+24-Apr-2026 10:22:06.374 情報 [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy コンテキストパス [/student-management-v2] のWebアプリケーションの配備を解除します
+24-Apr-2026 10:22:06.380 警告 [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc Web アプリケーション [student-management-v2] は自身で登録した JDBC ドライバー [org.h2.Driver] を停止時に解除できませんでした。メモリーリークの発生を防ぐには JDBC ドライバーを強制的に解除してください。
+24-Apr-2026 10:22:06.429 情報 [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Webアプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] を配備します
+24-Apr-2026 10:22:07.162 情報 [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars 少なくとも1つのJARでTLDをスキャンしましたが、TLDが含まれていませんでした。スキャンしたもののTLDが見つからなかったJARの完全なリストについては、このロガーのデバッグログを有効にしてください。スキャン中に不要なJARをスキップすると、起動時間とJSPのコンパイル時間が短縮されます。
+24-Apr-2026 10:22:07.742 情報 [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Web アプリケーションアーカイブ [C:\class_project\-2026-\tomcat\webapps\student-management-v2.war] の配備は [1,313] ミリ秒で完了しました

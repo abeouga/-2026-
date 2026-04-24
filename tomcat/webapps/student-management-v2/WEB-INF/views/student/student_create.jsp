@@ -10,8 +10,8 @@
 
                 <section class="me-4">
 
-                    <!-- ① -->
-                    <h2 class="mb-4 fw-normal
+    <!-- タイトル -->
+    <h2 class="mb-4 fw-normal
         bg-secondary bg-opacity-10
         py-2 px-4">
                         学生情報登録
@@ -19,63 +19,70 @@
 
                     <form action="StudentCreateExecute.action" method="post">
 
-                        <!-- ②③ 入学年度 -->
-                        <div class="mb-3">
-                            <label class="form-label">入学年度</label>
+        <!-- 入学年度 -->
+        <div class="mb-3">
+            <label class="form-label">入学年度</label>
 
-                            <select name="entYear" class="form-select">
+            <select name="entYear" class="form-select">
+                <option value="">------</option>
 
-                                <option value="">
-                                    ------
-                                </option>
+                <c:forEach var="year" items="${ent_year_set}">
+                    <option value="${year}">
+                        ${year}
+                    </option>
+                </c:forEach>
+            </select>
+        </div>
 
-                                <c:forEach var="year" items="${ent_year_set}">
-
-                                    <option value="${year}">
-                                        ${year}
-                                    </option>
-
-                                </c:forEach>
-                            </select>
-                        </div>
-
-                        <!-- ④⑤ 学生番号 -->
-                        <div class="mb-3">
-                            <label class="form-label">学生番号</label>
+        <!-- 学生番号 -->
+        <div class="mb-3">
+            <label class="form-label">学生番号</label>
 
                             <input type="text" name="no" class="form-control" placeholder="学生番号を入力してください">
                         </div>
 
-                        <!-- ⑥⑦ 氏名 -->
-                        <div class="mb-3">
-                            <label class="form-label">氏名</label>
+        <!-- 氏名 -->
+        <div class="mb-3">
+            <label class="form-label">氏名</label>
 
                             <input type="text" name="name" class="form-control" placeholder="氏名を入力してください">
                         </div>
 
-                        <!-- ⑧⑨ クラス -->
-                        <div class="mb-3">
-                            <label class="form-label">クラス</label>
+        <!-- クラス -->
+        <div class="mb-3">
+            <label class="form-label">クラス</label>
 
-                            <select name="classNum" class="form-select">
+            <select name="classNum" class="form-select">
+                <c:forEach var="num" items="${class_num_set}">
+                    <option value="${num}">
+                        ${num}
+                    </option>
+                </c:forEach>
+            </select>
+        </div>
 
-                                <c:forEach var="num" items="${class_num_set}">
+        <!-- ★ 在学（追加部分） -->
+        <div class="mb-3">
+            <label class="form-label">在学</label><br>
 
-                                    <option value="${num}">
-                                        ${num}
-                                    </option>
+            <input type="checkbox"
+                name="isAttend"
+                value="true">
 
-                                </c:forEach>
-                            </select>
-                        </div>
+            在学中
+        </div>
 
-                        <!-- ⑩ -->
-                        <button class="btn btn-secondary">
-                            登録して終了
-                        </button>
+        <!-- ボタン -->
+        <button class="btn btn-secondary">
+            登録して終了
+        </button>
 
                     </form>
 
+    <!-- 戻る -->
+    <div class="mt-3">
+        <a href="StudentList.action">戻る</a>
+    </div>
                     <!-- ⑪ -->
                     <div class="mt-3">
                         <a href="student.action">戻る</a>

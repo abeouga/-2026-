@@ -38,14 +38,14 @@
                     <th></th>
                 </tr>
 
-                <c:forEach var="subjects" items="${subjects}">
+                <c:forEach var="subjects" items="${list}">
                     <div class="border-list">
 
                         <tr>
-                            <td>${subjects.subject_cd}</td>
-                            <td>${subjects.subject_name}</td>
-                            <td><a href="subjectUpdate.action?no=${subjects.subject_cd}">変更</a></td>
-                            <td><a href="subjectDelete.action?no=${subjects.subject_cd}">削除</a></td>
+                            <td>${error}${subjects.cd}</td>
+                            <td>${subjects.name}</td>
+                            <td><a href="subjectUpdate.action?cd=${subjects.cd}">変更</a></td>
+                            <td><a href="subjectDelete.action?cd=${subjects.cd}">削除</a></td>
                         </tr>
                     </div>
                 </c:forEach>

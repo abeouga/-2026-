@@ -139,8 +139,13 @@
 
                                         <td class="text-center">
                                             <c:choose>
+<<<<<<< HEAD
                                                 <c:when test="${student.isAttend}">
                                                     ○
+=======
+                                                <c:when test="${student.attend}">
+                                                    〇
+>>>>>>> 07d94985258cb58bcc9914568ee31efe740750c6
                                                 </c:when>
                                                 <c:otherwise>
                                                     ×

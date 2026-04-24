@@ -23,6 +23,7 @@ public class StudentCreateExecuteAction implements Action {
         String no = req.getParameter("no");
         String name = req.getParameter("name");
         String classNum = req.getParameter("classNum");
+        String isAttendStr = req.getParameter("isAttend");
 
         // 入学年度リストを生成
         java.util.List<Integer> entYearSet = new java.util.ArrayList<>();
@@ -66,7 +67,7 @@ public class StudentCreateExecuteAction implements Action {
         student.setNo(no);
         student.setName(name);
         student.setClassNum(classNum);
-        student.setIsAttend(true);
+        student.setIsAttend(isAttendStr != null);
 
         StudentDao dao = new StudentDao();
         // 重複チェック
@@ -77,7 +78,7 @@ public class StudentCreateExecuteAction implements Action {
             req.setAttribute("no", no);
             req.setAttribute("name", name);
             req.setAttribute("classNum", classNum);
-            req.getRequestDispatcher("/WEB-INF/views/student/student_create.jsp").forward(req, res);
+            req.getRequestDispatcher("/WEB-INF/views/student/studentCreateError.jsp").forward(req, res);
             return;
         }
 

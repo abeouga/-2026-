@@ -61,7 +61,7 @@ body{
         <c:if test="${not empty user}">
             <div>
                 ${user.name} 様　
-                <a href="Logout.action">ログアウト</a>
+                <a href="Logout.action" onclick="return confirm('ログアウトしますか？');">ログアウト</a>
             </div>
         </c:if>
     </div>

@@ -37,13 +37,14 @@ body{
         <h4 class="mb-0">学生情報変更</h4>
     </div>
 
-    <form action="StudentUpdateExecute.action" method="post">
+    <form action="studentUpdateExecute.action" method="post">
 
         <!-- ②③ -->
         <div class="row mb-3">
             <label class="col-sm-3 col-form-label">入学年度</label>
             <div class="col-sm-9 pt-2">
                 ${student.entYear}
+                <input type="hidden" name="entYear" value="${student.entYear}">
             </div>
         </div>
 
@@ -87,8 +88,8 @@ body{
         <div class="row mb-4">
             <label class="col-sm-3 col-form-label">在学中</label>
             <div class="col-sm-9 pt-2">
-                <input type="checkbox" name="attend" value="true"
-                    <c:if test="${student.attend}">
+                <input type="checkbox" name="isAttend" value="true"
+                    <c:if test="${student.isAttend}">
                         checked
                     </c:if>>
             </div>
@@ -102,7 +103,7 @@ body{
         </div>
 
         <!-- ⑬ -->
-        <a href="StudentList.action">戻る</a>
+        <a href="student.action">戻る</a>
 
     </form>
 

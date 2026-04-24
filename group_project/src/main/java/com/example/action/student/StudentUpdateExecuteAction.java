@@ -59,7 +59,7 @@ public class StudentUpdateExecuteAction implements Action {
         dao.save(student);
 
         req.setAttribute("student", student);
-        req.getRequestDispatcher("/WEB-INF/views/student/student_update_done.jsp").forward(req, res);
+        req.getRequestDispatcher("/WEB-INF/views/student/studentUpdateComplete.jsp").forward(req, res);
     }
 }
 

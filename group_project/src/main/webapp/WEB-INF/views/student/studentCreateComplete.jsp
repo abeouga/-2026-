@@ -11,9 +11,9 @@
 
 <p>正常に登録されました。</p>
 
-<a href="StudentCreate.action">戻る</a>
+<a href="studentCreate.action">戻る</a>
 <br><br>
-<a href="StudentList.action">一覧へ戻る</a>
+<a href="student.action">一覧へ戻る</a>
 
 </body>
 </html>

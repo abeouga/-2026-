@@ -17,7 +17,7 @@
                         学生情報登録
                     </h2>
 
-                    <form action="StudentCreateExecute.action" method="post">
+                    <form action="studentCreateExecute.action" method="post">
 
         <!-- 入学年度 -->
         <div class="mb-3">
@@ -81,7 +81,7 @@
 
     <!-- 戻る -->
     <div class="mt-3">
-        <a href="StudentList.action">戻る</a>
+        <a href="student.action">戻る</a>
     </div>
                 </section>
 

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 C:\Users\i_kudou\Desktop\共有\-2026-\group_project\src\main\java\com\example\action\Action.java
 C:\Users\i_kudou\Desktop\共有\-2026-\group_project\src\main\java\com\example\action\auth\LoginAction.java
 C:\Users\i_kudou\Desktop\共有\-2026-\group_project\src\main\java\com\example\action\auth\LoginExecuteAction.java
@@ -29,35 +28,3 @@ C:\Users\i_kudou\Desktop\共有\-2026-\group_project\src\main\java\com\example\m
 C:\Users\i_kudou\Desktop\共有\-2026-\group_project\src\main\java\com\example\model\Subject.java
 C:\Users\i_kudou\Desktop\共有\-2026-\group_project\src\main\java\com\example\model\Teacher.java
 C:\Users\i_kudou\Desktop\共有\-2026-\group_project\src\main\java\com\example\model\Test.java
-=======
-C:\class_project\-2026-\group_project\src\main\java\com\example\action\Action.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\action\auth\LoginAction.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\action\auth\LoginExecuteAction.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\action\auth\LogoutAction.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\action\auth\MenuAction.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\action\student\StudentAction.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\action\student\StudentCreateAction.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\action\student\StudentCreateExecuteAction.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\action\student\StudentUpdateAction.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\action\student\StudentUpdateExecuteAction.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\action\subject\SubjectCreateAction.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\action\subject\SubjectCreateExecuteAction.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\action\subject\SubjectDeleteAction.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\action\subject\SubjectDeleteExecuteAction.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\action\subject\SubjectListAction.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\action\subject\SubjectUpdateAction.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\action\subject\SubjectUpdateExecuteAction.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\config\AppInitListener.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\controller\FrontController.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\dao\ClassNumDao.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\dao\DaoBase.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\dao\StudentDao.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\dao\SubjectDao.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\dao\TeacherDao.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\model\ClassNum.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\model\School.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\model\Student.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\model\Subject.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\model\Teacher.java
-C:\class_project\-2026-\group_project\src\main\java\com\example\model\Test.java
->>>>>>> f3a07ca3bb2c9b74f11e1ceee04a5ca541f89310

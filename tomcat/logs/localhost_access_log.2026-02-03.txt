@@ -1,7 +1,0 @@
-0:0:0:0:0:0:0:1 - - [03/Feb/2026:13:49:24 +0900] "GET /book/chapter15/ HTTP/1.1" 404 918
-0:0:0:0:0:0:0:1 - - [03/Feb/2026:13:49:31 +0900] "GET /book/chapter15/insert.jsp HTTP/1.1" 200 725
-0:0:0:0:0:0:0:1 - - [03/Feb/2026:13:49:38 +0900] "POST /book/chapter15/insert HTTP/1.1" 200 5120
-0:0:0:0:0:0:0:1 - - [03/Feb/2026:13:50:18 +0900] "POST /book/chapter15/insert HTTP/1.1" 200 167
-0:0:0:0:0:0:0:1 - - [03/Feb/2026:13:50:18 +0900] "GET /favicon.ico HTTP/1.1" 304 -
-0:0:0:0:0:0:0:1 - - [03/Feb/2026:14:39:55 +0900] "GET /book/chapter15/insert2.jsp HTTP/1.1" 200 726
-0:0:0:0:0:0:0:1 - - [03/Feb/2026:14:40:08 +0900] "POST /book/chapter15/insert2 HTTP/1.1" 200 936

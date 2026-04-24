@@ -1,3 +1,0 @@
-0:0:0:0:0:0:0:1 - - [22/Apr/2026:10:01:33 +0900] "GET /student-management-v2/login.action HTTP/1.1" 200 2085
-0:0:0:0:0:0:0:1 - - [22/Apr/2026:10:01:34 +0900] "GET /student-management-v2/css/style.css HTTP/1.1" 404 938
-0:0:0:0:0:0:0:1 - - [22/Apr/2026:10:01:34 +0900] "GET /favicon.ico HTTP/1.1" 404 802

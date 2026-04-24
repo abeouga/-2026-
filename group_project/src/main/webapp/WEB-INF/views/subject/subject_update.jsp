@@ -20,9 +20,10 @@
                             <div class="mb-3 col-md-4">
                                 <label class="form-label" for="student-no-input">科目コード</label>
                                 <br>
-                                <div>${subjects.subject_cd}</div>
+                                <input type="hidden" name="cd" value="${subject.cd}">
+                                <div>${subject.cd}</div>
                             </div>
-                                                        <div class="mb-3 col-md-4">
+                                <div class="mb-3 col-md-4">
                                 <label class="form-label" for="student-no-input">科目名</label>
                                 <br>
                                 <input class="form-input form-control" type="text" id="student-name-input" name="name" value="${name}" placeholder="科目名を入力してください" required>
@@ -34,7 +35,7 @@
                         </form>
 
         
-                            <a href="menu.jsp" class="text-decoration-none small">戻る</a>
+                            <a href="subjectList.action" class="text-decoration-none small">戻る</a>
                         </div>
                     </section>
                 </main>

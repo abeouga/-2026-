@@ -468,3 +468,5 @@
 24-Apr-2026 11:26:36.676 情報 [main] org.apache.catalina.startup.HostConfig.deployWAR Web アプリケーションアーカイブ [C:\Users\t_abe\Desktop\学校：グループ開発5\-2026-\tomcat\webapps\student-management-v2.war] の配備は [1,566] ミリ秒で完了しました
 24-Apr-2026 11:26:36.680 情報 [main] org.apache.coyote.AbstractProtocol.start プロトコルハンドラー ["http-nio-8080"] を開始しました。
 24-Apr-2026 11:26:36.745 情報 [main] org.apache.catalina.startup.Catalina.start サーバーの起動 [1716] ミリ秒
+24-Apr-2026 11:28:37.348 情報 [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy コンテキストパス [/student-management-v2] のWebアプリケーションの配備を解除します
+24-Apr-2026 11:28:37.355 警告 [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc Web アプリケーション [student-management-v2] は自身で登録した JDBC ドライバー [org.h2.Driver] を停止時に解除できませんでした。メモリーリークの発生を防ぐには JDBC ドライバーを強制的に解除してください。

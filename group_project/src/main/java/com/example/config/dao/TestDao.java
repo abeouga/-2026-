@@ -41,7 +41,7 @@ public class TestDao {
 
             if (rSet.next()) {
                 test.setClassNum(rSet.getString("class_num"));
-                test.setSubject(subject);
+                test.setSubjectCd(subject.getCd());
             } else {
                 test = null;
             }

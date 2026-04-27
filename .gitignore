@@ -1,1 +1,14 @@
 tomcat/logs/
+tomcat/webapps/
+tomcat/work/
+tomcat/temp/
+
+.vscode/
+.idea/
+*.iml
+.settings/
+.project
+.classpath
+
+Thumbs.db
+.DS_Store

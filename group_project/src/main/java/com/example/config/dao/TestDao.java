@@ -1,54 +1,42 @@
 package com.example.dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
 import com.example.model.Test;
 import com.example.model.School;
 import com.example.model.Student;
 import com.example.model.Subject;
 
-public class TestDao {
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
-    private String basesql =
-        "select * from test where class_num = ? and subject_cd = ?";
+public class TestDao extends DaoBase {
 
-    private Connection getConnection() throws Exception {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-
-        return DriverManager.getConnection(
-            "jdbc:mysql://localhost:3306/student_management",
-            "root",
-            "password"
-        );
-    }
+    private String baseSql =
+        "SELECT * FROM test WHERE class_num = ? AND subject_cd = ?";
 
     public Test get(Student student, Subject subject, School school, int no) throws Exception {
 
-        Connection connection = getConnection();
-        PreparedStatement statement = null;
-        Test test = new Test();
+        Test test = null;
 
-        try {
-            statement = connection.prepareStatement(basesql);
+        try (Connection con = getConnection();
+             PreparedStatement st = con.prepareStatement(baseSql)) {
 
-            statement.setString(1, student.getClassNum());
-            statement.setString(2, subject.getCd());
+            st.setString(1, student.getClassNum());
+            st.setString(2, subject.getCd());
 
-            ResultSet rSet = statement.executeQuery();
+            try (ResultSet rs = st.executeQuery()) {
 
-            if (rSet.next()) {
-                test.setClassNum(rSet.getString("class_num"));
-                test.setSubjectCd(subject.getCd());
-            } else {
-                test = null;
+                if (rs.next()) {
+                    test = new Test();
+
+                    test.setSchoolCd(rs.getString("school_cd"));
+                    test.setStudentNo(rs.getString("student_no"));
+                    test.setSubjectCd(rs.getString("subject_cd"));
+                    test.setNo(rs.getInt("no"));
+                    test.setClassNum(rs.getString("class_num"));
+                    test.setPoint(rs.getInt("point"));
+                }
             }
-
-        } finally {
-            if (statement != null) statement.close();
-            if (connection != null) connection.close();
         }
 
         return test;

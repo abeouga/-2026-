@@ -13,7 +13,11 @@
                 <main class="col-md-10 p-4">
                     <section>
                         <h2 class="h4 mb-4 fw-normal py-2 px-4" style="background-color: #f0f0f0; border-bottom: 1px solid #dee2e6;">科目情報登録</h2>
-
+                        <c:if test="${not empty error}">
+                            <div class="alert alert-danger mb-3" role="alert">
+                                ${error}
+                            </div>
+                        </c:if>
                         <form action="subjectCreateExecute.action" method="post" class="mx-4">
 
                             <div class="mb-3 col-md-4">

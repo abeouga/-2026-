@@ -149,9 +149,8 @@
                                         </td>
 
                                         <td>
-                                            <a href="studentUpdate.action?no=${student.no}">
-                                                変更
-                                            </a>
+                                            <a href="studentUpdate.action?no=${student.no}">変更</a> | 
+                                            <a href="studentDeleteExecute.action?no=${student.no}" onclick="return confirm('本当に削除しますか？');">削除</a>
                                         </td>
                                     </tr>
 

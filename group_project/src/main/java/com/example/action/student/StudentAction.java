@@ -22,9 +22,9 @@ public class StudentAction implements Action {
             return;
         }
 
-        String entYearStr = req.getParameter("entYear");
-        String classNum = req.getParameter("classNum");
-        String isAttendStr = req.getParameter("isAttend");
+        String entYearStr = req.getParameter("f1");
+        String classNum = req.getParameter("f2");
+        String isAttendStr = req.getParameter("f3");
 
         Integer entYear = null;
         if (entYearStr != null && !entYearStr.isEmpty() && !entYearStr.equals("0")) {
@@ -32,11 +32,11 @@ public class StudentAction implements Action {
         }
 
         Boolean isAttend = null;
-        if (isAttendStr != null && !isAttendStr.isEmpty()) {
-            isAttend = Boolean.parseBoolean(isAttendStr);
-        } else {
-            // 指定なしで検索
+        if (isAttendStr != null) {
+            // チェックされている場合は在学中(true)のみ表示
             isAttend = true;
+        } else {
+            // チェックされていない場合はすべて表示するため null のまま
         }
         /**
          * DBにアクセスする StudentDaoを生成し、ログイン中の教員が所属する学校の学生情報を取得してそれをキーにクエリを出してもらう。
@@ -46,9 +46,9 @@ public class StudentAction implements Action {
         List<Student> students = dao.filter(teacher.getSchoolCd(), entYear, classNum, isAttend);
 
         req.setAttribute("students", students);
-        req.setAttribute("fEntYear", entYearStr);
-        req.setAttribute("fClassNum", classNum);
-        req.setAttribute("fIsAttend", isAttendStr);
+        req.setAttribute("f1", entYearStr);
+        req.setAttribute("f2", classNum);
+        req.setAttribute("f3", isAttendStr);
 
         // 入学年度リストを生成
         java.util.List<Integer> entYearSet = new java.util.ArrayList<>();

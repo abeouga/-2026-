@@ -17,9 +17,9 @@
 
                         <form action="subjectDeleteExecute.action" method="post" class="mx-4">
 
-                            <p>「${subject.name}(${subject.cd})」を削除してもよろしいですか</p>
+                            <p>「${subject_name}(${subject_cd})」を削除してもよろしいですか</p>
 
-                            <input type="hidden" name="cd" value="${subject.cd}">
+                            <input type="hidden" name="subject_cd" value="${subject_cd}"> \\削除する科目コードをhidden
 
                             <div class="mt-4">
                                 <button type="submit" class="btn btn-secondary px-5">削除</button>
@@ -27,7 +27,7 @@
                         </form>
 
         
-                            <a href="subjectList.action" class="text-decoration-none small">戻る</a>
+                            <a href="menu.jsp" class="text-decoration-none small">戻る</a>
                         </div>
                     </section>
                 </main>

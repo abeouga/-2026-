@@ -116,4 +116,13 @@ public class StudentDao extends DaoBase {
             }
         }
     }
+    public boolean delete(String schoolCd, String no) throws Exception {
+        String sql = "DELETE FROM student WHERE school_cd = ? AND no = ?";
+        try (Connection con = getConnection();
+             PreparedStatement st = con.prepareStatement(sql)) {
+            st.setString(1, schoolCd);
+            st.setString(2, no);
+            return st.executeUpdate() > 0;
+        }
+    }
 }

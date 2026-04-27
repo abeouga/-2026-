@@ -28,7 +28,7 @@
                         <h2 class="h4 mb-4 fw-normal py-2 px-4" style="background-color: #f0f0f0; border-bottom: 1px solid #dee2e6;">科目情報変更</h2>
 
                         <div class="success-message">
-                            更新が完了しました
+                            登録が完了しました
                         </div>
 
                         

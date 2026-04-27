@@ -139,8 +139,8 @@
 
                                         <td class="text-center">
                                             <c:choose>
-                                                <c:when test="${student.attend}">
-                                                    〇
+                                                <c:when test="${student.isAttend}">
+                                                    ○
                                                 </c:when>
                                                 <c:otherwise>
                                                     ×
@@ -149,9 +149,8 @@
                                         </td>
 
                                         <td>
-                                            <a href="studentUpdate.action?no=${student.no}">
-                                                変更
-                                            </a>
+                                            <a href="studentUpdate.action?no=${student.no}">変更</a> | 
+                                            <a href="studentDeleteExecute.action?no=${student.no}" onclick="return confirm('本当に削除しますか？');">削除</a>
                                         </td>
                                     </tr>
 

@@ -89,7 +89,7 @@ body{
             <label class="col-sm-3 col-form-label">在学中</label>
             <div class="col-sm-9 pt-2">
                 <input type="checkbox" name="isAttend" value="true"
-                    <c:if test="${student.attend}">
+                    <c:if test="${student.isAttend}">
                         checked
                     </c:if>>
             </div>

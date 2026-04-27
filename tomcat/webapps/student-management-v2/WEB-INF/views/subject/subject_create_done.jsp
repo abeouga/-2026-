@@ -33,7 +33,8 @@
 
                         
                         <div class="mt-4 ms-4">
-                            <a href="subjectList.action" class="text-decoration-none small">戻る</a>
+                            <a href="menu.jsp" class="text-decoration-none small">戻る</a>
+                            <a href="subjectList.action" class="text-decoration-none small">科目一覧</a>
                         </div>
                     </section>
                 </main>

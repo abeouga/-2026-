@@ -1,4 +1,4 @@
-package scoremanager;
+package com.example.action.test;
 
 
 import java.util.List;
@@ -6,16 +6,16 @@ import java.util.Map;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import tool.Action;
-import bean.School;
-import bean.Student;
-import bean.Subject;
-import bean.Teacher;
-import bean.TestListStudent;
-import dao.ClassNumDao;
-import dao.StudentDao;
-import dao.SubjectDao;
-import dao.TestListStudentDao;
+import com.example.action.Action;
+import com.example.model.School;
+import com.example.model.Student;
+import com.example.model.Subject;
+import com.example.model.Teacher;
+import com.example.model.TestListStudent;
+import com.example.config.dao.ClassNumDao;
+import com.example.config.dao.StudentDao;
+import com.example.config.dao.SubjectDao;
+import com.example.config.dao.TestListStudentDao;
 
 public class TestListStudentExecuteAction extends Action{
     public String execute(HttpServletRequest request,HttpServletResponse responce)throws Exception{

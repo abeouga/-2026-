@@ -1,6 +1,6 @@
 package com.example.action.subject;
 
-import com.example.dao.SubjectDao;
+import com.example.config.dao.SubjectDao;
 import com.example.model.Teacher;
 import com.example.model.Subject;
 import com.example.action.Action;

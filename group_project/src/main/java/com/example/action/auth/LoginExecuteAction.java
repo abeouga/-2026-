@@ -3,7 +3,7 @@ package com.example.action.auth;
 
 import com.example.action.Action;
 
-import com.example.dao.TeacherDao;
+import com.example.config.dao.TeacherDao;
 import com.example.model.Teacher;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

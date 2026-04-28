@@ -1,4 +1,4 @@
-package com.example.dao;
+package com.example.config.dao;
 
 import com.example.model.Teacher;
 import java.sql.Connection;

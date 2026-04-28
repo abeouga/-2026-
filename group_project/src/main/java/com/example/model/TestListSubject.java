@@ -1,4 +1,4 @@
-package bean;
+package com.example.model;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.example.dao;
+package com.example.config.dao;
 
 import com.example.model.School;
 import com.example.model.TestListSubject;
@@ -12,7 +12,7 @@ import java.util.List;
 
 import com.example.model.Subject;
 
-public class TestListSubjectDao extends DAO{
+public class TestListSubjectDao extends DaoBase{
     private String baseSql =  "SELECT \n" + //
                 "    t.student_no,\n" + //
                 "    st.name AS student_name,\n" + //

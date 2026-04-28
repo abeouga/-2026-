@@ -20,7 +20,7 @@ import com.example.config.dao.TestListSubjectDao;
 public class TestRegistExecuteAction implements Action{
     public void execute(HttpServletRequest request,HttpServletResponse response)throws Exception{
         HttpSession session = request.getSession();
-        Teacher teacher = (Teacher)session.getAttribute("teacher");
+        Teacher teacher = (Teacher)session.getAttribute("user");
         
         if (teacher == null) {
             request.getRequestDispatcher("/WEB-INF/views/auth/login.jsp").forward(request, response);

@@ -1,4 +1,4 @@
-package scoremanager;
+package com.example.action.test;
 
 
 import java.util.List;

@@ -10,6 +10,7 @@
     <c:param name="content">
 
         <div class="container mt-5">
+            <h2 class="text-center mb-4">成績処理完了</h2>
 
             <div class="alert alert-success text-center">
                 ${message}
@@ -17,7 +18,7 @@
 
             <div class="text-center mt-3">
                 <a href="TestRegist.action" class="btn btn-primary">
-                    戻る
+                    管理画面へ戻る
                 </a>
             </div>
 

@@ -12,7 +12,6 @@ public class TestListStudent implements Serializable{
     private String classNum;
     //private Map<Integer,Integer> points = new HashMap<>();
     private int point;
-    private int key;
 
     public int getEntYear(){
         return entYear;

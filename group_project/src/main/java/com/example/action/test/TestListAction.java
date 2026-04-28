@@ -1,25 +1,25 @@
-package scoremanager;
-import bean.Teacher;
-import bean.TestListStudent;
+package com.example.action.test;
+import com.example.model.Teacher;
+import com.example.model.TestListStudent;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.util.List;
 
-import bean.ClassNum;
-import bean.School;
-import bean.Subject;
-import dao.ClassNumDao;
-import dao.SubjectDao;
-import dao.TestListStudentDao;
-import tool.Action;
+import com.example.model.ClassNum;
+import com.example.model.School;
+import com.example.model.Subject;
+import com.example.config.dao.ClassNumDao;
+import com.example.config.dao.SubjectDao;
+import com.example.config.dao.TestListStudentDao;
+import com.example.action.Action;
 
 public class TestListAction extends Action{
     public String execute(HttpServletRequest request,HttpServletResponse response)throws Exception{
         HttpSession session = request.getSession();
         Teacher teacher = (Teacher)session.getAttribute("teacher");
         if (teacher == null) {
-            return "login-in.jsp";
+            return "Login.action";
         }
         School school = teacher.getSchool();
 

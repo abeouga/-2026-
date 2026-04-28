@@ -47,7 +47,7 @@ public class FrontController extends HttpServlet {
              * 5. クラスを生成し、executeメソッドを実行することで、各アクションクラスの処理を呼び出す。
              */
             Action action = (Action) Class.forName(className).getDeclaredConstructor().newInstance();
-            action.execute(req, res);
+             action.execute(req, res);
         } catch (Exception e) {
             e.printStackTrace();
             req.setAttribute("error", e.getMessage());

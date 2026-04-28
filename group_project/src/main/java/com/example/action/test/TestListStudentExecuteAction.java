@@ -17,8 +17,8 @@ import com.example.config.dao.StudentDao;
 import com.example.config.dao.SubjectDao;
 import com.example.config.dao.TestListStudentDao;
 
-public class TestListStudentExecuteAction extends Action{
-    public String execute(HttpServletRequest request,HttpServletResponse responce)throws Exception{
+public class TestListStudentExecuteAction implements Action{
+    public void execute(HttpServletRequest request,HttpServletResponse response)throws Exception{
         HttpSession session = request.getSession();
         Teacher teacher = (Teacher)session.getAttribute("teacher");
         School school = teacher.getSchool();
@@ -27,9 +27,9 @@ public class TestListStudentExecuteAction extends Action{
         StudentDao stdao = new StudentDao();
         Student student = null;
         
-        List<Student> list = stdao.filter(school,false);
+        List<Student> list = stdao.filter(school.getCd(), null, null, false);
         request.setAttribute("studentNo",list);
-        List<String> list2 = cdao.filter(school);
+        List<String> list2 = cdao.filter(school.getCd());
         request.setAttribute("classList",list2);
         
         String studentNo = request.getParameter("studentNo");
@@ -39,7 +39,7 @@ public class TestListStudentExecuteAction extends Action{
         // ▼ 検索処理
         if (studentNo != null && !studentNo.isEmpty()) {
 
-            student = stdao.get(studentNo);
+            student = stdao.get(school.getCd(), studentNo);
 
             if (student != null) {
                 TestListStudentDao dao = new TestListStudentDao();
@@ -47,8 +47,6 @@ public class TestListStudentExecuteAction extends Action{
             }
         }
         request.setAttribute("testList",testList);
-        //request.getRequestDispatcher("test_list.jsp").forward(request, response);
-        return "test_list_student.jsp";
-
+        request.getRequestDispatcher("/WEB-INF/views/test/test_list_student.jsp").forward(request, response);
     }
 }

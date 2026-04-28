@@ -17,13 +17,14 @@ import com.example.config.dao.SubjectDao;
 import com.example.config.dao.TestDao;
 import com.example.config.dao.TestListSubjectDao;
 
-public class TestRegistExecuteAction extends Action{
-    public String execute(HttpServletRequest request,HttpServletResponse responce)throws Exception{
+public class TestRegistExecuteAction implements Action{
+    public void execute(HttpServletRequest request,HttpServletResponse response)throws Exception{
         HttpSession session = request.getSession();
         Teacher teacher = (Teacher)session.getAttribute("teacher");
         
         if (teacher == null) {
-            return "login-in.jsp";
+            request.getRequestDispatcher("/WEB-INF/views/auth/login.jsp").forward(request, response);
+            return;
         }
 
         School school = teacher.getSchool();
@@ -32,9 +33,9 @@ public class TestRegistExecuteAction extends Action{
         TestDao tdao = new TestDao();
         Subject subject = null;
         int entYear = 0;
-        List<String> list2 = cdao.filter(school);
+        List<String> list2 = cdao.filter(school.getCd());
         request.setAttribute("classList",list2);
-        List<Subject> list = sdao.filter(school);
+        List<Subject> list = sdao.filter(school.getCd());
         request.setAttribute("subjectList",list);
 
         
@@ -42,7 +43,11 @@ public class TestRegistExecuteAction extends Action{
         String entYearStr = request.getParameter("entYear");
         String subjectCd = request.getParameter("subjectCd");
         String classNum = request.getParameter("classNum");
-        int no = Integer.parseInt(request.getParameter("no"));
+        String noStr = request.getParameter("no");
+        int no = 0;
+        if (noStr != null && !noStr.isEmpty()) {
+            no = Integer.parseInt(noStr);
+        }
         if (subjectCd != null) {
             subjectCd = subjectCd.trim();
         }
@@ -55,7 +60,8 @@ public class TestRegistExecuteAction extends Action{
             classNum == null  || classNum.isEmpty() ||
             entYearStr == null || entYearStr.isEmpty()
         ) {
-            return "test_regist.jsp"; // 初期表示
+            request.getRequestDispatcher("/WEB-INF/views/test/test_regist.jsp").forward(request, response);
+            return;
         }
 
         if(entYearStr != null && !entYearStr.isEmpty()){
@@ -65,42 +71,46 @@ public class TestRegistExecuteAction extends Action{
         List<Test> testList = null;
 
         // ▼ 検索処理
-        subject = sdao.get(subjectCd, school);
+        subject = sdao.get(school.getCd(), subjectCd);
         testList = tdao.filter(entYear, classNum, subject, no, school);
         request.setAttribute("testList",testList);
         System.out.println("list size = " + testList.size());
-        //request.getRequestDispatcher("test_list.jsp").forward(request, response);
         // パラメータ取得
         String[] studentNos = request.getParameterValues("studentNoList");
         String[] points = request.getParameterValues("pointList");
 
-        // List作成
-        List<Test> saveList = new ArrayList<>();
+        if (studentNos != null && points != null) {
+            // List作成
+            List<Test> saveList = new ArrayList<>();
 
-        for (int i = 0; i < studentNos.length; i++) {
-            Test test = new Test();
+            for (int i = 0; i < studentNos.length; i++) {
+                Test test = new Test();
 
-            Student student = new Student();
-            student.setNo(studentNos[i]);
-            student.setClassNum(classNum);
+                Student student = new Student();
+                student.setNo(studentNos[i]);
+                student.setClassNum(classNum);
 
-            Subject sub = new Subject();
-            sub.setCd(subjectCd);
+                Subject sub = new Subject();
+                sub.setCd(subjectCd);
 
-            test.setStudent(student);
-            test.setSubject(sub);
-            test.setSchool(school);
-            test.setno(no);
+                test.setStudentNo(student.getNo());
+                test.setSubjectCd(sub.getCd());
+                test.setSchoolCd(school.getCd());
+                test.setNo(no);
+                test.setClassNum(classNum);
 
-            if (points[i] != null && !points[i].isEmpty()) {
-            test.setPoint(Integer.parseInt(points[i]));
+                if (points[i] != null && !points[i].isEmpty()) {
+                    test.setPoint(Integer.parseInt(points[i]));
+                }
+
+                saveList.add(test);
             }
 
-            saveList.add(test);
+            tdao.save(saveList);
+            request.getRequestDispatcher("/WEB-INF/views/test/test_regist_done.jsp").forward(request, response);
+            return;
         }
 
-        tdao.save(saveList);
-        return "test_regist_done.jsp";
-
+        request.getRequestDispatcher("/WEB-INF/views/test/test_regist.jsp").forward(request, response);
     }
 }

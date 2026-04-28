@@ -2,7 +2,7 @@ package com.example.action.student;
 
 import com.example.action.Action;
 
-import com.example.dao.StudentDao;
+import com.example.config.dao.StudentDao;
 import com.example.model.Student;
 import com.example.model.Teacher;
 import jakarta.servlet.http.HttpServletRequest;
@@ -34,7 +34,7 @@ public class StudentUpdateAction implements Action {
         req.setAttribute("ent_year_set", entYearSet);
 
         // クラス番号リストを取得
-        com.example.dao.ClassNumDao classNumDao = new com.example.dao.ClassNumDao();
+        com.example.config.dao.ClassNumDao classNumDao = new com.example.config.dao.ClassNumDao();
         java.util.List<String> classNumSet = classNumDao.filter(teacher.getSchoolCd());
         req.setAttribute("class_num_set", classNumSet);
         req.getRequestDispatcher("/WEB-INF/views/student/student_update.jsp").forward(req, res);

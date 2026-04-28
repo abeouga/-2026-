@@ -1,7 +1,7 @@
 package com.example.action.student;
 
 import com.example.action.Action;
-import com.example.dao.StudentDao;
+import com.example.config.dao.StudentDao;
 import com.example.model.Teacher;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

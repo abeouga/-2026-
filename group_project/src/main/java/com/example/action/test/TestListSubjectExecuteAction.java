@@ -19,13 +19,14 @@ import com.example.config.dao.SubjectDao;
 import com.example.config.dao.TestListStudentDao;
 import com.example.config.dao.TestListSubjectDao;
 
-public class TestListSubjectExecuteAction extends Action{
-    public String execute(HttpServletRequest request,HttpServletResponse responce)throws Exception{
+public class TestListSubjectExecuteAction implements Action{
+    public void execute(HttpServletRequest request,HttpServletResponse response)throws Exception{
         HttpSession session = request.getSession();
         Teacher teacher = (Teacher)session.getAttribute("teacher");
         
         if (teacher == null) {
-            return "login-in.jsp";
+            request.getRequestDispatcher("/WEB-INF/views/auth/login.jsp").forward(request, response);
+            return;
         }
 
         School school = teacher.getSchool();
@@ -33,9 +34,9 @@ public class TestListSubjectExecuteAction extends Action{
         ClassNumDao cdao = new ClassNumDao();
         Subject subject = null;
         int entYear = 0;
-        List<Subject> list = sdao.filter(school);
+        List<Subject> list = sdao.filter(school.getCd());
         request.setAttribute("subjectList",list);
-        List<String> list2 = cdao.filter(school);
+        List<String> list2 = cdao.filter(school.getCd());
         request.setAttribute("classList",list2);
         
         
@@ -54,7 +55,8 @@ public class TestListSubjectExecuteAction extends Action{
             classNum == null  || classNum.isEmpty() ||
             entYearStr == null || entYearStr.isEmpty()
         ) {
-            return "test_list_subject.jsp"; // 初期表示
+            request.getRequestDispatcher("/WEB-INF/views/test/test_list_subject.jsp").forward(request, response);
+            return;
         }
 
         if(entYearStr != null && !entYearStr.isEmpty()){
@@ -67,7 +69,7 @@ public class TestListSubjectExecuteAction extends Action{
         if (subjectCd != null && !subjectCd.isEmpty()
          && classNum != null && !classNum.isEmpty()) {
 
-            subject = sdao.get(subjectCd,school);
+            subject = sdao.get(school.getCd(), subjectCd);
 
             if (subject != null) {
                 TestListSubjectDao dao = new TestListSubjectDao();
@@ -75,10 +77,10 @@ public class TestListSubjectExecuteAction extends Action{
             }
         }
         System.out.println("subjectCd=[" + subjectCd + "]");
-        System.out.println("subject.getCd()=[" + subject.getCd() + "]");
+        if (subject != null) {
+            System.out.println("subject.getCd()=[" + subject.getCd() + "]");
+        }
         request.setAttribute("testList",testList);
-        //request.getRequestDispatcher("test_list.jsp").forward(request, response);
-        return "test_list_subject.jsp";
-
+        request.getRequestDispatcher("/WEB-INF/views/test/test_list_subject.jsp").forward(request, response);
     }
 }

@@ -20,7 +20,7 @@ import com.example.config.dao.TestListStudentDao;
 public class TestListStudentExecuteAction implements Action{
     public void execute(HttpServletRequest request,HttpServletResponse response)throws Exception{
         HttpSession session = request.getSession();
-        Teacher teacher = (Teacher)session.getAttribute("teacher");
+        Teacher teacher = (Teacher)session.getAttribute("user");
         School school = teacher.getSchool();
         SubjectDao sdao = new SubjectDao();
         ClassNumDao cdao = new ClassNumDao();

@@ -1,6 +1,6 @@
 package com.example.action.test;
-import dao.ClassNumDao;
-import dao.SubjectDao;
+import com.example.config.dao.ClassNumDao;
+import com.example.config.dao.SubjectDao;
 
 import java.util.List;
 

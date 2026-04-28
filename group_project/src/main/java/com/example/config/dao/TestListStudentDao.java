@@ -1,4 +1,4 @@
-package com.example.dao;
+package com.example.config.dao;
 
 import com.example.model.School;
 import com.example.model.Student;

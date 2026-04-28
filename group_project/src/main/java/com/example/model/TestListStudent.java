@@ -1,4 +1,4 @@
-package bean;
+package com.example.model;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -12,7 +12,6 @@ public class TestListStudent implements Serializable{
     private String classNum;
     //private Map<Integer,Integer> points = new HashMap<>();
     private int point;
-    private int key;
 
     public int getEntYear(){
         return entYear;

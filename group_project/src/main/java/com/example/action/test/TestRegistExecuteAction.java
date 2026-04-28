@@ -1,21 +1,21 @@
-package scoremanager;
+package com.example.action.test;
 
 import java.util.ArrayList;
 import java.util.List;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import tool.Action;
-import bean.School;
-import bean.Student;
-import bean.Subject;
-import bean.Teacher;
-import bean.Test;
-import bean.TestListSubject;
-import dao.ClassNumDao;
-import dao.SubjectDao;
-import dao.TestDao;
-import dao.TestListSubjectDao;
+import com.example.action.Action;
+import com.example.model.School;
+import com.example.model.Student;
+import com.example.model.Subject;
+import com.example.model.Teacher;
+import com.example.model.Test;
+import com.example.model.TestListSubject;
+import com.example.config.dao.ClassNumDao;
+import com.example.config.dao.SubjectDao;
+import com.example.config.dao.TestDao;
+import com.example.config.dao.TestListSubjectDao;
 
 public class TestRegistExecuteAction extends Action{
     public String execute(HttpServletRequest request,HttpServletResponse responce)throws Exception{

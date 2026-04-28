@@ -1,15 +1,15 @@
-package scoremanager;
+package com.example.action.test;
 import dao.ClassNumDao;
 import dao.SubjectDao;
 
 import java.util.List;
 
-import bean.School;
-import bean.Subject;
-import bean.Teacher;
-import bean.Test;
-import dao.TeacherDAO;
-import tool.Action;
+import com.example.model.School;
+import com.example.model.Subject;
+import com.example.model.Teacher;
+import com.example.model.Test;
+import com.example.config.dao.TeacherDAO;
+import com.example.action.Action;
 import jakarta.servlet.http.*;
 
 public class TestRegistAction extends Action{

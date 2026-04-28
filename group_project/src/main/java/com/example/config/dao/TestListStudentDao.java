@@ -1,9 +1,9 @@
-package dao;
+package com.example.dao;
 
-import bean.School;
-import bean.Student;
-import bean.Teacher;
-import bean.TestListStudent;
+import com.example.model.School;
+import com.example.model.Student;
+import com.example.model.Teacher;
+import com.example.model.TestListStudent;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

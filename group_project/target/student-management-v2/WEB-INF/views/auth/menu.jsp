@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>メニュー</title>
 
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon.png">
 <!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -77,6 +79,9 @@
 <p><a href="testRegist.action">成績参照</a></p>
 <p><a href="testList.action">成績登録</a></p>
 <p><a href="subjectList.action">科目管理</a></p>
+<c:if test="${user.role == 'admin'}">
+    <p><a href="teacherRoleList.action">アカウント権限管理</a></p>
+</c:if>
 
 </body>
 </html>

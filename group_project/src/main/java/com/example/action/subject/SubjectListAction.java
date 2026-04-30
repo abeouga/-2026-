@@ -17,7 +17,19 @@ public class SubjectListAction implements Action {
         SubjectDao dao = new SubjectDao();
         List<Subject> list = dao.filter(user.getSchoolCd());
 
-        session.setAttribute("list", list);
+        java.util.List<Subject> list1 = new java.util.ArrayList<>();
+        java.util.List<Subject> list2 = new java.util.ArrayList<>();
+        
+        for (Subject s : list) {
+            if (s.getCd() != null && s.getCd().startsWith("1")) {
+                list1.add(s);
+            } else if (s.getCd() != null && s.getCd().startsWith("2")) {
+                list2.add(s);
+            }
+        }
+
+        session.setAttribute("list1", list1);
+        session.setAttribute("list2", list2);
 
         req.getRequestDispatcher("/WEB-INF/views/subject/subject_list.jsp").forward(req, res);
     }

@@ -20,7 +20,6 @@ public class StudentCreateExecuteAction implements Action {
         }
 
         String entYearStr = req.getParameter("entYear");
-        String no = req.getParameter("no");
         String name = req.getParameter("name");
         String classNum = req.getParameter("classNum");
         String isAttendStr = req.getParameter("isAttend");
@@ -44,43 +43,31 @@ public class StudentCreateExecuteAction implements Action {
             req.setAttribute("entYearError", "入学年度を選択してください");
             error = true;
         }
-        if (no == null || no.isEmpty()) {
-            req.setAttribute("noError", "このフィールドを入力してください");
-            error = true;
-        }
+
         if (name == null || name.isEmpty()) {
             req.setAttribute("nameError", "このフィールドを入力してください");
             error = true;
         }
 
         if (error) {
-            req.setAttribute("no", no);
             req.setAttribute("name", name);
             req.setAttribute("classNum", classNum);
             req.getRequestDispatcher("/WEB-INF/views/student/student_create.jsp").forward(req, res);
             return;
         }
 
+        StudentDao dao = new StudentDao();
+        
+        int entYear = Integer.parseInt(entYearStr);
+        String no = dao.generateStudentNo(teacher.getSchoolCd(), entYear, classNum);
+
         Student student = new Student();
         student.setSchoolCd(teacher.getSchoolCd());
-        student.setEntYear(Integer.parseInt(entYearStr));
+        student.setEntYear(entYear);
         student.setNo(no);
         student.setName(name);
         student.setClassNum(classNum);
         student.setIsAttend(isAttendStr != null);
-
-        StudentDao dao = new StudentDao();
-        // 重複チェック
-        Student existing = dao.get(teacher.getSchoolCd(), no);
-        if (existing != null) {
-            req.setAttribute("duplicateError", "学生番号が重複しています");
-            req.setAttribute("entYear", entYearStr);
-            req.setAttribute("no", no);
-            req.setAttribute("name", name);
-            req.setAttribute("classNum", classNum);
-            req.getRequestDispatcher("/WEB-INF/views/student/studentCreateError.jsp").forward(req, res);
-            return;
-        }
 
         dao.save(student);
 

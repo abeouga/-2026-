@@ -13,3 +13,6 @@ tomcat/temp/
 Thumbs.db
 .DS_Store
 
+target/
+*.class
+

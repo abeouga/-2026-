@@ -24,8 +24,14 @@
 
                 <div class="col-md-3">
                     <label class="form-label">クラス</label>
-                    <input type="text" name="classNum" class="form-control"
-                           value="${param.classNum}" required>
+                    <select name="classNum" class="form-select">
+                        <option value="">選択してください</option>
+                        <c:forEach var="c" items="${classList}">
+                            <option value="${c}">
+                                ${c}
+                            </option>
+                        </c:forEach>
+                    </select>
                 </div>
 
                 <div class="col-md-3">
@@ -101,7 +107,7 @@
                                                min="0" max="100"
                                                value="${t.point}">
                                     </td>
-                                    <input type="hidden" name="testIdList" value="${t.id}">
+                                    <input type="hidden" name="noList" value="${t.no}">
                                 </tr>
                             </c:forEach>
                         </tbody>

@@ -25,29 +25,44 @@
         <section class="me-4">
             <div>
                 <h2 class="h4 mb-4 fw-normal py-2 px-4" style="background-color: #f0f0f0; border-bottom: 1px solid #dee2e6;">科目管理</h2>
-                <a class="create" href="subjectCreate.action">新規登録</a>
+                <a class="btn btn-sm btn-outline-primary" href="subjectCreate.action">新規登録</a>
             </div>
 
             
 
-            <table class="table table-hover">
+            <h3 class="h5 mt-4 mb-3">1年生 科目一覧</h3>
+            <table class="table table-hover border-list">
                 <tr>
                     <th>科目コード</th>
                     <th>科目名</th>
                     <th></th>
                     <th></th>
                 </tr>
+                <c:forEach var="subjects" items="${list1}">
+                    <tr>
+                        <td>${error}${subjects.cd}</td>
+                        <td>${subjects.name}</td>
+                        <td><a href="subjectUpdate.action?cd=${subjects.cd}" class="btn btn-sm btn-outline-primary">変更</a></td>
+                        <td><a href="subjectDelete.action?cd=${subjects.cd}" class="btn btn-sm btn-outline-danger">削除</a></td>
+                    </tr>
+                </c:forEach>
+            </table>
 
-                <c:forEach var="subjects" items="${list}">
-                    <div class="border-list">
-
-                        <tr>
-                            <td>${error}${subjects.cd}</td>
-                            <td>${subjects.name}</td>
-                            <td><a href="subjectUpdate.action?cd=${subjects.cd}">変更</a></td>
-                            <td><a href="subjectDelete.action?cd=${subjects.cd}">削除</a></td>
-                        </tr>
-                    </div>
+            <h3 class="h5 mt-5 mb-3">2年生 科目一覧</h3>
+            <table class="table table-hover border-list">
+                <tr>
+                    <th>科目コード</th>
+                    <th>科目名</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <c:forEach var="subjects" items="${list2}">
+                    <tr>
+                        <td>${error}${subjects.cd}</td>
+                        <td>${subjects.name}</td>
+                        <td><a href="subjectUpdate.action?cd=${subjects.cd}" class="btn btn-sm btn-outline-primary">変更</a></td>
+                        <td><a href="subjectDelete.action?cd=${subjects.cd}" class="btn btn-sm btn-outline-danger">削除</a></td>
+                    </tr>
                 </c:forEach>
             </table>
         </section>

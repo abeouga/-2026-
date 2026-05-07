@@ -33,6 +33,7 @@ public class AppInitListener implements ServletContextListener {
                         "id VARCHAR(10) NOT NULL, " +
                         "password VARCHAR(30), " +
                         "name VARCHAR(10), " +
+                        "role VARCHAR(20) DEFAULT 'viewer', " +
                         "PRIMARY KEY (school_cd, id), " +
                         "FOREIGN KEY (school_cd) REFERENCES school(cd))";
                 stmt.execute(sqlTeacher);
@@ -79,15 +80,27 @@ public class AppInitListener implements ServletContextListener {
                 
                 // seedデータ挿入
                 stmt.execute("MERGE INTO school KEY (cd) VALUES ('001', 'テスト校')");
-                stmt.execute("MERGE INTO teacher KEY (school_cd, id) VALUES ('001', 'admin', 'password', '管理者')");
+                stmt.execute("MERGE INTO school KEY (cd) VALUES ('002', '東京校')");
+                stmt.execute("MERGE INTO school KEY (cd) VALUES ('003', '大阪校')");
+                stmt.execute("MERGE INTO teacher KEY (school_cd, id) VALUES ('001', 'admin', 'password', '管理者', 'admin')");
                 // クラスシードデータ
                 stmt.execute("MERGE INTO class_num KEY (school_cd, class_num) VALUES ('001', '101')");
                 stmt.execute("MERGE INTO class_num KEY (school_cd, class_num) VALUES ('001', '102')");
-                stmt.execute("MERGE INTO class_num KEY (school_cd, class_num) VALUES ('001', '103')");
+                stmt.execute("MERGE INTO class_num KEY (school_cd, class_num) VALUES ('001', '201')");
+                stmt.execute("MERGE INTO class_num KEY (school_cd, class_num) VALUES ('001', '202')");
                 // 科目シードデータ
-                stmt.execute("MERGE INTO subject KEY (school_cd, cd) VALUES ('001', 'A01', '国語')");
-                stmt.execute("MERGE INTO subject KEY (school_cd, cd) VALUES ('001', 'A02', '算数')");
-                stmt.execute("MERGE INTO subject KEY (school_cd, cd) VALUES ('001', 'A03', '英語')");
+                // 1年生用
+                stmt.execute("MERGE INTO subject KEY (school_cd, cd) VALUES ('001', '101', '国語')");
+                stmt.execute("MERGE INTO subject KEY (school_cd, cd) VALUES ('001', '102', '算数')");
+                stmt.execute("MERGE INTO subject KEY (school_cd, cd) VALUES ('001', '103', '英語')");
+                stmt.execute("MERGE INTO subject KEY (school_cd, cd) VALUES ('001', '104', '理科')");
+                stmt.execute("MERGE INTO subject KEY (school_cd, cd) VALUES ('001', '105', '社会')");
+                // 2年生用
+                stmt.execute("MERGE INTO subject KEY (school_cd, cd) VALUES ('001', '201', '現代文')");
+                stmt.execute("MERGE INTO subject KEY (school_cd, cd) VALUES ('001', '202', '数学A')");
+                stmt.execute("MERGE INTO subject KEY (school_cd, cd) VALUES ('001', '203', '英語表現')");
+                stmt.execute("MERGE INTO subject KEY (school_cd, cd) VALUES ('001', '204', '物理')");
+                stmt.execute("MERGE INTO subject KEY (school_cd, cd) VALUES ('001', '205', '日本史')");
 
                 System.out.println("--- データベースの初期化・シード構築が完了しました ---");
             }

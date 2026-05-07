@@ -7,15 +7,21 @@ public class Teacher implements Serializable {
     private String id;
     private String password;
     private String name;
+    private String role;
 
     public Teacher() {
     }
 
-    public Teacher(String schoolCd, String id, String password, String name) {
+    public Teacher(String schoolCd, String id, String password, String name, String role) {
         this.schoolCd = schoolCd;
         this.id = id;
         this.password = password;
         this.name = name;
+        this.role = role;
+    }
+
+    public Teacher(String schoolCd, String id, String password, String name) {
+        this(schoolCd, id, password, name, "viewer");
     }
 
     public String getSchoolCd() {
@@ -48,5 +54,17 @@ public class Teacher implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public School getSchool() {
+        return new School(this.schoolCd, null);
     }
 }

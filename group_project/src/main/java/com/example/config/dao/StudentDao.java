@@ -1,4 +1,4 @@
-package com.example.dao;
+package com.example.config.dao;
 
 import com.example.model.Student;
 import java.sql.Connection;
@@ -31,22 +31,21 @@ public class StudentDao extends DaoBase {
         sql.append(" ORDER BY no ASC");
 
         try (Connection con = getConnection();
-             PreparedStatement st = con.prepareStatement(sql.toString())) {
-             
+                PreparedStatement st = con.prepareStatement(sql.toString())) {
+
             for (int i = 0; i < params.size(); i++) {
                 st.setObject(i + 1, params.get(i));
             }
-            
+
             try (ResultSet rs = st.executeQuery()) {
                 while (rs.next()) {
                     list.add(new Student(
-                        rs.getString("school_cd"),
-                        rs.getString("no"),
-                        rs.getString("name"),
-                        rs.getInt("ent_year"),
-                        rs.getString("class_num"),
-                        rs.getBoolean("is_attend")
-                    ));
+                            rs.getString("school_cd"),
+                            rs.getString("no"),
+                            rs.getString("name"),
+                            rs.getInt("ent_year"),
+                            rs.getString("class_num"),
+                            rs.getBoolean("is_attend")));
                 }
             }
         }
@@ -57,20 +56,19 @@ public class StudentDao extends DaoBase {
         Student student = null;
         String sql = "SELECT * FROM student WHERE school_cd = ? AND no = ?";
         try (Connection con = getConnection();
-             PreparedStatement st = con.prepareStatement(sql)) {
-             
+                PreparedStatement st = con.prepareStatement(sql)) {
+
             st.setString(1, schoolCd);
             st.setString(2, no);
             try (ResultSet rs = st.executeQuery()) {
                 if (rs.next()) {
                     student = new Student(
-                        rs.getString("school_cd"),
-                        rs.getString("no"),
-                        rs.getString("name"),
-                        rs.getInt("ent_year"),
-                        rs.getString("class_num"),
-                        rs.getBoolean("is_attend")
-                    );
+                            rs.getString("school_cd"),
+                            rs.getString("no"),
+                            rs.getString("name"),
+                            rs.getInt("ent_year"),
+                            rs.getString("class_num"),
+                            rs.getBoolean("is_attend"));
                 }
             }
         }
@@ -116,13 +114,42 @@ public class StudentDao extends DaoBase {
             }
         }
     }
+
     public boolean delete(String schoolCd, String no) throws Exception {
         String sql = "DELETE FROM student WHERE school_cd = ? AND no = ?";
         try (Connection con = getConnection();
-             PreparedStatement st = con.prepareStatement(sql)) {
+                PreparedStatement st = con.prepareStatement(sql)) {
             st.setString(1, schoolCd);
             st.setString(2, no);
             return st.executeUpdate() > 0;
         }
+    }
+
+    // クラス番号や入学年度をもとに学生番号をここでくみ上げます。
+    public String generateStudentNo(String schoolCd, int entYear, String classNum) throws Exception {
+        String yearStr = String.format("%02d", entYear % 100);
+        String classDigit = classNum.substring(classNum.length() - 1);
+        String prefix = yearStr + classDigit;
+        String sql = "SELECT MAX(no) FROM student WHERE school_cd = ? AND no LIKE ?";
+
+        try (Connection con = getConnection();
+                PreparedStatement st = con.prepareStatement(sql)) {
+            st.setString(1, schoolCd);
+            st.setString(2, prefix + "%");
+            try (ResultSet rs = st.executeQuery()) {
+                if (rs.next()) {
+                    String maxNo = rs.getString(1);
+                    if (maxNo != null && maxNo.length() >= 6) {
+                        try {
+                            int nextSeq = Integer.parseInt(maxNo.substring(3)) + 1;
+                            return prefix + String.format("%03d", nextSeq);
+                        } catch (NumberFormatException e) {
+                            // ignore and fallback
+                        }
+                    }
+                }
+            }
+        }
+        return prefix + "001";
     }
 }

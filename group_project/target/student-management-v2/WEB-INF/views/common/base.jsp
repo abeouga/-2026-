@@ -10,6 +10,7 @@
 <meta charset="UTF-8">
 <title>${param.title}</title>
 
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon.png">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
@@ -59,9 +60,9 @@ body{
         <h2 class="mb-0 fw-bold">得点管理システム</h2>
 
         <c:if test="${not empty user}">
-            <div>
+            <div class="d-flex align-items-center">
                 ${user.name} 様　
-                <a href="Logout.action" onclick="return confirm('ログアウトしますか？');">ログアウト</a>
+                <a href="Logout.action" class="btn btn-sm btn-outline-danger" onclick="return confirm('ログアウトしますか？');">ログアウト</a>
             </div>
         </c:if>
     </div>
@@ -69,25 +70,19 @@ body{
     <div class="row">
 
         <c:if test="${not empty user}">
-            <div class="col-2 sidebar">
+            <div class="col-2 sidebar pt-2">
 
-                <a href="Menu.action">メニュー</a>
+                <a href="Menu.action" class="btn btn-sm btn-outline-secondary w-100 mb-3">メニュー</a>
 
-                <div class="mt-3 fw-bold">
-                    学生管理
-                </div>
-                <a href="student.action">学生一覧</a>
+                <div class="fw-bold small text-muted mb-1">学生管理</div>
+                <a href="student.action" class="btn btn-sm btn-outline-primary w-100 mb-1">学生一覧</a>
 
-                <div class="mt-3 fw-bold">
-                    成績管理
-                </div>
-                <a href="testCreate.action">成績登録</a>
-                <a href="testList.action">成績参照</a>
+                <div class="fw-bold small text-muted mt-3 mb-1">成績管理</div>
+                <a href="testCreate.action" class="btn btn-sm btn-outline-primary w-100 mb-1">成績登録</a>
+                <a href="testList.action" class="btn btn-sm btn-outline-primary w-100 mb-1">成績参照</a>
 
-                <div class="mt-3 fw-bold">
-                    科目管理
-                </div>
-                <a href="subjectList.action">科目一覧</a>
+                <div class="fw-bold small text-muted mt-3 mb-1">科目管理</div>
+                <a href="subjectList.action" class="btn btn-sm btn-outline-primary w-100 mb-1">科目一覧</a>
 
             </div>
 

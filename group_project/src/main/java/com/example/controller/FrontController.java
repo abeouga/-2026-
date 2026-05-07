@@ -8,7 +8,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import jakarta.servlet.annotation.MultipartConfig;
+
 @WebServlet(urlPatterns = { "*.action" }) // 末尾にactionの付くリクエストはこのハンドラに集められる。
+@MultipartConfig
 public class FrontController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -21,12 +24,23 @@ public class FrontController extends HttpServlet {
             /** 2. actionの拡張子を取り除く。(.actionを空白に置き換える。) */
             String name = path.replace(".action", "");
 
+            com.example.model.Teacher teacher = (com.example.model.Teacher) req.getSession().getAttribute("user");
+            if (teacher != null && "viewer".equals(teacher.getRole())) {
+                if (name.contains("Create") || name.contains("Update") || name.contains("Delete") || name.contains("Execute")) {
+                    req.setAttribute("error", "閲覧権限(viewer)のため、この操作は許可されていません。");
+                    req.getRequestDispatcher("/WEB-INF/views/auth/error.jsp").forward(req, res);
+                    return;
+                }
+            }
+
             /**
              * 3. actionの先頭の文字列をパッケージ名として取り出す。(student,subject,test,authのいずれか)
              * startsWithで文字列が特定の文字で始まっているかを判定する。 trueならpackageNameにその文字列を追加する。
              */
             String packageName = "";
-            if (name.startsWith("student"))
+            if (name.startsWith("studentCsv"))
+                packageName = "student.csv.";
+            else if (name.startsWith("student"))
                 packageName = "student.";
             else if (name.startsWith("subject"))
                 packageName = "subject.";
@@ -47,7 +61,7 @@ public class FrontController extends HttpServlet {
              * 5. クラスを生成し、executeメソッドを実行することで、各アクションクラスの処理を呼び出す。
              */
             Action action = (Action) Class.forName(className).getDeclaredConstructor().newInstance();
-            action.execute(req, res);
+             action.execute(req, res);
         } catch (Exception e) {
             e.printStackTrace();
             req.setAttribute("error", e.getMessage());

@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>学生情報変更</title>
 
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon.png">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>

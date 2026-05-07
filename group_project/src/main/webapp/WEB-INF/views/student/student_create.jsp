@@ -34,13 +34,6 @@
             </select>
         </div>
 
-        <!-- 学生番号 -->
-        <div class="mb-3">
-            <label class="form-label">学生番号</label>
-
-                            <input type="text" name="no" class="form-control" placeholder="学生番号を入力してください">
-                        </div>
-
         <!-- 氏名 -->
         <div class="mb-3">
             <label class="form-label">氏名</label>
@@ -67,7 +60,8 @@
 
             <input type="checkbox"
                 name="isAttend"
-                value="true">
+                value="true"
+                checked>
 
             在学中
         </div>

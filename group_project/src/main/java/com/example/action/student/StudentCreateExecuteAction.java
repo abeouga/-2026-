@@ -2,6 +2,7 @@ package com.example.action.student;
 
 import com.example.action.Action;
 
+import com.example.config.dao.ClassNumDao;
 import com.example.config.dao.StudentDao;
 import com.example.model.Student;
 import com.example.model.Teacher;
@@ -46,6 +47,12 @@ public class StudentCreateExecuteAction implements Action {
 
         if (name == null || name.isEmpty()) {
             req.setAttribute("nameError", "このフィールドを入力してください");
+            error = true;
+        }
+
+        // クラス番号の妥当性チェック
+        if (classNum == null || !classNumSet.contains(classNum)) {
+            req.setAttribute("classNumError", "有効なクラスを選択してください");
             error = true;
         }
 

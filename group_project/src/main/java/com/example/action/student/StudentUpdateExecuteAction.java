@@ -25,10 +25,26 @@ public class StudentUpdateExecuteAction implements Action {
         String classNum = req.getParameter("classNum");
         String isAttendStr = req.getParameter("isAttend");
 
+        // クラス番号リストを取得
+        com.example.config.dao.ClassNumDao classNumDao = new com.example.config.dao.ClassNumDao();
+        java.util.List<String> classNumSet = classNumDao.filter(teacher.getSchoolCd());
+
+        boolean error = false;
+
         if (name == null || name.isEmpty()) {
+            req.setAttribute("nameError", "このフィールドを入力してください");
+            error = true;
+        }
+
+        // クラス番号の妥当性チェック
+        if (classNum == null || !classNumSet.contains(classNum)) {
+            req.setAttribute("classNumError", "有効なクラスを選択してください");
+            error = true;
+        }
+
+        if (error) {
             Student student = new Student(teacher.getSchoolCd(), no, name, Integer.parseInt(entYearStr), classNum, isAttendStr != null);
             req.setAttribute("student", student);
-            req.setAttribute("nameError", "このフィールドを入力してください");
 
             // 入学年度リストを生成
             java.util.List<Integer> entYearSet = new java.util.ArrayList<>();
@@ -37,10 +53,6 @@ public class StudentUpdateExecuteAction implements Action {
                 entYearSet.add(i);
             }
             req.setAttribute("ent_year_set", entYearSet);
-
-            // クラス番号リストを取得
-            com.example.config.dao.ClassNumDao classNumDao = new com.example.config.dao.ClassNumDao();
-            java.util.List<String> classNumSet = classNumDao.filter(teacher.getSchoolCd());
             req.setAttribute("class_num_set", classNumSet);
 
             req.getRequestDispatcher("/WEB-INF/views/student/student_update.jsp").forward(req, res);

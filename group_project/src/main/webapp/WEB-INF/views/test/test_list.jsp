@@ -12,11 +12,11 @@
 
         <div class="d-grid gap-3 col-6 mx-auto">
 
-            <a href="TestListSubjectExecute.action" class="btn btn-primary">
+            <a href="testListSubjectExecute.action" class="btn btn-primary">
                  📘 科目・クラス別で参照
             </a>
 
-            <a href="TestListStudentExecute.action" class="btn btn-secondary">
+            <a href="testListStudentExecute.action" class="btn btn-secondary">
                  👤 学生別で参照
             </a>
 

@@ -1,6 +1,7 @@
 package com.example.action.student.csv;
 
 import com.example.action.Action;
+import com.example.config.dao.ClassNumDao;
 import com.example.config.dao.StudentDao;
 import com.example.model.Student;
 import com.example.model.Teacher;
@@ -40,6 +41,10 @@ public class StudentCsvImportExecuteAction implements Action {
         int skipCount = 0;
         StudentDao dao = new StudentDao();
 
+        // 有効なクラス番号リストを取得（101, 201のみ）
+        ClassNumDao classNumDao = new ClassNumDao();
+        java.util.List<String> validClassNums = classNumDao.filter(teacher.getSchoolCd());
+
         // 読み込み処理。文字コードはUTF-8で固定
         try (BufferedReader br = new BufferedReader(new InputStreamReader(filePart.getInputStream(), StandardCharsets.UTF_8))) {
             String line;
@@ -73,6 +78,12 @@ public class StudentCsvImportExecuteAction implements Action {
                     boolean isAttend = Boolean.parseBoolean(columns[3].trim());
 
                     if (name.isEmpty() || classNum.isEmpty()) {
+                        skipCount++;
+                        continue;
+                    }
+
+                    // クラス番号の妥当性チェック
+                    if (!validClassNums.contains(classNum)) {
                         skipCount++;
                         continue;
                     }

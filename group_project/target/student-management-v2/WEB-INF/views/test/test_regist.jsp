@@ -12,7 +12,7 @@
         <c:if test="${not empty error}">
             <div class="alert alert-danger text-center">${error}</div>
         </c:if>
-        <form action="TestRegist.action" method="post" class="card p-4 mb-4 shadow-sm">
+        <form action="testRegist.action" method="post" class="card p-4 mb-4 shadow-sm">
 
             <div class="row g-3">
 
@@ -73,7 +73,7 @@
         </c:if>
         <c:if test="${not empty testList}">
 
-            <form action="TestRegistExecute.action" method="post">
+            <form action="testRegistExecute.action" method="post">
 
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped text-center align-middle">

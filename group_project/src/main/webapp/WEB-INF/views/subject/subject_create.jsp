@@ -23,7 +23,7 @@
                             <div class="mb-3 col-md-4">
                                 <label class="form-label" for="student-no-input">科目コード</label>
                                 <br>
-                                <input class="form-input form-control" type="text" id="student-no-input" name="cd" value="${cd}" placeholder="科目コードを入力してください" required>
+                                <input class="form-input form-control" type="text" id="student-no-input" name="cd" value="${cd}" placeholder="科目コード (例: 101 または 201)" required>
                             <div class="text-danger small">${errors.get("cd")}</div> </div>
 
                             <div class="mb-3 col-md-6">
@@ -38,7 +38,7 @@
                         </form>
 
                         <div class="mt-4 ms-4">
-                            <a href="subjectList.action" class="text-decoration-none small">戻る</a>
+                            <a href="subjectList.action" class="btn btn-sm btn-outline-secondary">戻る</a>
                         </div>
                     </section>
                 </main>

@@ -21,9 +21,8 @@
                     </h2>
 
                     <div class="my-2 text-end px-4">
-                        <a href="studentCreate.action">
-                            新規登録
-                        </a>
+                        <a href="studentCsvImport.action" class="btn btn-sm btn-outline-success me-2">CSV読み込み</a>
+                        <a href="studentCreate.action" class="btn btn-sm btn-outline-primary">新規登録</a>
                     </div>
 
                     <form method="get">
@@ -149,8 +148,8 @@
                                         </td>
 
                                         <td>
-                                            <a href="studentUpdate.action?no=${student.no}">変更</a> | 
-                                            <a href="studentDeleteExecute.action?no=${student.no}" onclick="return confirm('本当に削除しますか？');">削除</a>
+                                            <a href="studentUpdate.action?no=${student.no}" class="btn btn-sm btn-outline-primary me-1">変更</a>
+                                            <a href="studentDeleteExecute.action?no=${student.no}" class="btn btn-sm btn-outline-danger" onclick="return confirm('本当に削除しますか？');">削除</a>
                                         </td>
                                     </tr>
 

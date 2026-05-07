@@ -1,4 +1,5 @@
 package com.example.action.test;
+
 import com.example.config.dao.ClassNumDao;
 import com.example.config.dao.SubjectDao;
 import com.example.config.dao.TestDao;
@@ -10,21 +11,28 @@ import com.example.model.Subject;
 import com.example.model.Teacher;
 import com.example.model.Test;
 import com.example.action.Action;
+
 import jakarta.servlet.http.*;
 
-public class TestRegistAction implements Action{
+public class TestRegistAction implements Action {
+
+    @Override
     public void execute(
-        HttpServletRequest request,HttpServletResponse response
-    )throws Exception{
+        HttpServletRequest request,
+        HttpServletResponse response
+    ) throws Exception {
+
         HttpSession session = request.getSession();
-        Teacher teacher = (Teacher)session.getAttribute("user");
+        Teacher teacher = (Teacher) session.getAttribute("user");
 
         if (teacher == null) {
-            request.getRequestDispatcher("/WEB-INF/views/auth/login.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/views/auth/login.jsp")
+                   .forward(request, response);
             return;
         }
 
         School school = teacher.getSchool();
+
         SubjectDao sdao = new SubjectDao();
         ClassNumDao cdao = new ClassNumDao();
 
@@ -39,9 +47,10 @@ public class TestRegistAction implements Action{
         String subjectCd = request.getParameter("subjectCd");
         String noStr = request.getParameter("no");
 
-        if (entYearStr != null && classNum != null && subjectCd != null && noStr != null
-            && !entYearStr.isEmpty() && !classNum.isEmpty()
-            && !subjectCd.isEmpty() && !noStr.isEmpty()) {
+        if (entYearStr != null && classNum != null &&
+            subjectCd != null && noStr != null &&
+            !entYearStr.isEmpty() && !classNum.isEmpty() &&
+            !subjectCd.isEmpty() && !noStr.isEmpty()) {
 
             int entYear = Integer.parseInt(entYearStr);
             int no = Integer.parseInt(noStr);
@@ -51,11 +60,13 @@ public class TestRegistAction implements Action{
 
             TestDao tdao = new TestDao();
 
-            List<Test> list = tdao.filter(entYear, classNum, subject, no, school);
+            List<Test> list =
+                tdao.filter(entYear, classNum, subject, no, school);
 
             request.setAttribute("testList", list);
         }
-        request.getRequestDispatcher("/WEB-INF/views/test/test_regist.jsp").forward(request, response);
-    }
 
+        request.getRequestDispatcher("/WEB-INF/views/test/test_regist.jsp")
+               .forward(request, response);
+    }
 }

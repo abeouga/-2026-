@@ -83,11 +83,9 @@ public class AppInitListener implements ServletContextListener {
                 stmt.execute("MERGE INTO school KEY (cd) VALUES ('002', '東京校')");
                 stmt.execute("MERGE INTO school KEY (cd) VALUES ('003', '大阪校')");
                 stmt.execute("MERGE INTO teacher KEY (school_cd, id) VALUES ('001', 'admin', 'password', '管理者', 'admin')");
-                // クラスシードデータ
+                // クラスシードデータ（一学年1クラス：101, 201のみ）
                 stmt.execute("MERGE INTO class_num KEY (school_cd, class_num) VALUES ('001', '101')");
-                stmt.execute("MERGE INTO class_num KEY (school_cd, class_num) VALUES ('001', '102')");
                 stmt.execute("MERGE INTO class_num KEY (school_cd, class_num) VALUES ('001', '201')");
-                stmt.execute("MERGE INTO class_num KEY (school_cd, class_num) VALUES ('001', '202')");
                 // 科目シードデータ
                 // 1年生用
                 stmt.execute("MERGE INTO subject KEY (school_cd, cd) VALUES ('001', '101', '国語')");

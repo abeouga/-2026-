@@ -78,7 +78,7 @@ body{
                 <a href="student.action" class="btn btn-sm btn-outline-primary w-100 mb-1">学生一覧</a>
 
                 <div class="fw-bold small text-muted mt-3 mb-1">成績管理</div>
-                <a href="testCreate.action" class="btn btn-sm btn-outline-primary w-100 mb-1">成績登録</a>
+                <a href="testRegist.action" class="btn btn-sm btn-outline-primary w-100 mb-1">成績登録</a>
                 <a href="testList.action" class="btn btn-sm btn-outline-primary w-100 mb-1">成績参照</a>
 
                 <div class="fw-bold small text-muted mt-3 mb-1">科目管理</div>

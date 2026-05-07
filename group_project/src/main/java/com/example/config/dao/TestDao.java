@@ -46,20 +46,29 @@ public class TestDao extends DaoBase {
 
     public List<Test> filter(int entYear, String classNum, Subject subject, int no, School school) throws Exception {
         List<Test> list = new ArrayList<>();
-        String sql = "SELECT t.*, st.name AS student_name, sub.name AS subject_name " +
-                     "FROM test t " +
-                     "JOIN student st ON t.student_no = st.no AND t.school_cd = st.school_cd " +
-                     "JOIN subject sub ON t.subject_cd = sub.cd AND t.school_cd = sub.school_cd " +
-                     "WHERE t.school_cd = ? AND t.class_num = ? AND t.subject_cd = ? AND t.no = ? AND st.ent_year = ? " +
-                     "ORDER BY t.student_no";
+        String sql = "SELECT st.no AS student_no, st.name AS student_name, " +
+    "st.class_num, sub.cd AS subject_cd, sub.name AS subject_name, " +
+    "t.point, ? AS no, st.school_cd " +
+    "FROM student st " +
+    "JOIN subject sub ON sub.cd = ? AND sub.school_cd = st.school_cd " +
+    "LEFT JOIN test t ON st.no = t.student_no " +
+    "AND t.subject_cd = sub.cd " +
+    "AND t.no = ? " +
+    "AND t.class_num = st.class_num " +
+    "AND t.school_cd = st.school_cd " +
+    "WHERE st.school_cd = ? " +
+    "AND st.class_num = ? " +
+    "AND st.ent_year = ? " +
+    "ORDER BY st.no";
 
         try (Connection con = getConnection();
              PreparedStatement st = con.prepareStatement(sql)) {
-            st.setString(1, school.getCd());
-            st.setString(2, classNum);
-            st.setString(3, subject.getCd());
-            st.setInt(4, no);
-            st.setInt(5, entYear);
+            st.setInt(1, no);
+            st.setString(2, subject.getCd());
+            st.setInt(3, no);
+            st.setString(4, school.getCd());
+            st.setString(5, classNum);
+            st.setInt(6, entYear);
 
             try (ResultSet rs = st.executeQuery()) {
                 while (rs.next()) {

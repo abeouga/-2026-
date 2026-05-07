@@ -89,18 +89,11 @@
                         <tbody>
                             <c:forEach var="t" items="${testList}">
                                 <tr>
-                                    <c:choose>
-                                        <c:when test="${not empty t.student}">
                                             <td>
-                                                ${t.student.no}
-                                                <input type="hidden" name="studentNoList" value="${t.student.no}">
+                                                ${t.studentNo}
+                                                <input type="hidden" name="studentNoList" value="${t.studentNo}">
                                             </td>
-                                            <td>${t.student.name}</td>
-                                        </c:when>
-                                        <c:otherwise>
-                                            <td colspan="2" class="text-muted">不明</td>
-                                        </c:otherwise>
-                                    </c:choose>
+                                            <td>${t.studentName}</td>
                                     <td style="width:150px;">
                                         <input type="number"
                                                name="pointList"

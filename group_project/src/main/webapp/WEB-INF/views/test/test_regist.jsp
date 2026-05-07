@@ -27,7 +27,8 @@
                     <select name="classNum" class="form-select">
                         <option value="">選択してください</option>
                         <c:forEach var="c" items="${classList}">
-                            <option value="${c}">
+                            <option value="${c}"
+                                <c:if test="${param.classNum eq c}">selected</c:if>>
                                 ${c}
                             </option>
                         </c:forEach>

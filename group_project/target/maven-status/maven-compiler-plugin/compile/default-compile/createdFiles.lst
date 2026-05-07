@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 2ebb8da13f8450bba90eb048954ac0e24aea1e05
->>>>>>> ba3c4dceaaa1d619b4f100fc015213675d03d5a0
 com\example\action\subject\SubjectCreateAction.class
 com\example\config\dao\ClassNumDao.class
 com\example\model\Test.class
@@ -48,12 +39,3 @@ com\example\model\TestListStudent.class
 com\example\action\auth\LoginAction.class
 com\example\model\Student.class
 com\example\config\dao\StudentDao.class
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> ee886c14b7767c20d8c4e56616def4cf433891ad
->>>>>>> 9e445479a6e4c38b5d54be7b15b76b88d8ace9b5
->>>>>>> 2ebb8da13f8450bba90eb048954ac0e24aea1e05
->>>>>>> ba3c4dceaaa1d619b4f100fc015213675d03d5a0

@@ -11,15 +11,15 @@ public class SubjectCreateExecuteAction implements Action {
 
         HttpSession session = req.getSession();
 
-        Teacher user = (Teacher)session.getAttribute("user");
-        
+        Teacher user = (Teacher) session.getAttribute("user");
+
         String code = req.getParameter("cd");
         String name = req.getParameter("name");
-
-        if (code == null || name == null) {
+        // バリデーションね
+        if (code == null || name == null || !code.matches("^(10[1-5]|20[1-5])$")) {
             req.setAttribute("cd", code);
             req.setAttribute("name", name);
-            req.setAttribute("error", "科目コード、科目名をセットし、科目コードは３文字で入力してください");
+            req.setAttribute("error", "科目コードは101〜105、または201〜205の形式で入力してください");
             req.getRequestDispatcher("/WEB-INF/views/subject/subject_create.jsp").forward(req, res);
             return;
         }

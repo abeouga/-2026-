@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>登録エラー</title>
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon.png">
 </head>
 <body>
 

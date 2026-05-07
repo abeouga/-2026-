@@ -6,6 +6,7 @@
 <head>
     <title>ログイン</title>
 
+    <link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -101,6 +102,10 @@
             </div>
 
             <button type="submit" class="btn btn-primary w-100">ログイン</button>
+
+            <div class="mt-3 text-center">
+                <a href="teacherRegister.action" style="text-decoration: none;">新規登録はこちら</a>
+            </div>
         </form>
     </c:if>
 

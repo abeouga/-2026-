@@ -26,7 +26,7 @@
                                 <div class="mb-3 col-md-4">
                                 <label class="form-label" for="student-no-input">科目名</label>
                                 <br>
-                                <input class="form-input form-control" type="text" id="student-name-input" name="name" value="${name}" placeholder="科目名を入力してください" required>
+                                <input class="form-input form-control" type="text" id="student-name-input" name="name" value="${subject.name}" placeholder="科目名を入力してください" required>
                             </div>
 
                             <div class="mt-4">

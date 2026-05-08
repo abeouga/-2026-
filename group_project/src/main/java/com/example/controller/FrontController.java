@@ -46,6 +46,10 @@ public class FrontController extends HttpServlet {
                 packageName = "subject.";
             else if (name.startsWith("test"))
                 packageName = "test.";
+            else if (name.startsWith("schoolclass")) { 
+                packageName = "schoolclass.";
+                name = "schoolClass" + name.substring("schoolclass".length());
+            }
             else
                 packageName = "auth.";
 

@@ -84,6 +84,9 @@ body{
                 <div class="fw-bold small text-muted mt-3 mb-1">科目管理</div>
                 <a href="subjectList.action" class="btn btn-sm btn-outline-primary w-100 mb-1">科目一覧</a>
 
+                <div class="fw-bold small text-muted mt-3 mb-1">クラス管理</div>
+                <a href="schoolclassList.action" class="btn btn-sm btn-outline-primary w-100 mb-1">クラス一覧</a>
+
             </div>
 
             <div class="col-10">

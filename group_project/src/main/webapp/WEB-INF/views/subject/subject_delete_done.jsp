@@ -33,7 +33,11 @@
 
                         
                         <div class="mt-4 ms-4">
+<<<<<<< HEAD
                             <a href="subjectList.action" class="text-decoration-none small">科目一覧へ</a>
+=======
+                            <a href="subjectList.action" class="text-decoration-none small">科目一覧</a>
+>>>>>>> 0c1a3cddef56d8d9c525e29293e86a5cbfc209c9
                         </div>
                     </section>
                 </main>

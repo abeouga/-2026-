@@ -73,6 +73,11 @@ public class TestRegistExecuteAction implements Action{
         // ▼ 検索処理
         subject = sdao.get(school.getCd(), subjectCd);
         testList = tdao.filter(entYear, classNum, subject, no, school);
+        System.out.println("entYear=" + entYear);
+        System.out.println("classNum=" + classNum);
+        System.out.println("subjectCd=" + subjectCd);
+        System.out.println("no=" + no);
+        System.out.println("list size=" + list.size());
         request.setAttribute("testList",testList);
         System.out.println("list size = " + testList.size());
         // パラメータ取得

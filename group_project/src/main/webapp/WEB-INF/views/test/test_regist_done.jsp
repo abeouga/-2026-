@@ -16,7 +16,7 @@
             </div>
 
             <div class="text-center mt-3">
-                <a href="TestRegist.action" class="btn btn-primary">
+                <a href="testRegist.action" class="btn btn-primary">
                     戻る
                 </a>
             </div>

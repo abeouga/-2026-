@@ -15,7 +15,7 @@
         </c:if>
 
         <!-- 検索 -->
-        <form action="TestListStudentExecute.action" method="post" class="card p-3 mb-4">
+        <form action="testListStudentExecute.action" method="post" class="card p-3 mb-4">
 
             <div class="row g-3">
 

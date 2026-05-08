@@ -4,7 +4,6 @@ import com.example.action.Action;
 
 import com.example.config.dao.SchoolClassDao;
 import com.example.model.SchoolClass;
-import com.example.model.Student;
 import com.example.model.Teacher;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -16,13 +15,11 @@ public class SchoolClassListAction implements Action {
     public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
         /** ログイン確認 */
         HttpSession session = req.getSession();
-        Teacher teacher = (Teacher) session.getAttribute("user");
-        if (teacher == null) {
+        Teacher user = (Teacher) session.getAttribute("user");
+        if (user == null) {
             res.sendRedirect(req.getContextPath() + "/login.action");
             return;
         }
-
-        Teacher user = (Teacher)session.getAttribute("user");
 
         SchoolClassDao dao = new SchoolClassDao();
         List<SchoolClass> list = dao.filter(user.getSchoolCd());

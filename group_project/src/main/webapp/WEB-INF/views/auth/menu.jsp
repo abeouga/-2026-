@@ -76,8 +76,8 @@
     </a>
 </div>
 <p><a href="student.action">学生管理</a></p>
-<p><a href="testRegist.action">成績参照</a></p>
-<p><a href="testList.action">成績登録</a></p>
+<p><a href="testList.action">成績参照</a></p>
+<p><a href="testRegist.action">成績登録</a></p>
 <p><a href="subjectList.action">科目管理</a></p>
 <c:if test="${user.role == 'admin'}">
     <p><a href="teacherRoleList.action">アカウント権限管理</a></p>

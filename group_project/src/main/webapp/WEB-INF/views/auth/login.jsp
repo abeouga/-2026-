@@ -90,11 +90,11 @@
 
         <form action="LoginExecute.action" method="post">
             <div class="mb-3">
-                <input type="text" name="id" class="form-control" placeholder="ユーザーID">
+                <input type="text" name="id" class="form-control" placeholder="ユーザーID" required>
             </div>
 
             <div class="mb-3">
-                <input type="password" name="password" class="form-control" placeholder="パスワード" id="password">
+                <input type="password" name="password" class="form-control" placeholder="パスワード" id="password" required>
             </div>
 
             <div class="mb-3">

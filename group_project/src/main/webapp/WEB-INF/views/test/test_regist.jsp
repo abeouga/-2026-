@@ -24,7 +24,7 @@
 
                 <div class="col-md-3">
                     <label class="form-label">クラス</label>
-                    <select name="classNum" class="form-select">
+                    <select name="classNum" class="form-select" required>
                         <option value="">選択してください</option>
                         <c:forEach var="c" items="${classList}">
                             <option value="${c}"

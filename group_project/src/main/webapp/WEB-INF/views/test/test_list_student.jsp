@@ -21,7 +21,7 @@
 
                 <div class="col-md-4">
                     <label class="form-label">学生番号</label>
-                    <input type="text" name="studentNo" class="form-control" value="${param.studentNo}">
+                    <input type="text" name="studentNo" class="form-control" value="${param.studentNo}" required>
                 </div>
 
             </div>

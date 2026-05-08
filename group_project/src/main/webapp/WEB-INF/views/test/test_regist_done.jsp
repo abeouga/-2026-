@@ -12,7 +12,7 @@
         <div class="container mt-5">
 
             <div class="alert alert-success text-center">
-                ${message}
+                登録完了
             </div>
 
             <div class="text-center mt-3">

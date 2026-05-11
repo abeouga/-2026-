@@ -64,7 +64,7 @@ body{
             <div class="col-sm-9">
                 <input type="text" name="name"
                     value="${student.name}"
-                    class="form-control">
+                    class="form-control" required>
             </div>
         </div>
 

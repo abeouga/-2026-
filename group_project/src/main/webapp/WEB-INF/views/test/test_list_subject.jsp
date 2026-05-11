@@ -82,6 +82,11 @@
             </table>
 
         </c:if>
+        <c:if test="${empty testList and not empty param.subjectCd}">
+            <div class="alert alert-warning">
+                成績情報が存在しませんでした
+            </div>
+        </c:if>
 
     </c:param>
 

@@ -58,6 +58,12 @@
             </table>
 
         </c:if>
+        <!--データの中身が存在しない場合-->
+        <c:if test="${empty testList and not empty param.subjectCd}">
+            <div class="alert alert-warning">
+                学生情報が存在しませんでした
+            </div>
+        </c:if>
 
     </c:param>
 

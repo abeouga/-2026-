@@ -1,83 +1,93 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-    <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
-        <c:import url="/WEB-INF/views/common/base.jsp">
+<c:import url="/WEB-INF/views/common/base.jsp">
 
-            <c:param name="title">得点管理システム</c:param>
+    <c:param name="title">得点管理システム</c:param>
 
-            <c:param name="content">
+    <c:param name="content">
 
-                <section class="me-4">
+        <section class="me-4">
 
-    <!-- タイトル -->
-    <h2 class="mb-4 fw-normal
-        bg-secondary bg-opacity-10
-        py-2 px-4">
-                        学生情報登録
-                    </h2>
+            <!-- タイトル -->
+            <h2 class="mb-4 fw-normal
+                bg-secondary bg-opacity-10
+                py-2 px-4">
+                学生情報登録
+            </h2>
 
-                    <form action="studentCreateExecute.action" method="post">
+            <form action="studentCreateExecute.action" method="post">
 
-        <!-- 入学年度 -->
-        <div class="mb-3">
-            <label class="form-label">入学年度</label>
+                <!-- 入学年度 -->
+                <div class="mb-3">
+                    <label class="form-label">入学年度</label>
 
-            <select name="entYear" class="form-select">
-                <option value="">------</option>
+                    <select name="entYear" class="form-select" required>
+                        <option value="">------</option>
 
-                <c:forEach var="year" items="${ent_year_set}">
-                    <option value="${year}">
-                        ${year}
-                    </option>
-                </c:forEach>
-            </select>
-        </div>
+                        <c:forEach var="year" items="${ent_year_set}">
+                            <option value="${year}">
+                                ${year}
+                            </option>
+                        </c:forEach>
+                    </select>
+                </div>
 
-        <!-- 氏名 -->
-        <div class="mb-3">
-            <label class="form-label">氏名</label>
+                <!-- 氏名 -->
+                <div class="mb-3">
+                    <label class="form-label">氏名</label>
 
-                            <input type="text" name="name" class="form-control" placeholder="氏名を入力してください">
-                        </div>
+                    <input
+                        type="text"
+                        name="name"
+                        class="form-control"
+                        placeholder="氏名を入力してください"
+                        required>
+                </div>
 
-        <!-- クラス -->
-        <div class="mb-3">
-            <label class="form-label">クラス</label>
+                <!-- クラス -->
+                <div class="mb-3">
+                    <label class="form-label">クラス</label>
 
-            <select name="classNum" class="form-select">
-                <c:forEach var="num" items="${class_num_set}">
-                    <option value="${num}">
-                        ${num}
-                    </option>
-                </c:forEach>
-            </select>
-        </div>
+                    <select name="classNum" class="form-select" required>
+                        <option value="">------</option>
 
-        <!-- ★ 在学（追加部分） -->
-        <div class="mb-3">
-            <label class="form-label">在学</label><br>
+                        <c:forEach var="num" items="${class_num_set}">
+                            <option value="${num}">
+                                ${num}
+                            </option>
+                        </c:forEach>
+                    </select>
+                </div>
 
-            <input type="checkbox"
-                name="isAttend"
-                value="true"
-                checked>
+                <!-- 在学 -->
+                <div class="mb-3">
+                    <label class="form-label">在学</label><br>
 
-            在学中
-        </div>
+                    <input
+                        type="checkbox"
+                        name="isAttend"
+                        value="true"
+                        checked>
 
-        <!-- ボタン -->
-        <button class="btn btn-secondary">
-            登録して終了
-        </button>
+                    在学中
+                </div>
 
-                    </form>
+                <!-- ボタン -->
+                <button class="btn btn-secondary">
+                    登録して終了
+                </button>
 
-    <!-- 戻る -->
-    <div class="mt-3">
-        <a href="student.action">戻る</a>
-    </div>
-                </section>
+            </form>
 
-            </c:param>
-        </c:import>
+            <!-- 戻る -->
+            <div class="mt-3">
+                <a href="student.action">戻る</a>
+            </div>
+
+        </section>
+
+    </c:param>
+
+</c:import>

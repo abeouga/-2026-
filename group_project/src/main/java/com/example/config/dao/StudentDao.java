@@ -116,12 +116,31 @@ public class StudentDao extends DaoBase {
     }
 
     public boolean delete(String schoolCd, String no) throws Exception {
-        String sql = "DELETE FROM student WHERE school_cd = ? AND no = ?";
-        try (Connection con = getConnection();
-                PreparedStatement st = con.prepareStatement(sql)) {
-            st.setString(1, schoolCd);
-            st.setString(2, no);
-            return st.executeUpdate() > 0;
+        try (Connection con = getConnection()) {
+            boolean result = false;
+            con.setAutoCommit(false);
+            try {
+                String sqlTest = "DELETE FROM test WHERE school_cd = ? AND student_no = ?";
+                try (PreparedStatement stTest = con.prepareStatement(sqlTest)) {
+                    stTest.setString(1, schoolCd);
+                    stTest.setString(2, no);
+                    stTest.executeUpdate();
+                }
+
+                String sqlStudent = "DELETE FROM student WHERE school_cd = ? AND no = ?";
+                try (PreparedStatement stStudent = con.prepareStatement(sqlStudent)) {
+                    stStudent.setString(1, schoolCd);
+                    stStudent.setString(2, no);
+                    result = stStudent.executeUpdate() > 0;
+                }
+                con.commit();
+            } catch (Exception e) {
+                con.rollback();
+                throw e;
+            } finally {
+                con.setAutoCommit(true);
+            }
+            return result;
         }
     }
 

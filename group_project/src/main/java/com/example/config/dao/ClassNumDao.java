@@ -18,7 +18,7 @@ public class ClassNumDao extends DaoBase {
             st.setString(1, schoolCd);
             try (ResultSet rs = st.executeQuery()) {
                 while (rs.next()) {
-                    list.add(rs.getString("class_num"));
+                    list.add(rs.getString("class_num") != null ? rs.getString("class_num").trim() : null);
                 }
             }
         }

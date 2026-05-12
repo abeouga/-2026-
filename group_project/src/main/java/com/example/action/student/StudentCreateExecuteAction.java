@@ -51,8 +51,14 @@ public class StudentCreateExecuteAction implements Action {
         }
 
         // クラス番号の妥当性チェック
+        if (classNum != null) {
+            classNum = classNum.trim();
+        }
         if (classNum == null || !classNumSet.contains(classNum)) {
             req.setAttribute("classNumError", "有効なクラスを選択してください");
+            error = true;
+        } else if (classNum.length() > 3) {
+            req.setAttribute("classNumError", "クラス番号は3文字以内で入力してください");
             error = true;
         }
 

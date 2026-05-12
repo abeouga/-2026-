@@ -1,0 +1,72 @@
+# 提示スキーマ適用と不具合防止のための実装プラン
+
+提示されたスキーマの仕様（`student.class_num`を`CHAR(3)`、`test.school_cd`を`CHAR(10)`）をデータベース定義に適用し、その変更によって生じる「空白のパディング（固定長による余白）」や「文字数制限」による不具合を防ぐため、各層（DAO、Action、JSP）に空白除去（Trim）とバリデーションを実装します。
+
+## User Review Required
+
+> [!WARNING]
+> スキーマ定義を変更するため、ローカルのH2データベースファイル（`~/groupes.mv.db` または `~/kaihatu.mv.db` 等）を一度削除し、アプリケーションを再起動してデータベースを再初期化する必要があります。
+> また、`student`テーブルの`class_num`(`CHAR(3)`)と、親テーブルである`class_num`テーブルの`class_num`(`VARCHAR(5)`)でデータ型が不一致となるため、データベースエンジンによっては外部キー制約の挙動に影響が出る可能性があります（今回は提示スキーマの文字数を正として進めます）。
+
+## Open Questions
+
+> [!IMPORTANT]
+> - `test`テーブルの`school_cd`は`CHAR(10)`になりますが、親である`school`テーブルの`cd`は`CHAR(3)`のままです。Actionでの入力チェック（バリデーション）は、親に合わせて「3文字以内」とするか、DB定義に合わせて「10文字以内」とするか、どちらがよろしいでしょうか？
+> （本プランではひとまず安全のため、親のschoolテーブルと整合性を保つ目的で「3文字以内」としてバリデーションする方針としています）
+
+## Proposed Changes
+
+### Database Initialization
+データベースのテーブル作成用SQLを提示スキーマの桁数に合わせて修正します。
+
+#### [MODIFY] `src/main/java/com/example/config/AppInitListener.java`
+- `student` テーブル作成時の `class_num` の型を `VARCHAR(5)` から `CHAR(3)` に変更します。
+- `test` テーブル作成時の `school_cd` の型を `CHAR(3)` から `CHAR(10)` に変更します。
+
+---
+
+### DAO Layer (Database Access)
+固定長(CHAR)特有の「末尾に空白がパディングされる」問題に対処するため、データベースから取得した値に `.trim()` を適用し、余計な空白を削除します。
+
+#### [MODIFY] `src/main/java/com/example/config/dao/StudentDao.java`
+- `ResultSet` から `class_num` および `school_cd` を取得する箇所で `.trim()` を追加します。
+
+#### [MODIFY] `src/main/java/com/example/config/dao/TestDao.java`
+- `ResultSet` から `school_cd` および `class_num` を取得する箇所で `.trim()` を追加します。
+
+---
+
+### Action Layer (Business Logic & Validation)
+登録・更新処理の直前に、入力値の空白除去と桁数のバリデーションを追加します。
+
+#### [MODIFY] `src/main/java/com/example/action/student/StudentCreateExecuteAction.java`
+- `req.getParameter("classNum")` の値に `.trim()` を適用します。
+- `classNum` が3文字を超えている場合のバリデーションエラー処理を追加し、エラー時は元の入力画面へ戻す処理を実装します。
+
+#### [MODIFY] `src/main/java/com/example/action/student/StudentUpdateExecuteAction.java`
+- `StudentCreateExecuteAction` と同様のTrimおよびバリデーション処理を追加します。
+
+#### [MODIFY] `src/main/java/com/example/action/test/TestRegistExecuteAction.java` （成績登録処理が存在する場合）
+- `test` データの保存前に `school_cd` 等にバリデーションとTrim処理を追加します。
+
+---
+
+### View Layer (JSP)
+フロントエンド側でも物理的な文字数制限をかけます。
+
+#### [MODIFY] `src/main/webapp/WEB-INF/views/student/student_create.jsp`
+- `class_num` を入力する要素に対して `maxlength="3"` を追加します。（※セレクトボックスで実装されている場合はHTMLの改修は不要で、選択肢のデータ抽出側のTrimで対応します）
+
+#### [MODIFY] `src/main/webapp/WEB-INF/views/student/student_update.jsp`
+- 同上。
+
+## Verification Plan
+
+### Automated Tests
+- 特になし（もしJUnitテストで文字数制限に引っかかるテストデータがあれば、テストコード側も3文字以内に修正します）。
+
+### Manual Verification
+1. 既存のH2データベースファイルを削除します。
+2. Tomcat（アプリケーション）を起動し、テーブルが新しいスキーマ定義で作成されることをコンソール等で確認します。
+3. ブラウザからログインし、学生の登録画面で3文字を超えるクラス番号を入力（または送信）した際に、適切なバリデーションエラーメッセージが表示されるか確認します。
+4. 学生登録・成績登録を行い、一覧画面等で余計な空白が含まれずに正常に表示・検索できるか確認します。

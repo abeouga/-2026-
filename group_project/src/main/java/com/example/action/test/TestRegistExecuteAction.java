@@ -100,7 +100,7 @@ public class TestRegistExecuteAction implements Action{
 
                 test.setStudentNo(student.getNo());
                 test.setSubjectCd(sub.getCd());
-                test.setSchoolCd(school.getCd());
+                test.setSchoolCd(school.getCd() != null ? school.getCd().trim() : null);
                 test.setNo(no);
                 test.setClassNum(classNum);
 

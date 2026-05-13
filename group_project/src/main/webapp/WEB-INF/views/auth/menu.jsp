@@ -134,13 +134,13 @@
 
                         <!-- 学生管理 -->
                         <div class="menu-card student">
-                            <a href="studentList.action">学生管理</a>
+                            <a href="student.action">学生管理</a>
                         </div>
 
                         <!-- 成績管理 -->
                         <div class="menu-card score">
+                            <a href="testRegist.action">成績登録</a>
                             <a href="testList.action">成績参照</a>
-                            <a href="testCreate.action">成績登録</a>
                         </div>
 
                         <!-- 科目管理 -->
@@ -154,7 +154,7 @@
 
             </div>
 
-            <div class="footer">
+            <div class=" footer">
                 © 2023 TIC<br>
                 大原学園
             </div>

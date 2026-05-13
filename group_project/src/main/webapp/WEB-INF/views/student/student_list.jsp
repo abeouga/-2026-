@@ -148,8 +148,7 @@
                                         </td>
 
                                         <td>
-                                            <a href="studentUpdate.action?no=${student.no}" class="btn btn-sm btn-outline-primary me-1">変更</a>
-                                            <a href="studentDeleteExecute.action?no=${student.no}" class="btn btn-sm btn-outline-danger" onclick="return confirm('本当に削除しますか？');">削除</a>
+                                            <a href="studentUpdate.action?no=${student.no}" class="btn btn-sm btn-outline-primary">変更</a>
                                         </td>
                                     </tr>
 

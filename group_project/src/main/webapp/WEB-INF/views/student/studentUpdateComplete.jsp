@@ -7,15 +7,16 @@
     <c:param name="content">
         <section class="me-4">
             <h2 class="mb-4 fw-normal bg-secondary bg-opacity-10 py-2 px-4">
-                変更完了
+                学生情報変更
             </h2>
 
             <div class="mx-4">
-                <p>学生情報の変更が完了しました。</p>
-                <p>正常に変更されました。</p>
+                <div class="alert alert-success py-2" role="alert">
+                    変更が完了しました
+                </div>
 
-                <div class="mt-3">
-                    <a href="student.action">一覧へ戻る</a>
+                <div class="mt-4 d-flex gap-5">
+                    <a href="student.action">学生一覧</a>
                 </div>
             </div>
         </section>

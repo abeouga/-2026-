@@ -75,6 +75,51 @@ public class StudentDao extends DaoBase {
         return student;
     }
 
+    public boolean update(Student student, String oldNo) throws Exception {
+        try (Connection con = getConnection()) {
+            con.setAutoCommit(false);
+            try {
+                // 制約チェックを一時無効化
+                try (java.sql.Statement stmt = con.createStatement()) {
+                    stmt.execute("SET REFERENTIAL_INTEGRITY FALSE");
+                }
+
+                // studentテーブルの更新
+                String sqlStudent = "UPDATE student SET no = ?, name = ?, ent_year = ?, class_num = ?, is_attend = ? WHERE school_cd = ? AND no = ?";
+                try (PreparedStatement stStudent = con.prepareStatement(sqlStudent)) {
+                    stStudent.setString(1, student.getNo());
+                    stStudent.setString(2, student.getName());
+                    stStudent.setInt(3, student.getEntYear());
+                    stStudent.setString(4, student.getClassNum());
+                    stStudent.setBoolean(5, student.getIsAttend());
+                    stStudent.setString(6, student.getSchoolCd());
+                    stStudent.setString(7, oldNo);
+                    stStudent.executeUpdate();
+                }
+
+                // 関連する成績データ(testテーブル)の更新
+                String sqlTest = "UPDATE test SET student_no = ? WHERE school_cd = ? AND student_no = ?";
+                try (PreparedStatement stTest = con.prepareStatement(sqlTest)) {
+                    stTest.setString(1, student.getNo());
+                    stTest.setString(2, student.getSchoolCd());
+                    stTest.setString(3, oldNo);
+                    stTest.executeUpdate();
+                }
+
+                // 制約チェックを有効化
+                try (java.sql.Statement stmt = con.createStatement()) {
+                    stmt.execute("SET REFERENTIAL_INTEGRITY TRUE");
+                }
+
+                con.commit();
+                return true;
+            } catch (Exception e) {
+                con.rollback();
+                throw e;
+            }
+        }
+    }
+
     public boolean save(Student student) throws Exception {
         String sqlSelect = "SELECT * FROM student WHERE school_cd = ? AND no = ?";
         try (Connection con = getConnection()) {

@@ -21,6 +21,7 @@ public class StudentUpdateExecuteAction implements Action {
 
         String entYearStr = req.getParameter("entYear");
         String no = req.getParameter("no");
+        String oldNo = req.getParameter("oldNo"); // 追加
         String name = req.getParameter("name");
         String classNum = req.getParameter("classNum");
         String isAttendStr = req.getParameter("isAttend");
@@ -30,10 +31,20 @@ public class StudentUpdateExecuteAction implements Action {
         java.util.List<String> classNumSet = classNumDao.filter(teacher.getSchoolCd());
 
         boolean error = false;
+        StudentDao dao = new StudentDao();
 
         if (name == null || name.isEmpty()) {
             req.setAttribute("nameError", "このフィールドを入力してください");
             error = true;
+        }
+
+        // 学生番号の重複チェック（変更された場合のみ）
+        if (no != null && !no.equals(oldNo)) {
+            Student existing = dao.get(teacher.getSchoolCd(), no);
+            if (existing != null) {
+                req.setAttribute("noError", "学生番号が重複しています");
+                error = true;
+            }
         }
 
         // クラス番号の妥当性チェック
@@ -45,6 +56,7 @@ public class StudentUpdateExecuteAction implements Action {
         if (error) {
             Student student = new Student(teacher.getSchoolCd(), no, name, Integer.parseInt(entYearStr), classNum, isAttendStr != null);
             req.setAttribute("student", student);
+            req.setAttribute("oldNo", oldNo); // エラー時も保持
 
             // 入学年度リストを生成
             java.util.List<Integer> entYearSet = new java.util.ArrayList<>();
@@ -67,8 +79,7 @@ public class StudentUpdateExecuteAction implements Action {
         student.setClassNum(classNum);
         student.setIsAttend(isAttendStr != null);
 
-        StudentDao dao = new StudentDao();
-        dao.save(student);
+        dao.update(student, oldNo); // save ではなく update を呼ぶ
 
         req.setAttribute("student", student);
         req.getRequestDispatcher("/WEB-INF/views/student/studentUpdateComplete.jsp").forward(req, res);

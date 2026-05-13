@@ -39,6 +39,10 @@
                     .subject {
                         background: #d6d8f5;
                     }
+ 
+                    .role {
+                        background: #fff3cd;
+                    }
 
                     .menu-card a {
                         display: block;
@@ -71,6 +75,11 @@
                     <!-- 科目管理 -->
                     <div class="menu-card subject">
                         <a href="subjectList.action">科目管理</a>
+                    </div>
+ 
+                    <!-- ロール管理 -->
+                    <div class="menu-card role">
+                        <a href="teacherRoleList.action">ロール管理</a>
                     </div>
                 </div>
             </c:param>

@@ -69,6 +69,7 @@ public class StudentCreateExecuteAction implements Action {
         }
 
         if (error) {
+            req.setAttribute("entYear", entYearStr);
             req.setAttribute("no", no);
             req.setAttribute("name", name);
             req.setAttribute("classNum", classNum);
@@ -81,6 +82,7 @@ public class StudentCreateExecuteAction implements Action {
         if (no != null) no = no.trim();
         Student existing = dao.get(teacher.getSchoolCd(), no);
         if (existing != null) {
+            req.setAttribute("entYear", entYearStr);
             req.setAttribute("no", no);
             req.setAttribute("name", name);
             req.setAttribute("classNum", classNum);
@@ -94,6 +96,7 @@ public class StudentCreateExecuteAction implements Action {
         Student student = new Student();
         student.setSchoolCd(teacher.getSchoolCd());
         student.setEntYear(entYear);
+        // 入力された学生番号をそのままセットして保存
         student.setNo(no);
         student.setName(name);
         student.setClassNum(classNum);

@@ -7,17 +7,17 @@
     <c:param name="content">
         <section class="me-4">
             <h2 class="mb-4 fw-normal bg-secondary bg-opacity-10 py-2 px-4">
-                登録完了
+                学生情報登録
             </h2>
 
             <div class="mx-4">
-                <p>学生登録が完了しました。</p>
-                <p>正常に登録されました。</p>
+                <div class="alert alert-success py-2" role="alert">
+                    登録が完了しました
+                </div>
 
-                <div class="mt-3">
-                    <a href="studentCreate.action">続けて登録</a>
-                    <span class="mx-2">|</span>
-                    <a href="student.action">一覧へ戻る</a>
+                <div class="mt-4 d-flex gap-5">
+                    <a href="studentCreate.action">戻る</a>
+                    <a href="student.action">学生一覧</a>
                 </div>
             </div>
         </section>

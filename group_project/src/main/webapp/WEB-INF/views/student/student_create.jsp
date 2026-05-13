@@ -27,7 +27,7 @@
                                 <option value="">------</option>
 
                                 <c:forEach var="year" items="${ent_year_set}">
-                                    <option value="${year}">
+                                    <option value="${year}" <c:if test="${year == entYear}">selected</c:if>>
                                         ${year}
                                     </option>
                                 </c:forEach>
@@ -60,7 +60,7 @@
                                 <option value="">------</option>
 
                                 <c:forEach var="num" items="${class_num_set}">
-                                    <option value="${num}">
+                                    <option value="${num}" <c:if test="${num == classNum}">selected</c:if>>
                                         ${num}
                                     </option>
                                 </c:forEach>

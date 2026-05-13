@@ -33,6 +33,14 @@ public class SubjectCreateExecuteAction implements Action {
             req.getRequestDispatcher("/WEB-INF/views/subject/subject_create.jsp").forward(req, res);
             return;
         }
+
+        if (name.length() > 20) {
+            req.setAttribute("cd", code);
+            req.setAttribute("name", name);
+            req.setAttribute("error", "科目名が長すぎます。20文字に収めてください");
+            req.getRequestDispatcher("/WEB-INF/views/subject/subject_create.jsp").forward(req, res);
+            return;
+        }
         Subject newSubject = new Subject();
         newSubject.setCd(code);
         newSubject.setName(name);

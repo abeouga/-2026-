@@ -24,7 +24,8 @@
                                 <label class="form-label" for="student-no-input">科目コード</label>
                                 <br>
                                 <input class="form-input form-control" type="text" id="student-no-input" name="cd" value="${cd}" placeholder="科目コード (例: 101 または 201)" required>
-                            <div class="text-danger small">${errors.get("cd")}</div> </div>
+                            <div class="text-danger small">${errors.get("cd")}</div>
+                            </div>
 
                             <div class="mb-3 col-md-6">
                                 <label class="form-label" for="student-name-input">科目名</label>

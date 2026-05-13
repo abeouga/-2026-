@@ -28,11 +28,12 @@
                         <h2 class="h4 mb-4 fw-normal py-2 px-4" style="background-color: #f0f0f0; border-bottom: 1px solid #dee2e6;">科目情報登録</h2>
 
                         <div class="success-message">
-                            登録が完了しました
+                            <p>登録が完了しました</p>
                         </div>
 
                         
                         <div class="mt-4 ms-4">
+                            <a href="subjectCreate.action" class="btn btn-sm btn-outline-secondary">戻る</a>
                             <a href="subjectList.action" class="btn btn-sm btn-outline-secondary">科目一覧へ</a>
                         </div>
                     </section>

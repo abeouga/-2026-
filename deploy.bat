@@ -12,9 +12,9 @@ echo [1/5] Stopping Tomcat...
 call "%TOMCAT_DIR%\bin\shutdown.bat" >nul 2>&1
 timeout /t 3 /nobreak > nul
 
-echo [2/5] Building Project (mvn clean package)...
+echo [2/5] Building Project (mvnw clean package)...
 cd /d "%PROJECT_DIR%"
-call mvn clean package
+call mvnw.cmd clean package
 if %ERRORLEVEL% neq 0 (
     echo [ERROR] Build failed.
     pause

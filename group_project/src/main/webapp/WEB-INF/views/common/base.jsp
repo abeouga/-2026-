@@ -72,20 +72,20 @@ body{
         <c:if test="${not empty user}">
             <div class="col-2 sidebar pt-2">
 
-                <a href="Menu.action" class="btn btn-sm btn-outline-secondary w-100 mb-3">メニュー</a>
+                <a href="Menu.action" class="mb-3">メニュー</a>
 
                 <div class="fw-bold small text-muted mb-1">学生管理</div>
-                <a href="student.action" class="btn btn-sm btn-outline-primary w-100 mb-1">学生一覧</a>
+                <a href="student.action" class="mb-1">学生一覧</a>
 
                 <div class="fw-bold small text-muted mt-3 mb-1">成績管理</div>
-                <a href="testRegist.action" class="btn btn-sm btn-outline-primary w-100 mb-1">成績登録</a>
-                <a href="testList.action" class="btn btn-sm btn-outline-primary w-100 mb-1">成績参照</a>
+                <a href="testRegist.action" class="mb-1">成績登録</a>
+                <a href="testList.action" class="mb-1">成績参照</a>
 
                 <div class="fw-bold small text-muted mt-3 mb-1">科目管理</div>
-                <a href="subjectList.action" class="btn btn-sm btn-outline-primary w-100 mb-1">科目一覧</a>
+                <a href="subjectList.action" class="mb-1">科目一覧</a>
 
                 <div class="fw-bold small text-muted mt-3 mb-1">クラス管理</div>
-                <a href="schoolclassList.action" class="btn btn-sm btn-outline-primary w-100 mb-1">クラス一覧</a>
+                <a href="schoolclassList.action" class="mb-1">クラス一覧</a>
 
             </div>
 

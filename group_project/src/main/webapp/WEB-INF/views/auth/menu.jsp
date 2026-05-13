@@ -108,10 +108,10 @@ body{
     <!-- 左メニュー -->
     <div class="sidebar">
         <a href="#">メニュー</a>
-        <a href="StudentList.action">学生管理</a>
-        <a href="TestList.action">成績参照</a>
-        <a href="TestCreate.action">成績登録</a>
-        <a href="SubjectList.action">科目管理</a>
+        <a href="studentList.action">学生管理</a>
+        <a href="testList.action">成績参照</a>
+        <a href="testCreate.action">成績登録</a>
+        <a href="subjectList.action">科目管理</a>
     </div>
 
     <!-- メイン -->
@@ -125,18 +125,18 @@ body{
 
             <!-- 学生管理 -->
             <div class="menu-card student">
-                <a href="StudentList.action">学生管理</a>
+                <a href="studentList.action">学生管理</a>
             </div>
 
             <!-- 成績管理 -->
             <div class="menu-card score">
-                <a href="TestList.action">成績参照</a>
-                <a href="TestCreate.action">成績登録</a>
+                <a href="testList.action">成績参照</a>
+                <a href="testCreate.action">成績登録</a>
             </div>
 
             <!-- 科目管理 -->
             <div class="menu-card subject">
-                <a href="SubjectList.action">科目管理</a>
+                <a href="subjectList.action">科目管理</a>
             </div>
 
         </div>

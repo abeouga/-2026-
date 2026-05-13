@@ -46,11 +46,12 @@ public class TestDao extends DaoBase {
 
     public List<Test> filter(int entYear, String classNum, Subject subject, int no, School school) throws Exception {
         List<Test> list = new ArrayList<>();
-        String sql = "SELECT st.no AS student_no, st.name AS student_name, " +
+        String sql =
+    "SELECT st.no AS student_no, st.name AS student_name, " +
     "st.class_num, sub.cd AS subject_cd, sub.name AS subject_name, " +
     "t.point, ? AS no, st.school_cd " +
     "FROM student st " +
-    "JOIN subject sub ON sub.cd = ? AND sub.school_cd = st.school_cd " +
+    "LEFT JOIN subject sub ON sub.cd = ? AND sub.school_cd = st.school_cd " +
     "LEFT JOIN test t ON st.no = t.student_no " +
     "AND t.subject_cd = sub.cd " +
     "AND t.no = ? " +

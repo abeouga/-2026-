@@ -112,6 +112,7 @@ public class TestRegistExecuteAction implements Action{
             }
 
             tdao.save(saveList);
+            request.setAttribute("message", "登録が完了しました");
             request.getRequestDispatcher("/WEB-INF/views/test/test_regist_done.jsp").forward(request, response);
             return;
         }

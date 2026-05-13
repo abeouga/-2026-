@@ -1,88 +1,164 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>メニュー</title>
+    <!DOCTYPE html>
+    <html>
 
-<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon.png">
-<!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <head>
+        <meta charset="UTF-8">
+        <title>メニュー</title>
 
-<style>
-    body {
-        background-color: #f8f9fa;
-        padding: 30px;
-    }
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    h2 {
-        background-color: #dee2e6;
-        padding: 20px;
-        border-radius: 12px;
-        margin-bottom: 30px;
-        font-weight: bold;
-    }
+        <style>
+            body {
+                background: #f5f5f5;
+            }
 
-    p {
-        margin-bottom: 20px;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-        transition: 0.3s;
-    }
+            /* ヘッダー */
+            .header {
+                background: #e9edf5;
+                padding: 20px;
+                font-size: 32px;
+                font-weight: bold;
+            }
 
-    p:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 16px rgba(0,0,0,0.12);
-    }
+            /* 全体 */
+            .container-area {
+                display: flex;
+            }
 
-    p a {
-        display: block;
-        padding: 20px;
-        text-decoration: none;
-        font-size: 18px;
-        font-weight: bold;
-    }
-    .logout-btn {
-        position: absolute;
-        top: 20px;
-        right: 30px;
-    }
+            /* 左メニュー */
+            .sidebar {
+                width: 220px;
+                background: white;
+                min-height: 100vh;
+                padding: 20px;
+                border-right: 1px solid #ccc;
+            }
 
-    /* 色分け（HTMLそのまま） */
-    p:nth-of-type(1) {
-        background-color: #f8d7da;
-    }
+            .sidebar a {
+                display: block;
+                margin-bottom: 15px;
+                text-decoration: none;
+            }
 
-    p:nth-of-type(2),
-    p:nth-of-type(3) {
-        background-color: #d1e7dd;
-    }
+            /* メイン */
+            .main {
+                flex: 1;
+                padding: 20px;
+            }
 
-    p:nth-of-type(4) {
-        background-color: #d6d8f5;
-    }
-</style>
-</head>
-<body>
+            /* タイトル */
+            .menu-title {
+                background: #ddd;
+                padding: 10px;
+                margin-bottom: 20px;
+                font-size: 24px;
+                font-weight: bold;
+            }
 
-<h2>メニュー画面</h2>
-<div class="text-end mb-3">
-    <a class="btn btn-warning"
-       href="Logout.action"
-       onclick="return confirm('ログアウトしますか？');">
-       ログアウト
-    </a>
-</div>
-<p><a href="student.action">学生管理</a></p>
-<p><a href="testList.action">成績参照</a></p>
-<p><a href="testRegist.action">成績登録</a></p>
-<p><a href="subjectList.action">科目管理</a></p>
-<p><a href="schoolclassList.action">クラス管理</a></p>
-<c:if test="${user.role == 'admin'}">
-    <p><a href="teacherRoleList.action">アカウント権限管理</a></p>
-</c:if>
+            /* カード横並び */
+            .card-area {
+                display: flex;
+                gap: 20px;
+            }
 
-</body>
-</html>
+            /* カード */
+            .menu-card {
+                width: 220px;
+                min-height: 120px;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+            }
+
+            /* 色 */
+            .student {
+                background: #f8d7da;
+            }
+
+            .score {
+                background: #d1e7dd;
+            }
+
+            .subject {
+                background: #d6d8f5;
+            }
+
+            /* リンク */
+            .menu-card a {
+                display: block;
+                text-decoration: none;
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            .footer {
+                background: #e9ecef;
+                text-align: center;
+                font-size: 12px;
+                color: #666;
+                padding: 10px;
+                margin-top: 30px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="container mt-3">
+            <!-- ヘッダー -->
+            <div class="header">
+                得点管理システム
+            </div>
+
+            <div class="container-area">
+
+                <!-- 左メニュー -->
+                <div class="sidebar">
+                    <a href="#">メニュー</a>
+                    <a href="studentList.action">学生管理</a>
+                    <a href="testRegist.action">成績登録</a>
+                    <a href="testList.action">成績参照</a>
+                    <a href="subjectList.action">科目管理</a>
+                </div>
+
+                <!-- メイン -->
+                <div class="main">
+
+                    <div class="menu-title">
+                        メニュー
+                    </div>
+
+                    <div class="card-area">
+
+                        <!-- 学生管理 -->
+                        <div class="menu-card student">
+                            <a href="studentList.action">学生管理</a>
+                        </div>
+
+                        <!-- 成績管理 -->
+                        <div class="menu-card score">
+                            <a href="testList.action">成績参照</a>
+                            <a href="testCreate.action">成績登録</a>
+                        </div>
+
+                        <!-- 科目管理 -->
+                        <div class="menu-card subject">
+                            <a href="subjectList.action">科目管理</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="footer">
+                © 2023 TIC<br>
+                大原学園
+            </div>
+        </div>
+    </body>
+
+    </html>

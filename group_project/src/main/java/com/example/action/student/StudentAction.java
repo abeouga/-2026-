@@ -38,6 +38,17 @@ public class StudentAction implements Action {
         } else {
             // チェックされていない場合はすべて表示するため null のまま
         }
+
+        java.util.Map<String, String> errors = new java.util.HashMap<>();
+        if (entYear == null && classNum != null && !classNum.isEmpty()) {
+            errors.put("f1", "クラスを指定する場合は入学年度も指定してください");
+            req.setAttribute("errors", errors);
+            // フォームの入力をリセット
+            entYearStr = "";
+            classNum = "";
+            isAttendStr = null;
+            isAttend = null;
+        }
         /**
          * DBにアクセスする StudentDaoを生成し、ログイン中の教員が所属する学校の学生情報を取得してそれをキーにクエリを出してもらう。
          * 戻り値は studentsにリスト型で入るので、それをそれぞれ state(リクエスト)にattributeする。

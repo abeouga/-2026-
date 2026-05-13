@@ -20,12 +20,12 @@
 
                 <div class="col-md-3">
                     <label class="form-label">入学年度</label>
-                    <input type="number" name="entYear" class="form-control" value="${param.entYear}">
+                    <input type="number" name="entYear" class="form-control" value="${param.entYear}" required>
                 </div>
 
                 <div class="col-md-3">
                     <label class="form-label">クラス</label>
-                    <select name="classNum" class="form-select">
+                    <select name="classNum" class="form-select" required>
                         <option value="">選択してください</option>
                         <c:forEach var="c" items="${classList}">
                             <option value="${c}">
@@ -37,7 +37,7 @@
 
                 <div class="col-md-3">
                     <label class="form-label">科目</label>
-                    <select name="subjectCd" class="form-select">
+                    <select name="subjectCd" class="form-select" required>
                         <option value="">選択してください</option>
                         <c:forEach var="sub" items="${subjectList}">
                             <option value="${sub.cd}"
@@ -81,6 +81,11 @@
 
             </table>
 
+        </c:if>
+        <c:if test="${empty testList and not empty param.subjectCd}">
+            <div class="alert alert-warning">
+                成績情報が存在しませんでした
+            </div>
         </c:if>
 
     </c:param>

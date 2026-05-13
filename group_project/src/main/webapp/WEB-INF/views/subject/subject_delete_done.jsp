@@ -28,16 +28,12 @@
                         <h2 class="h4 mb-4 fw-normal py-2 px-4" style="background-color: #f0f0f0; border-bottom: 1px solid #dee2e6;">科目情報削除</h2>
 
                         <div class="success-message">
-                            削除が完了しました
+                            <p>削除が完了しました</p>
                         </div>
 
                         
                         <div class="mt-4 ms-4">
-<<<<<<< HEAD
-                            <a href="subjectList.action" class="text-decoration-none small">科目一覧へ</a>
-=======
                             <a href="subjectList.action" class="text-decoration-none small">科目一覧</a>
->>>>>>> 0c1a3cddef56d8d9c525e29293e86a5cbfc209c9
                         </div>
                     </section>
                 </main>

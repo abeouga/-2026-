@@ -16,6 +16,11 @@
                         <h2 class="h4 mb-4 fw-normal py-2 px-4" style="background-color: #f0f0f0; border-bottom: 1px solid #dee2e6;">科目情報更新</h2>
 
                         <form action="subjectUpdateExecute.action" method="post" class="mx-4">
+                        <c:if test="${not empty error}">
+                            <div class="alert alert-danger mb-3" role="alert">
+                                ${error}
+                            </div>
+                        </c:if>
 
                             <div class="mb-3 col-md-4">
                                 <label class="form-label" for="student-no-input">科目コード</label>

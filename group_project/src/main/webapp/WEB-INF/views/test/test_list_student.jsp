@@ -21,7 +21,7 @@
 
                 <div class="col-md-4">
                     <label class="form-label">学生番号</label>
-                    <input type="text" name="studentNo" class="form-control" value="${param.studentNo}">
+                    <input type="text" name="studentNo" class="form-control" value="${param.studentNo}" required>
                 </div>
 
             </div>
@@ -57,6 +57,12 @@
 
             </table>
 
+        </c:if>
+        <!--データの中身が存在しない場合-->
+        <c:if test="${empty testList and not empty param.subjectCd}">
+            <div class="alert alert-warning">
+                学生情報が存在しませんでした
+            </div>
         </c:if>
 
     </c:param>

@@ -80,6 +80,8 @@
 
                         <thead class="table-dark">
                             <tr>
+                                <th>入学年度</th>
+                                <th>クラス</th>
                                 <th>学生番号</th>
                                 <th>氏名</th>
                                 <th>点数</th>
@@ -89,6 +91,8 @@
                         <tbody>
                             <c:forEach var="t" items="${testList}">
                                 <tr>
+                                    <td>${param.entYear}</td>
+                                    <td>${param.classNum}</td>
                                             <td>
                                                 ${t.studentNo}
                                                 <input type="hidden" name="studentNoList" value="${t.studentNo}">
@@ -96,11 +100,15 @@
                                             <td>${t.studentName}</td>
                                     <td style="width:150px;">
                                         <input type="number"
-                                               name="pointList"
-                                               class="form-control"
-                                               min="0" max="100"
-                                               value="${t.point}">
-                                    </td>
+                                                name="pointList"
+                                                class="form-control"
+                                                min="0"
+                                                max="100"
+                                                required
+                                                oninvalid="this.setCustomValidity('0〜100の数値を入力してください')"
+                                                oninput="this.setCustomValidity('')"
+                                                value="${t.point}">
+                                        </td>
                                     <input type="hidden" name="noList" value="${t.no}">
                                 </tr>
                             </c:forEach>

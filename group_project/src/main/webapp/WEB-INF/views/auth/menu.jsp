@@ -109,8 +109,8 @@ body{
     <div class="sidebar">
         <a href="#">メニュー</a>
         <a href="studentList.action">学生管理</a>
+        <a href="testRegist.action">成績登録</a>
         <a href="testList.action">成績参照</a>
-        <a href="testCreate.action">成績登録</a>
         <a href="subjectList.action">科目管理</a>
     </div>
 

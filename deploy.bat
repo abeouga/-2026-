@@ -14,7 +14,7 @@ timeout /t 3 /nobreak > nul
 
 echo [2/5] Building Project (mvnw clean package)...
 cd /d "%PROJECT_DIR%"
-call mvnw.cmd clean package
+call mvnw.cmd package
 if %ERRORLEVEL% neq 0 (
     echo [ERROR] Build failed.
     pause

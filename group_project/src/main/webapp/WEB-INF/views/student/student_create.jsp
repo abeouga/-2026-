@@ -34,11 +34,22 @@
                             </select>
                         </div>
 
+                        <!-- 学生番号 -->
+                        <div class="mb-3">
+                            <label class="form-label">学生番号</label>
+
+                            <input type="text" name="no" value="${no}" class="form-control" placeholder="学生番号を入力してください" required>
+
+                            <c:if test="${no_duplicate_error}">
+                                <div class="text-danger mt-1">学生番号が重複しています</div>
+                            </c:if>
+                        </div>
+
                         <!-- 氏名 -->
                         <div class="mb-3">
                             <label class="form-label">氏名</label>
 
-                            <input type="text" name="name" class="form-control" placeholder="氏名を入力してください" required>
+                            <input type="text" name="name" value="${name}" class="form-control" placeholder="氏名を入力してください" required>
                         </div>
 
                         <!-- クラス -->

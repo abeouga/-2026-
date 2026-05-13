@@ -21,6 +21,7 @@ public class StudentCreateExecuteAction implements Action {
         }
 
         String entYearStr = req.getParameter("entYear");
+        String no = req.getParameter("no");
         String name = req.getParameter("name");
         String classNum = req.getParameter("classNum");
         String isAttendStr = req.getParameter("isAttend");
@@ -40,6 +41,11 @@ public class StudentCreateExecuteAction implements Action {
 
         boolean error = false;
 
+        if (no == null || no.trim().isEmpty()) {
+            req.setAttribute("noError", "学生番号を入力してください");
+            error = true;
+        }
+
         if (entYearStr == null || entYearStr.isEmpty() || entYearStr.equals("0")) {
             req.setAttribute("entYearError", "入学年度を選択してください");
             error = true;
@@ -51,22 +57,39 @@ public class StudentCreateExecuteAction implements Action {
         }
 
         // クラス番号の妥当性チェック
+        if (classNum != null) {
+            classNum = classNum.trim();
+        }
         if (classNum == null || !classNumSet.contains(classNum)) {
             req.setAttribute("classNumError", "有効なクラスを選択してください");
+            error = true;
+        } else if (classNum.length() > 3) {
+            req.setAttribute("classNumError", "クラス番号は3文字以内で入力してください");
             error = true;
         }
 
         if (error) {
+            req.setAttribute("no", no);
             req.setAttribute("name", name);
             req.setAttribute("classNum", classNum);
             req.getRequestDispatcher("/WEB-INF/views/student/student_create.jsp").forward(req, res);
             return;
         }
 
+        // 学生番号の重複チェック
         StudentDao dao = new StudentDao();
-        
+        if (no != null) no = no.trim();
+        Student existing = dao.get(teacher.getSchoolCd(), no);
+        if (existing != null) {
+            req.setAttribute("no", no);
+            req.setAttribute("name", name);
+            req.setAttribute("classNum", classNum);
+            req.setAttribute("no_duplicate_error", true);
+            req.getRequestDispatcher("/WEB-INF/views/student/student_create.jsp").forward(req, res);
+            return;
+        }
+
         int entYear = Integer.parseInt(entYearStr);
-        String no = dao.generateStudentNo(teacher.getSchoolCd(), entYear, classNum);
 
         Student student = new Student();
         student.setSchoolCd(teacher.getSchoolCd());

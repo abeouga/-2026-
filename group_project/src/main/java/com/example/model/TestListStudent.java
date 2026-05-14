@@ -12,6 +12,7 @@ public class TestListStudent implements Serializable{
     private String classNum;
     //private Map<Integer,Integer> points = new HashMap<>();
     private int point;
+    private int no;
 
     public int getEntYear(){
         return entYear;
@@ -48,6 +49,12 @@ public class TestListStudent implements Serializable{
     }
     public void setPoint(int point){
         this.point=point;
+    }
+    public int getNo(){
+        return no;
+    }
+    public void setNo(int no){
+        this.no=no;
     }
     
 }

@@ -33,9 +33,8 @@ public class TestListSubjectDao extends DaoBase{
                 TestListSubject subject = new TestListSubject();
 
                 subject.setSubjectName(rSet.getString("subject_name"));
-                subject.setSubjectCd(rSet.getString("subject_cd")); // ← 追加必要
-                subject.setNum(rSet.getInt("no"));    
-                subject.setClassNum(rSet.getString("class_num"));              // ← 修正
+                subject.setSubjectCd(rSet.getString("subject_cd"));
+                subject.setNo(rSet.getInt("no"));    
                 subject.setPoint(rSet.getInt("point"));
 
                 list.add(subject);

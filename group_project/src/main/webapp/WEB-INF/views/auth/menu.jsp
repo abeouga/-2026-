@@ -67,7 +67,7 @@
 
                     <!-- 成績管理 -->
                     <div class="menu-card score">
-                        <div>成績管理</div>
+                        <a>成績管理</a>
                         <a href="testRegist.action">成績登録</a>
                         <a href="testList.action">成績参照</a>
                     </div>

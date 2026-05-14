@@ -17,6 +17,7 @@ public class TestListStudentDao extends DaoBase{
                 "    st.no AS student_no,\n" + //
                 "    st.name AS student_name,\n" + //
                 "    sub.name AS subject_name,\n" + //
+                "    t.no,\n" + //
                 "    t.point\n" + //
                 "FROM test t\n" + //
                 "JOIN student st ON t.student_no = st.no\n" + //
@@ -33,6 +34,7 @@ public class TestListStudentDao extends DaoBase{
                 student.setStudentName(rSet.getString("name"));
                 student.setStudentNo(rSet.getString("student_No"));
                 student.setClassNum("class_num");
+                student.setNo(rSet.getInt("no"));
                 student.setPoint(rSet.getInt("point"));
                 //リストに追加
                 list.add(student);
@@ -67,6 +69,7 @@ public class TestListStudentDao extends DaoBase{
                     student.setStudentName(rSet.getString("student_name"));
                     student.setSubjectCd(rSet.getString("subject_name"));
                     student.setPoint(rSet.getInt("point"));
+                    student.setNo(rSet.getInt("no"));
                     list.add(student);
                 }
             }

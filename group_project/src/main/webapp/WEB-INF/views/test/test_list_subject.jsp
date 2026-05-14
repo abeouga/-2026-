@@ -63,7 +63,7 @@
                     <tr>
                         <th>教科名</th>
                         <th>教科コード</th>
-                        <th>クラス番号</th>
+                        <th>回数</th>
                         <th>点数</th>
                     </tr>
                 </thead>
@@ -73,7 +73,7 @@
                         <tr>
                             <td>${t.subjectName}</td>
                             <td>${t.subjectCd}</td>
-                            <td>${t.classNum}</td>
+                            <td>${t.no}</td>
                             <td>${t.point}</td>
                         </tr>
                     </c:forEach>

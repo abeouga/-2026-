@@ -40,6 +40,7 @@
                         <th>学生名</th>
                         <th>科目名</th>
                         <th>学生番号</th>
+                        <th>回数</th>
                         <th>点数</th>
                     </tr>
                 </thead>
@@ -50,6 +51,7 @@
                             <td>${t.studentName}</td>
                             <td>${t.subjectCd}</td>
                             <td>${t.studentNo}</td>
+                            <td>${t.no}</td>
                             <td>${t.point}</td>
                         </tr>
                     </c:forEach>

@@ -6,6 +6,7 @@ public class TestListSubject implements Serializable{
     private String subjectName;
     private String subjectCd;
     private int num;
+    private int no;
     private int point;
     private String classNum;
     public String getSubjectName(){
@@ -37,5 +38,11 @@ public class TestListSubject implements Serializable{
     }
     public void setClassNum(String classNum){
         this.classNum=classNum;
+    }
+    public int getNo(){
+        return no;
+    }
+    public void setNo(int no){
+        this.no=no;
     }
 }

@@ -7,7 +7,7 @@
 
     <c:param name="content">
 
-        <h2 class="mb-4 text-center">成績登録</h2>
+        <h2 class="mb-4 text-center">成績管理</h2>
 
         <c:if test="${not empty error}">
             <div class="alert alert-danger text-center">${error}</div>
@@ -100,14 +100,22 @@
                                             <td>${t.studentName}</td>
                                     <td style="width:150px;">
                                         <input type="number"
-                                                name="pointList"
-                                                class="form-control"
-                                                min="0"
-                                                max="100"
-                                                required
-                                                oninvalid="this.setCustomValidity('0〜100の数値を入力してください')"
-                                                oninput="this.setCustomValidity('')"
-                                                value="${t.point}">
+                                            name="pointList"
+                                            class="form-control"
+                                            min="0"
+                                            max="100"
+                                            required
+                                            value="${t.point}"
+
+                                            oninvalid="
+                                                if(this.value==''){
+                                                    this.setCustomValidity('0〜100の数字を入力してください');
+                                                } else {
+                                                    this.setCustomValidity('0〜100の数字を入力してください');
+                                                }
+                                            "
+
+                                            oninput="this.setCustomValidity('')">
                                         </td>
                                     <input type="hidden" name="noList" value="${t.no}">
                                 </tr>

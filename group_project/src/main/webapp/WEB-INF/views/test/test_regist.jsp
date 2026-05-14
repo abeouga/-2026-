@@ -76,6 +76,17 @@
             <form action="testRegistExecute.action" method="post">
 
                 <div class="table-responsive">
+                    <div class="d-flex justify-content-end mb-2">
+                        <div class="fw-bold">
+                            科目：
+                            <c:forEach var="sub" items="${subjectList}">
+                                <c:if test="${sub.cd eq param.subjectCd}">
+                                ${sub.name}
+                            </c:if>
+                            </c:forEach>
+                            （${param.no}回）
+                        </div>
+                    </div>
                     <table class="table table-bordered table-striped text-center align-middle">
 
                         <thead class="table-dark">

@@ -23,7 +23,7 @@
                         <div class="mb-3">
                             <label class="form-label">入学年度</label>
 
-                            <select name="entYear" class="form-select" required>
+                            <select name="entYear" class="form-select">
                                 <option value="">------</option>
 
                                 <c:forEach var="year" items="${ent_year_set}">
@@ -32,6 +32,10 @@
                                     </option>
                                 </c:forEach>
                             </select>
+
+                            <c:if test="${ent_year_error}">
+                                <div class="text-danger mt-1">入学年度を選択してください</div>
+                            </c:if>
                         </div>
 
                         <!-- 学生番号 -->

@@ -47,7 +47,7 @@ public class StudentCreateExecuteAction implements Action {
         }
 
         if (entYearStr == null || entYearStr.isEmpty() || entYearStr.equals("0")) {
-            req.setAttribute("entYearError", "入学年度を選択してください");
+            req.setAttribute("ent_year_error", true);
             error = true;
         }
 

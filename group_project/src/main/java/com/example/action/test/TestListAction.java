@@ -3,6 +3,7 @@ package com.example.action.test;
 import com.example.action.Action;
 import com.example.config.dao.SchoolClassDao;
 import com.example.config.dao.SubjectDao;
+import com.example.config.dao.ClassNumDao;
 import com.example.model.SchoolClass;
 import com.example.model.Subject;
 import com.example.model.Teacher;
@@ -33,8 +34,8 @@ public class TestListAction implements Action {
         }
 
         // クラスリストを取得
-        SchoolClassDao classDao = new SchoolClassDao();
-        List<SchoolClass> classList = classDao.filter(schoolCd);
+        ClassNumDao classDao = new ClassNumDao();
+        List<String> classList = classDao.filter(schoolCd);
 
         // 科目リストを取得
         SubjectDao subjectDao = new SubjectDao();

@@ -1,6 +1,8 @@
 package com.example.action.test;
 
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import jakarta.servlet.http.HttpServletRequest;
@@ -26,11 +28,19 @@ public class TestListStudentExecuteAction implements Action{
         ClassNumDao cdao = new ClassNumDao();
         StudentDao stdao = new StudentDao();
         Student student = null;
-        
+
+        List<Integer> entYearList = new ArrayList<>();
+        int currentYear = LocalDate.now().getYear();
+        for (int i = currentYear - 10; i <= currentYear + 1; i++) {
+            entYearList.add(i);
+        }
+        request.setAttribute("entYearList", entYearList);
         List<Student> list = stdao.filter(school.getCd(), null, null, false);
         request.setAttribute("studentNo",list);
         List<String> list2 = cdao.filter(school.getCd());
         request.setAttribute("classList",list2);
+        List<Subject> list3 = sdao.filter(school.getCd());
+        request.setAttribute("subjectList",list3);
         
         String studentNo = request.getParameter("studentNo");
 
@@ -46,7 +56,7 @@ public class TestListStudentExecuteAction implements Action{
                 testList = dao.filter(studentNo,school);
             }
         }
-        request.setAttribute("testList",testList);
-        request.getRequestDispatcher("/WEB-INF/views/test/test_list_student.jsp").forward(request, response);
+        request.setAttribute("testListst",testList);
+        request.getRequestDispatcher("/WEB-INF/views/test/test_list.jsp").forward(request, response);
     }
 }

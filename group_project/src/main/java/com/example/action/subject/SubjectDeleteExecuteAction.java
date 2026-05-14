@@ -20,6 +20,13 @@ public class SubjectDeleteExecuteAction implements Action {
 
         SubjectDao dao = new SubjectDao();
         Subject subject = dao.get(user.getSchoolCd(), code);
+
+        if (subject == null) {
+            req.setAttribute("error", "指定された科目が存在しません");
+            req.getRequestDispatcher("/WEB-INF/views/subject/subject_delete.jsp").forward(req, res);
+            return;
+        }
+
         boolean line = dao.delete(subject);
 
         session.setAttribute("line", line);

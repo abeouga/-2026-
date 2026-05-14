@@ -23,9 +23,9 @@
 
     <c:param name="content">
         <section class="me-4">
-            <div class="my-2 text-end px-4">
+            <div>
                 <h2 class="h4 mb-4 fw-normal py-2 px-4" style="background-color: #f0f0f0; border-bottom: 1px solid #dee2e6;">クラス管理</h2>
-                <a class="btn btn-sm btn-outline-primary" href="schoolclassCreate.action">新規登録</a>
+                <div class="my-2 text-end px-4"><a class="btn btn-sm btn-outline-primary" href="schoolclassCreate.action">新規登録</a></div>
             </div>
 
             

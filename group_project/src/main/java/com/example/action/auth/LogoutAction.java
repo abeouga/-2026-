@@ -13,7 +13,7 @@ public class LogoutAction implements Action {
         if (session != null) {
             session.invalidate();
         }
-        res.sendRedirect(req.getContextPath() + "/login.action");
+        req.getRequestDispatcher("/WEB-INF/views/auth/logout_complete.jsp").forward(req, res);
     }
 }
 

@@ -62,7 +62,7 @@
                     <c:if test="${not empty user}">
                         <div class="d-flex align-items-center">
                             ${user.name} 様　
-                            <a href="LogoutConfirmation.action" class="btn btn-sm btn-outline-danger">ログアウト</a>
+                            <a href="Logout.action" class="btn btn-sm btn-outline-danger">ログアウト</a>
                         </div>
                     </c:if>
                 </div>

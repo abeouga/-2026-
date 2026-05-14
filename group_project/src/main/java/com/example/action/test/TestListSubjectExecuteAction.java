@@ -63,7 +63,7 @@ public class TestListSubjectExecuteAction implements Action{
             classNum == null  || classNum.isEmpty() ||
             entYearStr == null || entYearStr.isEmpty()
         ) {
-            request.getRequestDispatcher("/WEB-INF/views/test/test_list_subject.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/views/test/test_list.jsp").forward(request, response);
             return;
         }
 

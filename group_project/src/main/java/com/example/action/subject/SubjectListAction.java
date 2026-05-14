@@ -11,8 +11,11 @@ public class SubjectListAction implements Action {
     public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
 
         HttpSession session = req.getSession();
-
-        Teacher user = (Teacher)session.getAttribute("user");
+        Teacher user = (Teacher) session.getAttribute("user");
+        if (user == null) {
+            res.sendRedirect(req.getContextPath() + "/login.action");
+            return;
+        }
 
         SubjectDao dao = new SubjectDao();
         List<Subject> list = dao.filter(user.getSchoolCd());

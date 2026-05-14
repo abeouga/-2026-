@@ -10,8 +10,12 @@ public class SubjectUpdateExecuteAction implements Action {
     public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
 
         HttpSession session = req.getSession();
-
         Teacher user = (Teacher)session.getAttribute("user");
+        if (user == null) {
+            res.sendRedirect(req.getContextPath() + "/login.action");
+            return;
+        }
+
         
         String code = req.getParameter("cd");
         String name = req.getParameter("name");

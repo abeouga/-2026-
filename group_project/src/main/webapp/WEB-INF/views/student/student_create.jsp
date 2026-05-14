@@ -73,14 +73,7 @@
                             </select>
                         </div>
 
-                        <!-- 在学 -->
-                        <div class="mb-3">
-                            <label class="form-label">在学</label><br>
 
-                            <input type="checkbox" name="isAttend" value="true" checked>
-
-                            在学中
-                        </div>
 
                         <!-- ボタン -->
                         <button type="submit" class="btn btn-secondary">

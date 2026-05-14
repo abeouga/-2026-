@@ -24,7 +24,7 @@ public class StudentCreateExecuteAction implements Action {
         String no = req.getParameter("no");
         String name = req.getParameter("name");
         String classNum = req.getParameter("classNum");
-        String isAttendStr = req.getParameter("isAttend");
+
 
         // 入学年度リストを生成
         java.util.List<Integer> entYearSet = new java.util.ArrayList<>();
@@ -100,7 +100,7 @@ public class StudentCreateExecuteAction implements Action {
         student.setNo(no);
         student.setName(name);
         student.setClassNum(classNum);
-        student.setIsAttend(isAttendStr != null);
+        student.setIsAttend(true);
 
         dao.save(student);
 

@@ -44,13 +44,8 @@ body{
         <div class="row mb-3">
             <label class="col-sm-3 col-form-label">入学年度</label>
             <div class="col-sm-9">
-                <select name="entYear" class="form-select" required>
-                    <c:forEach var="year" items="${ent_year_set}">
-                        <option value="${year}" <c:if test="${year == student.entYear}">selected</c:if>>
-                            ${year}
-                        </option>
-                    </c:forEach>
-                </select>
+                <p class="form-control-plaintext">${student.entYear}</p>
+                <input type="hidden" name="entYear" value="${student.entYear}">
             </div>
         </div>
 
@@ -58,11 +53,9 @@ body{
         <div class="row mb-3">
             <label class="col-sm-3 col-form-label">学生番号</label>
             <div class="col-sm-9">
-                <input type="text" name="no" value="${student.no}" class="form-control" required>
+                <p class="form-control-plaintext">${student.no}</p>
+                <input type="hidden" name="no" value="${student.no}">
                 <input type="hidden" name="oldNo" value="${empty oldNo ? student.no : oldNo}">
-                <c:if test="${not empty noError}">
-                    <div class="text-danger small mt-1">${noError}</div>
-                </c:if>
             </div>
         </div>
 

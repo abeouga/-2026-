@@ -40,11 +40,11 @@ public class StudentDao extends DaoBase {
             try (ResultSet rs = st.executeQuery()) {
                 while (rs.next()) {
                     list.add(new Student(
-                            rs.getString("school_cd"),
+                            rs.getString("school_cd") != null ? rs.getString("school_cd").trim() : null,
                             rs.getString("no"),
                             rs.getString("name"),
                             rs.getInt("ent_year"),
-                            rs.getString("class_num"),
+                            rs.getString("class_num") != null ? rs.getString("class_num").trim() : null,
                             rs.getBoolean("is_attend")));
                 }
             }
@@ -63,11 +63,11 @@ public class StudentDao extends DaoBase {
             try (ResultSet rs = st.executeQuery()) {
                 if (rs.next()) {
                     student = new Student(
-                            rs.getString("school_cd"),
+                            rs.getString("school_cd") != null ? rs.getString("school_cd").trim() : null,
                             rs.getString("no"),
                             rs.getString("name"),
                             rs.getInt("ent_year"),
-                            rs.getString("class_num"),
+                            rs.getString("class_num") != null ? rs.getString("class_num").trim() : null,
                             rs.getBoolean("is_attend"));
                 }
             }

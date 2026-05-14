@@ -54,6 +54,11 @@ public class TestRegistExecuteAction implements Action{
         if (classNum != null) {
             classNum = classNum.trim();
         }
+        if (classNum != null && classNum.length() > 3) {
+            request.setAttribute("errorMessage", "クラス番号は3文字以内で入力してください");
+            request.getRequestDispatcher("/WEB-INF/views/test/test_regist.jsp").forward(request, response);
+            return;
+        }
 
         if (
             subjectCd == null || subjectCd.isEmpty() ||

@@ -31,11 +31,11 @@ public class TestDao extends DaoBase {
                 if (rs.next()) {
                     test = new Test();
 
-                    test.setSchoolCd(rs.getString("school_cd"));
+                    test.setSchoolCd(rs.getString("school_cd") != null ? rs.getString("school_cd").trim() : null);
                     test.setStudentNo(rs.getString("student_no"));
                     test.setSubjectCd(rs.getString("subject_cd"));
                     test.setNo(rs.getInt("no"));
-                    test.setClassNum(rs.getString("class_num"));
+                    test.setClassNum(rs.getString("class_num") != null ? rs.getString("class_num").trim() : null);
                     test.setPoint(rs.getInt("point"));
                 }
             }
@@ -74,11 +74,11 @@ public class TestDao extends DaoBase {
             try (ResultSet rs = st.executeQuery()) {
                 while (rs.next()) {
                     Test test = new Test();
-                    test.setSchoolCd(rs.getString("school_cd"));
+                    test.setSchoolCd(rs.getString("school_cd") != null ? rs.getString("school_cd").trim() : null);
                     test.setStudentNo(rs.getString("student_no"));
                     test.setSubjectCd(rs.getString("subject_cd"));
                     test.setNo(rs.getInt("no"));
-                    test.setClassNum(rs.getString("class_num"));
+                    test.setClassNum(rs.getString("class_num") != null ? rs.getString("class_num").trim() : null);
                     test.setPoint(rs.getInt("point"));
                     test.setStudentName(rs.getString("student_name"));
                     test.setSubjectName(rs.getString("subject_name"));

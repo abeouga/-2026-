@@ -58,7 +58,7 @@ public class AppInitListener implements ServletContextListener {
                         "no VARCHAR(10) NOT NULL, " +
                         "name VARCHAR(10), " +
                         "ent_year INTEGER, " +
-                        "class_num VARCHAR(5), " +
+                        "class_num CHAR(3), " +
                         "is_attend BOOLEAN, " +
                         "PRIMARY KEY (school_cd, no), " +
                         "FOREIGN KEY (school_cd) REFERENCES school(cd), " +
@@ -66,7 +66,7 @@ public class AppInitListener implements ServletContextListener {
                 stmt.execute(sqlStudent);
 
                 String sqlTest = "CREATE TABLE IF NOT EXISTS test (" +
-                        "school_cd CHAR(3) NOT NULL, " +
+                        "school_cd CHAR(10) NOT NULL, " +
                         "student_no VARCHAR(10) NOT NULL, " +
                         "subject_cd CHAR(3) NOT NULL, " +
                         "no INTEGER NOT NULL, " +

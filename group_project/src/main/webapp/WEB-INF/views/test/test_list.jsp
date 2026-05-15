@@ -23,7 +23,7 @@
                                 <!-- 入学年度 -->
                                 <div class="col-md-2">
                                     <label class="form-label">入学年度</label>
-                                    <select name="entYear" class="form-select">
+                                    <select name="entYear" class="form-select" required>
                                         <option value="">------</option>
                                         <c:forEach var="year" items="${entYearList}">
                                             <option value="${year}">
@@ -36,7 +36,7 @@
                                 <!-- クラス -->
                                 <div class="col-md-2">
                                     <label class="form-label">クラス</label>
-                                    <select name="classNum" class="form-select">
+                                    <select name="classNum" class="form-select" required>
                                         <option value="">------</option>
                                         <c:forEach var="c" items="${classList}">
                                             <option value="${c}">
@@ -49,7 +49,7 @@
                                 <!-- 科目 -->
                                 <div class="col-md-4">
                                     <label class="form-label">科目</label>
-                                    <select name="subjectCd" class="form-select">
+                                    <select name="subjectCd" class="form-select" required>
                                         <option value="">------</option>
                                         <c:forEach var="sub" items="${subjectList}">
                                             <option value="${sub.cd}">
@@ -87,7 +87,7 @@
                                     <label class="form-label">学生番号</label>
 
                                     <input type="text" name="studentNo" class="form-control"
-                                        placeholder="学生番号を入力してください">
+                                        placeholder="学生番号を入力してください" required>
                                 </div>
 
                                 <!-- 検索 -->
@@ -156,12 +156,10 @@
                 </table>
 
             </c:if>
-            <c:if test="${empty testListsub and not empty param.subjectCd}">
-                <c:if test="${empty testListsub and not empty param.subjectCd}">
+            <c:if test="${empty testListsub and empty testListst and (not empty param.subjectCd or not empty param.studentNo)}">
                     <div class="alert alert-warning">
                         成績情報が存在しませんでした
                     </div>
-                </c:if>
             </c:if>
 
                     <!-- メッセージ -->
